@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Star, StarBorder } from '@material-ui/icons';
 import { Promocao } from '../style/style'
+import ButtonEncomendar from './ButtonEncomendar';
+import ButtonVerMais from './ButtonVerMais';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -43,13 +45,16 @@ export default () => {
                   <span>4 Estrelas</span>
                 </div>
                 <div className='descricao--preco'>
-
+                    <span className='preco--novo'>KZ 50.000,00</span>
+                    <span className='preco--antigo'>KZ 70.000,00</span>
                 </div>
                 <div className='descricao--btns'>
-
+                    <ButtonEncomendar />
+                    <ButtonVerMais />
                 </div>
               </div>
             </div>
+            <p>Quantidades limitadas.</p>
         </Promocao>
   )
 }

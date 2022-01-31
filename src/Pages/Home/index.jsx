@@ -10,6 +10,7 @@ import Menu from './Components/MenuNavigation'
 import ButtonContactar from './Components/ButtonContactar'
 
 import PedacoBolo from '../../Imagens/1 (1).png'
+import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos';
 
 const index = () => {
   return (
@@ -42,7 +43,7 @@ const index = () => {
         {/* Pedacinho is already very done */}
 
         <Promocao />
-
+        <ProdutosMaisVendidos />
 
       </>
   )

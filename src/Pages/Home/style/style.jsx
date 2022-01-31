@@ -3,6 +3,10 @@ import css from 'styled-components'
 import Banner from '../../../Imagens/1 (9).jpg'
 import Bolo_Chocolate from '../../../Imagens/1 (7).jpeg'
 
+import item1 from '../../../Imagens/1 (3).jpeg'
+import item2 from '../../../Imagens/1 (6).jpeg'
+import item3 from '../../../Imagens/1 (8).jpeg'
+
 export const Header = css.header`
     height: 100vh;
     background: url('${Banner}');
@@ -53,11 +57,12 @@ export const Pedacinho = css.section`
 
 
         h3{
-            font-size: 1.3em;
+            font-size: 1.7em;
         }
 
 
         p{
+            font-size: 1.2em;
             max-width: 500px;
         }
     }
@@ -67,7 +72,86 @@ export const Promocao = css.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    h2{
+        font-size: 2em;
+
+        span{
+            color: #FF00E8;
+        }
+    }
+
+    h2::after{
+        content: '';
+        display: block;
+        height: 3px;
+        width: 60%;
+        background: #FF00E8;
+        margin: 10px auto; 
+    }
+
+    h2 + p{
+        color: #FF00E8;
+        margin-bottom: -10px;
+    }
+
+    .time-promocao{
+        display: flex;
+        gap: 30px;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            background: #371910;
+            border-radius: 5px;
+            color: #eee;
+            width: 100px;
+            padding: 10px 0;
+
+            span:first-child{
+                font-size: 1.5em;
+            }
+            span:last-child{
+                font-size: .9em;
+            }
+        }
+    }
+
+    .time-promocao + p{
+        font-size: 1.2em;
+    }
+
+    .item-promocao{
+        display: flex;
+    }
+
+    .item-promocao--imagem{
+        background-image: url('${Bolo_Chocolate}');
+        background-position: center;
+        background-size: cover;
+        height: 350px;
+        max-width: 350px;
+        min-width: 250px;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .item-promocao--descricao{
+        background: #371910;
+
+        h3{
+            color: #FF00E8;
+        }
+    }
+
+`
+
+export const ProdutosMaisVendidos = css.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 
     h2{
         font-size: 2em;
@@ -81,84 +165,9 @@ export const Promocao = css.section`
         content: '';
         display: block;
         height: 3px;
+        width: 40%;
         background: #FF00E8;
-        width: 55%;
-        margin: 10px auto 20px;
-        border-radius: 20%;
+        margin: 10px auto; 
     }
-
-    h2 + p{
-        color: #FF00E8;
-    }
-
-    .time-promocao{
-        display: flex;
-        gap: 20px;
-        margin-bottom: 20px;
-        
-        div{
-            padding: 10px;
-            background: #371910;
-            color: #eee;
-            border-radius: 5px;
-            width: 140px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-
-            span:first-child{
-                font-size: 1.8em;
-            }
-            span:last-child{
-                font-size: .9em;
-            }
-        }
-    }
-
-    .time-promocao + p{
-        font-size: 1.2em;
-        margin: 15px 0 0;
-    }
-
-    .item-promocao{
-        max-width: 800px;
-        margin: 0 auto 40px;
-        display: flex;
-        align-items: center;
-        background: #371910;
-        border-radius: 5px;
-
-        .item-promocao--imagem{
-            background: url('${Bolo_Chocolate}');
-            background-position: center;
-            background-size: cover;
-            height: 330px;
-            max-width: 350px;
-            min-width: 250px;
-        }
-        .item-promocao--descricao{
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            flex: 1;
-
-            h3{
-                margin-bottom: -10px;
-                color: #FF00E8;
-            }
-            p{
-                color: #eee;
-            }
-
-            .descricao--cotacao{
-                color: yellow;
-                display: flex;
-                align-items: center;
-                gap: 20px;
-            }
-        }
-    }
-
+    
 `
