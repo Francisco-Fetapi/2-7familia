@@ -126,20 +126,19 @@ export const Promocao = css.section`
         margin: 0 auto 40px;
         display: flex;
         align-items: center;
-     
+        background: #371910;
+        border-radius: 5px;
 
         .item-promocao--imagem{
             background: url('${Bolo_Chocolate}');
             background-position: center;
             background-size: cover;
-            height: 350px;
+            height: 330px;
             max-width: 350px;
             min-width: 250px;
-            border-radius: 5px 0 0 5px;
         }
         .item-promocao--descricao{
             padding: 30px;
-            border-radius: 0 5px 5px 0;
             display: flex;
             flex-direction: column;
             gap: 20px;
