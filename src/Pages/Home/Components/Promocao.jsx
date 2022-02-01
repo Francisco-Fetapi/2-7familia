@@ -5,6 +5,8 @@ import { Promocao } from '../style/style'
 import ButtonEncomendar from './ButtonEncomendar';
 import ButtonVerMais from './ButtonVerMais';
 
+import Bolo_Chocolate from '../../../Imagens/1 (7).jpeg'
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
@@ -27,10 +29,8 @@ export default () => {
             </div>
             <p>Faça já a sua encomenda e delicie-se com as nossas Delicatezzas.</p>
             <div className='item-promocao'>
-              <div className='item-promocao--imagem'>
-                {/* Aqui vai a imagem */}
-              </div>
-              <div className='item-promocao--descricao'>
+              <img src={Bolo_Chocolate} className='promocao--imagem' alt='Bolo' />
+              <div className='promocao_descricao'>
                 <h3>Bolo de chocolate</h3>
                 <p> O melhor bolo de chocolate que você já viu e vai provar, com creme de chocolate e recheio de morango.</p>
                 <p><span>Categoria: </span>Bolos de chocolate</p>
@@ -54,7 +54,7 @@ export default () => {
                 </div>
               </div>
             </div>
-            <p>Quantidades limitadas.</p>
+            <p className='warning'>Quantidades limitadas.</p>
         </Promocao>
   )
 }
