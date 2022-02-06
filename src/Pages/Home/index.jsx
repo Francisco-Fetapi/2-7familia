@@ -11,6 +11,9 @@ import ButtonContactar from './Components/ButtonContactar'
 
 import PedacoBolo from '../../Imagens/1 (1).png'
 import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos';
+import PorqueNos from './Components/PorqueNos';
+import QuemSomos from './Components/QuemSomos';
+
 
 const index = () => {
   return (
@@ -44,7 +47,8 @@ const index = () => {
 
         <Promocao />
         <ProdutosMaisVendidos />
-
+        <PorqueNos />
+        <QuemSomos />
       </>
   )
 }

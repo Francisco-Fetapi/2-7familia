@@ -4,6 +4,7 @@ export default css.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: red;
 
     & h1 img{
         max-width: 180px;

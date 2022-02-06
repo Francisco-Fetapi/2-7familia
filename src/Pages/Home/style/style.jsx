@@ -2,9 +2,12 @@ import css from 'styled-components'
 
 import Banner from '../../../Imagens/1 (9).jpg'
 
+import Padeiro from '../../../Imagens/1 (5).jpg'
+
 import item1 from '../../../Imagens/1 (3).jpeg'
 import item2 from '../../../Imagens/1 (6).jpeg'
 import item3 from '../../../Imagens/1 (8).jpeg'
+
 
 export const Header = css.header`
     height: 100vh;
@@ -72,7 +75,7 @@ export const Promocao = css.section`
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto 40px;
     h2{
         font-size: 2em;
@@ -131,7 +134,7 @@ export const Promocao = css.section`
         margin: auto;
 
         .promocao--imagem{
-            height: 300px;
+            height: 304px;
             width: 300px;
             border-radius: 10px 0 0 10px;
         }
@@ -199,8 +202,8 @@ export const ProdutosMaisVendidos = css.section`
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 120px auto 40px;
 
     h2{
         font-size: 2em;
@@ -229,20 +232,194 @@ export const ProdutosMaisVendidos = css.section`
         justify-content: center;
         gap: 15px;
 
+        & > div{
+            background: #371910;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            
+            & > div:first-child{
+                height: 300px;
+                border-radius: 5px 5px 0 0;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .produto--cotacao{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #FFFF00;
+            }
+    
+            .produto--preco{
+                color: #eee;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1.3em;
+            }
+    
+            .produto--categoria{
+                color: #eee;
+                font-weight: 400;
+    
+                span{
+                    color: #A15300;
+                }
+            }
+
+            & > div:last-child{
+                display: flex;
+                gap: 15px;
+                padding: 10px 20px 20px;
+            }
+        }
+
+        & > div:nth-child(1){
+            & > div:first-child{
+                background: url('${item1}');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        & > div:nth-child(2){
+            & > div:first-child{
+                background: url('${item2}');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        & > div:nth-child(3){
+            & > div:first-child{
+                background: url('${item3}');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+`
+
+export const PorqueNos = css.section`
+    margin: 150px 0;
+
+    h2{
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 40px;
     }
 
-    .produtos--vendidos > div{
+    h2::after{
+        content: '';
+        display: block;
+        height: 3px;
+        width: 8%;
+        background: currentColor;
+        margin: 10px auto; 
+        border-radius: 20px;
     }
 
-    .produtos--vendidos > div > div:first-child{
+    & > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 80px 0;
+
+        background: #1D1E20;
+        
+
+        text-align: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        & > div > div svg{
+            height: 100px;
+            width: 100px;
+        }
+        
+        & > div > div{
+            margin-bottom: -15px;
+        }
+
+        div h4{
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #A15300;
+        }
+        div p{
+            max-width: 235px;
+            color: #eee;
+        }
+    }
+`
+
+export const QuemSomos = css.section`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 130px;
+
+    h2{
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    h2::after{
+        content: '';
+        display: block;
+        height: 3px;
+        width: 8%;
+        background: currentColor;
+        margin: 10px auto; 
+        border-radius: 20px;
+    }
+
+    & > h2 + div{
+        background: url('${Padeiro}');
         background-position: center;
         background-size: cover;
-        height: 300px;
-        border-radius: 5px 5px 0 0;
+    
+        & > div{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: #0000006c;
+            padding: 120px 20px 0;
+
+            & > div{
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                color: #eee;
+                
+                p:first-child{
+                    font-size: 1.3em;
+                    line-height: 1.6em;
+                    max-width: 650px;
+                }
+
+                p:last-child{
+                    font-size: 2em;
+                    margin-bottom: 70px;
+                }
+            }
+
+            & > img{
+                width: 470px;
+                height: 350px;
+                align-self: flex-end;
+            }
+        } 
     }
 
-    .produtos--vendidos > div:nth-child(1) > div:first-child{
-        
+    .Nos{
+        display: flex;
     }
-    
 `
