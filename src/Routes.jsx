@@ -6,7 +6,7 @@ import Home from './Pages/Home'
 // import Sobre from './pages/sobre.jsx'
 // import Produtos from './pages/produtos.jsx'
 // import Contacto from './pages/contacto.jsx'
-// import Login from './pages/login.jsx'
+import Login from './Pages/Login/Index'
 // import Cadastro from './pages/cadastro.jsx'
 
 /*------ Rotas(React Router) ------*/
@@ -20,8 +20,9 @@ const Rotas = () => (
                 {/* <Route path='/sobre' component={Sobre} />
                 <Route path='/produtos' component={Produtos} />
                 <Route path='/contacto' component={Contacto} />
-                <Route path='/login' component={Login}/>
+                
                 <Route path='/cadastro' component={Cadastro}/> */}
+                <Route path='/login' component={Login}/>
                 <Route path='/' component={Home}/>
             </Switch>
         </BrowserRouter>

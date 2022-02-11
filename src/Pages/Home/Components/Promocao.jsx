@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Star, StarBorder } from '@material-ui/icons';
-import { Promocao } from '../style/style'
+import { ImagemItemPromocao, ItemPromocao, Promocao, TimePromocao, Title } from '../style/style'
 import ButtonEncomendar from './ButtonEncomendar';
 import ButtonVerMais from './ButtonVerMais';
 
@@ -11,9 +11,9 @@ import Bolo_Chocolate from '../../../Imagens/1 (7).jpeg'
 export default () => {
   return (
         <Promocao>
-            <h2>Promoção do <span>dia</span></h2>
+            <Title>Promoção do <span>dia</span></Title>
             <p>FALTAM 15 DIAS E</p>
-            <div className='time-promocao'>
+            <TimePromocao>
               <div>
                 <span>10</span>
                 <span>Hora(s)</span>
@@ -26,10 +26,10 @@ export default () => {
                 <span>57</span>
                 <span>Segundo(s)</span>
               </div>
-            </div>
+            </TimePromocao>
             <p>Faça já a sua encomenda e delicie-se com as nossas Delicatezzas.</p>
-            <div className='item-promocao'>
-              <img src={Bolo_Chocolate} className='promocao--imagem' alt='Bolo' />
+            <ItemPromocao>
+              <ImagemItemPromocao imagem={Bolo_Chocolate}/>
               <div className='promocao_descricao'>
                 <h3>Bolo de chocolate</h3>
                 <p> O melhor bolo de chocolate que você já viu e vai provar, com creme de chocolate e recheio de morango.</p>
@@ -53,7 +53,7 @@ export default () => {
                     <ButtonVerMais />
                 </div>
               </div>
-            </div>
+            </ItemPromocao>
             <p className='warning'>Quantidades limitadas.</p>
         </Promocao>
   )

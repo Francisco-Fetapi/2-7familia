@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { PorqueNos } from '../style/style'
+import { ItemMotivos, PorqueNos, Title } from '../style/style'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
         <PorqueNos>
-            <h2>Porquê nós?</h2>
+            <Title>Porquê nós?</Title>
             <div>
                 <div>
-                    <div>
+                    <ItemMotivos>
                         <svg xmlns="http://www.w3.org/2000/svg" width="208.782" height="208.811" viewBox="0 0 208.782 208.811">
                             <g id="Icon" transform="translate(4 4)">
                                 <path id="Stroke_607" data-name="Stroke 607" d="M142.505,103.621H12.953a12.953,12.953,0,0,1,0-25.906H71.237a12.953,12.953,0,0,0,0-25.906H12.953a12.953,12.953,0,0,1,0-25.906H71.237A12.953,12.953,0,1,0,71.237,0H51.788" transform="translate(0 97.19)" fill="none" stroke="#a15300" strokeMiterlimit="10" strokeWidth="8" strokeDasharray="0.755 0.755"/>
@@ -17,12 +17,12 @@ export default () => {
                                 <path id="Stroke_611" data-name="Stroke 611" d="M33.694,95.934h0L5.334,51.873a33.7,33.7,0,1,1,56.725,0L33.7,95.931Zm0-78.609A15.724,15.724,0,1,0,49.418,33.049,15.724,15.724,0,0,0,33.694,17.326Z" transform="translate(3.238 0.015)" fill="none" stroke="#a15300" strokeMiterlimit="10" strokeWidth="8"/>
                             </g>
                         </svg>
-                    </div>
+                    </ItemMotivos>
                     <h4>Localização</h4>
                     <p>Estamos tão perto de si, basta abrires a porta e aqui estamos nós mais uma vez.</p>
                 </div>
                 <div>
-                    <div>
+                    <ItemMotivos>
                         <svg xmlns="http://www.w3.org/2000/svg" width="221.436" height="233.461" viewBox="0 0 221.436 233.461">
                             <g id="icon" transform="translate(4 4)">
                                 <path id="Stroke_1" data-name="Stroke 1" d="M0,.5H22.471" transform="translate(152.139 194.619)" fill="none" stroke="#a15300" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="8"/>
@@ -56,12 +56,12 @@ export default () => {
                                 <path id="Stroke_56" data-name="Stroke 56" d="M0,0V.742A2.344,2.344,0,0,0,2.34,3.087H11.4a8.046,8.046,0,0,1,8.034,8.067V53.221" transform="translate(167.527 57.701)" fill="none" stroke="#a15300" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="8"/>
                             </g>
                         </svg>
-                    </div>
+                    </ItemMotivos>
                     <h4>Fidelidade</h4>
                     <p>Somos 100% fiel aos nossos clientes e o compromisso feitos a eles.</p>
                 </div>
                 <div>
-                    <div>
+                    <ItemMotivos>
                         <svg xmlns="http://www.w3.org/2000/svg" width="216.993" height="221.827" viewBox="0 0 216.993 221.827">
                             <g id="icon" transform="translate(4.015 4.037)">
                                 <g id="Group_25" data-name="Group 25" transform="translate(0)">
@@ -85,7 +85,7 @@ export default () => {
                                 </g>
                             </g>
                         </svg>
-                    </div>
+                    </ItemMotivos>
                     <h4>Simplicidade</h4>
                     <p>É tão simples adquirir aos nossos serviços que parece beber água.</p>
                 </div>

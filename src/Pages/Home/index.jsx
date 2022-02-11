@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core'
 import { Phone }from '@material-ui/icons'
 
 import Promocao from './Components/Promocao'
-import { Header, Div, Pedacinho } from './style/style'
+import { Header, Div, Pedacinho  } from './style/style'
 import Menu from './Components/MenuNavigation'
 import ButtonContactar from './Components/ButtonContactar'
 
@@ -13,6 +13,9 @@ import PedacoBolo from '../../Imagens/1 (1).png'
 import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos';
 import PorqueNos from './Components/PorqueNos';
 import QuemSomos from './Components/QuemSomos';
+import NossosProdutos from './Components/NossosProdutos';
+import ContactarNos from './Components/ContactarNos';
+import Footer from './Components/Footer';
 
 
 const index = () => {
@@ -49,6 +52,9 @@ const index = () => {
         <ProdutosMaisVendidos />
         <PorqueNos />
         <QuemSomos />
+        <NossosProdutos />
+        <ContactarNos />
+        <Footer />
       </>
   )
 }
