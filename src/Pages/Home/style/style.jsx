@@ -484,6 +484,7 @@ export const ImagemItemProdutoSmall = css.div`
     border-radius: 4px;
     margin: 10px;
     transition: .4s ease-in-out;
+    color: 
 
     &:hover{
         transform: scale(1.04);
