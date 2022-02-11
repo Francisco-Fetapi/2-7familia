@@ -6,8 +6,8 @@ import { Phone }from '@material-ui/icons'
 
 import Promocao from './Components/Promocao'
 import { Header, Div, Pedacinho  } from './style/style'
-import Menu from './Components/MenuNavigation'
-import ButtonContactar from './Components/ButtonContactar'
+import Menu from '../../Components/Menu'
+import ButtonContactar from '../../Components/ButtonContactar'
 
 import PedacoBolo from '../../Imagens/1 (1).png'
 import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos';

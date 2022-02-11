@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { ImagemProdutoMaisVendido, PodutosMaisVendidositems, ProdutosMaisVendidos, Title } from '../style/style'
-import ButtonEncomendar from './ButtonEncomendar';
-import ButtonVerMais from './ButtonVerMais';
+import ButtonEncomendar from '../../../Components/ButtonEncomendar';
+import ButtonVerMais from '../../../Components/ButtonVerMais';
 import { Star, StarHalf, StarBorder } from '@material-ui/icons';
 
 import item1 from '../../../Imagens/1 (3).jpeg'

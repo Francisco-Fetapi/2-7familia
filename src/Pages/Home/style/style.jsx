@@ -483,6 +483,11 @@ export const ImagemItemProdutoSmall = css.div`
     flex-basis: 35%;
     border-radius: 4px;
     margin: 10px;
+    transition: .4s ease-in-out;
+
+    &:hover{
+        transform: scale(1.04);
+    }
 `
 
 export const ImagemItemProdutoBig = css(ImagemItemProdutoSmall)`

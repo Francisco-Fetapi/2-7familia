@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Star, StarBorder } from '@material-ui/icons';
 import { ImagemItemPromocao, ItemPromocao, Promocao, TimePromocao, Title } from '../style/style'
-import ButtonEncomendar from './ButtonEncomendar';
-import ButtonVerMais from './ButtonVerMais';
+import ButtonEncomendar from '../../../Components/ButtonEncomendar';
+import ButtonVerMais from '../../../Components/ButtonVerMais';
 
 import Bolo_Chocolate from '../../../Imagens/1 (7).jpeg'
 
