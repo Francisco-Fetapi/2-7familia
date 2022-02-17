@@ -1,6 +1,6 @@
 import css from 'styled-components'
 
-import Banner from '../../../Imagens/1 (9).jpg'
+import Banner from '../../Imagens/1 (9).jpg'
 
 
 export const Title = css.h2`

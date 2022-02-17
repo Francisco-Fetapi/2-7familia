@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Title } from '../style';
+import { Title } from '../../style';
 import { ImagemProdutoMaisVendido, PodutosMaisVendidositems, ProdutosMaisVendidos } from './style'
 import ButtonEncomendar from '../../../../Components/ButtonEncomendar';
 import ButtonVerMais from '../../../../Components/ButtonVerMais';
 import { Star, StarHalf, StarBorder } from '@material-ui/icons';
 
-import item1 from '../../../Imagens/1 (3).jpeg'
-import item2 from '../../../Imagens/1 (6).jpeg'
-import item3 from '../../../Imagens/1 (8).jpeg'
+import item1 from '../../../../Imagens/1 (3).jpeg'
+import item2 from '../../../../Imagens/1 (6).jpeg'
+import item3 from '../../../../Imagens/1 (8).jpeg'
 
 
 // eslint-disable-next-line import/no-anonymous-default-export

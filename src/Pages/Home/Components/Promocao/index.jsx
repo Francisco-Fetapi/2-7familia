@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Title } from '../style';
+import { Title } from '../../style';
 import { Star, StarBorder } from '@material-ui/icons';
 import { ImagemItemPromocao, ItemPromocao, Promocao, TimePromocao } from './style'
 import ButtonEncomendar from '../../../../Components/ButtonEncomendar';
 import ButtonVerMais from '../../../../Components/ButtonVerMais';
 
-import Bolo_Chocolate from '../../../Imagens/1 (7).jpeg'
+import Bolo_Chocolate from '../../../../Imagens/1 (7).jpeg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {

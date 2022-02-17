@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title } from '../style';
+import { Title } from '../../style';
 import { ItemMotivos, PorqueNos } from './style'
 
 // eslint-disable-next-line import/no-anonymous-default-export

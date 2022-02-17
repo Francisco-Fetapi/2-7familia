@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import Logo from '../Imagens/Delicatezza.svg'
-import Menu from './style'
-import ItemsMenu from './ItemsMenu';
-import Title from '../TitleTooltip';
-
 import { Badge, Tooltip } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
+
+import ItemsMenu from './ItemsMenu';
+import Title from '../TitleTooltip';
+import Menu from './style'
+import Logo from '../../Imagens/Delicatezza.svg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {

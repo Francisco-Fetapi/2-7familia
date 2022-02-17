@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { Title } from '../style';
+import { Title } from '../../style';
 import { ImagemItemProdutoBig, ImagemItemProdutoSmall, NossosProdutos } from './style';
 
-
 /* Imagens */
-import item1 from '../../../Imagens/1 (14).jpg'
-import item2 from '../../../Imagens/1 (11).jpg'
-import item3 from '../../../Imagens/1 (12).jpg'
-import item4 from '../../../Imagens/1 (2).jpg'
+import item1 from '../../../../Imagens/1 (14).jpg'
+import item2 from '../../../../Imagens/1 (11).jpg'
+import item3 from '../../../../Imagens/1 (12).jpg'
+import item4 from '../../../../Imagens/1 (2).jpg'
 import { Button } from '@material-ui/core';
 import { ArrowForwardIos } from '@material-ui/icons';
 

@@ -7,7 +7,7 @@ import PersonAdd from '@material-ui/icons/PersonAdd'
 import { Container } from './style'
 import { Certo, Erro } from '../../style';
 
-import foto_user from '../../../Imagens/user.jpg' 
+import foto_user from '../../../../Imagens/user.jpg' 
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ open, handleClose, Imagem, mudarImagem, mudaBI }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footer } from './style';
 
-import logo from '../../../Imagens/Delicatezza.svg'
+import logo from '../../../../Imagens/Delicatezza.svg'
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/no-anonymous-default-export

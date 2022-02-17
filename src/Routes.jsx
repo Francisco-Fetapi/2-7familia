@@ -6,7 +6,7 @@ import Home from './Pages/Home/index'
 // import Sobre from './pages/sobre.jsx'
 // import Produtos from './pages/produtos.jsx'
 // import Contacto from './pages/contacto.jsx'
-import Login from './Pages/Login/Index'
+import Login from './Pages/Login/index'
 // import Cadastro from './pages/cadastro.jsx'
 
 /*------ Rotas(React Router) ------*/

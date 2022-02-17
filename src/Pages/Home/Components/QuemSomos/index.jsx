@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Title } from '../style';
+import { Title } from '../../style';
 import { BannerDescritivo, Nos, QuemSomos } from './style';
 import { Button } from '@material-ui/core';
 import { LocationOn, Email, LocalPhone } from '@material-ui/icons'
 
-import mulher from '../../../Imagens/mulher.png'
+import mulher from '../../../../Imagens/mulher.png'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
