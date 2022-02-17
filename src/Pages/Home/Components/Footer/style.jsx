@@ -30,12 +30,20 @@ export const Footer = css.footer`
             }
             & li, & a{
                 color: #ccc;
+                font-size: 1em;
 
                 span{
                     color: #fff;
                     font-weight: 500;
                     font-size: 1.1em;
                 }
+            }
+
+            & a{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 4px 0;
             }
         }
 

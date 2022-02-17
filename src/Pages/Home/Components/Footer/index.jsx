@@ -1,8 +1,14 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+import { Tooltip } from '@material-ui/core';
+import { ArrowForwardIos } from '@material-ui/icons';
+
 import { Footer } from './style';
 
 import logo from '../../../../Imagens/Delicatezza.svg'
-import { Link } from 'react-router-dom';
+import TitleTooltip from '../../../../Components/TitleTooltip';
+
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -19,12 +25,24 @@ export default () => {
                 </ul>
                 <ul>
                     <h4>Links Rápidos</h4>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Sobre</Link></li>
-                    <li><Link to='/'>Produtos</Link></li>
-                    <li><Link to='/'>Contactar-nos</Link></li>
-                    <li><Link to='/'>Carrinho</Link></li>
-                    <li><Link to='/'>Login</Link></li>
+                    <Tooltip title={<TitleTooltip>Página inicial</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Home</Link></li>
+                    </Tooltip>
+                    <Tooltip title={<TitleTooltip>Saiba mais sobre nós</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/sobre'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Sobre</Link></li>
+                    </Tooltip>
+                    <Tooltip title={<TitleTooltip>Ver nossos produtos</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/produtos'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Produtos</Link></li>
+                    </Tooltip>
+                    <Tooltip title={<TitleTooltip>Entre em contacto connosco</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/contactar_nos'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Contactar-nos</Link></li>
+                    </Tooltip>
+                    <Tooltip title={<TitleTooltip>Carrinho de encomendas</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Carrinho</Link></li>
+                    </Tooltip>
+                    <Tooltip title={<TitleTooltip>Faça o seu login já</TitleTooltip>} arrow placement='left'>
+                        <li><Link to='/login'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Login</Link></li>
+                    </Tooltip>
                 </ul>
                 <ul>
                     <h4>Nossos Serviços</h4>

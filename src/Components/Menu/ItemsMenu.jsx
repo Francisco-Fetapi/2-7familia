@@ -1,7 +1,7 @@
-import { Tooltip } from '@material-ui/core';
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import { Tooltip } from '@material-ui/core';
 import Title from '../TitleTooltip';
 
 const ItemsMenu = () => {

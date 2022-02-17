@@ -15,6 +15,10 @@ export default css.nav`
         display: flex;
         align-items: center;
         gap: 30px;
+        
+        .MuiBadge-colorSecondary{
+            background: #FF00E8;
+        }
     }
 
     & ul li a{
@@ -48,8 +52,18 @@ export default css.nav`
         align-items: center;
     }
 
-    & ul + ul li:first-child::after{
+    & ul + ul li:first-child::after, & ul + ul li:last-child::after{
         display: none;
+    }
+    & ul + ul li:last-child a{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: linear-gradient(#FF00E8, #AF049F);
+        padding: 10px 25px;
+        font-size: 1.3em;
+        border-radius: 4px;
+        color: #1d1e20;
     }
 
 `

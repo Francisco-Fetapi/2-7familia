@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { Badge, Tooltip } from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
+import { PersonPin, ShoppingCart } from '@material-ui/icons';
 
 import ItemsMenu from './ItemsMenu';
 import Title from '../TitleTooltip';
@@ -30,7 +30,9 @@ export default () => {
                         </Link>
                     </li>
                 </Tooltip>
-                <li><Link to='/login'>Login</Link></li>
+                <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
+                    <li><Link to='/login'><PersonPin /> Login</Link></li>
+                </Tooltip>
             </ul>
         </Menu>
     )
