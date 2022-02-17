@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Container } from './style';
-
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Input from '../Home/Components/Input';
+import Input from '../../Components/Input';
 import Telegram from '@material-ui/icons/Telegram'
 import { Button } from '@material-ui/core';
 import HowToReg from '@material-ui/icons/HowToReg'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 import PersonAdd from '@material-ui/icons/PersonAdd'
-import { useState } from 'react';
 import ModalSessao from './Components/ModalSessao';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default  () => {
+
+
 
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
@@ -46,6 +47,8 @@ export default  () => {
     }
       
     const [open, setOpen] = useState(false)
+    const [Imagem, setImagem] = useState('')
+    const [BI, setBI] = useState('')
 
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
@@ -54,7 +57,19 @@ export default  () => {
         e.preventDefault()
         handleOpen()
     }
-    const [value, setValue] = React.useState(0);
+
+    const mudarImagem = async valor => {
+
+      const FD = new FormData()
+
+      FD.append(valor.current.name, valor.current.files[0])
+      const foto = await axios.post('http://localhost/Projecto_back_end/mostra_foto.php',FD)
+
+      setImagem(foto.data)
+    }
+    const mudaBI = bi => setBI(bi)
+
+    const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
       setValue(newValue)
@@ -95,7 +110,13 @@ export default  () => {
                               <Input label='Confirmar-senha' type='password' />
                             </div>
                             <Button style={{background: 'linear-gradient(#FF00E8, #AF049F)', padding: '8px 20px', fontSize: '1.2em', color: '#eee', marginTop: '25px', alignSelf: 'flex-end'}} endIcon={<ArrowForwardIos style={{fontSize: '1.5em'}} />} type='submit' >Seguinte</Button>
-                            <ModalSessao open={open} handleClose={handleClose}/>
+                            <ModalSessao 
+                              open={open} 
+                              handleClose={handleClose} 
+                              Imagem={Imagem} 
+                              mudarImagem={mudarImagem} 
+                              mudaBI={mudaBI}
+                            />
                         </form>
                     </TabPanel>
                 </div>

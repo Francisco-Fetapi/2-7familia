@@ -2,7 +2,7 @@ import React from 'react'
 
 /*------ Importando pages ------*/
 
-import Home from './Pages/Home'
+import Home from './Pages/Home/index'
 // import Sobre from './pages/sobre.jsx'
 // import Produtos from './pages/produtos.jsx'
 // import Contacto from './pages/contacto.jsx'
