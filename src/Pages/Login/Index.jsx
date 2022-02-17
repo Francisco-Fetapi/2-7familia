@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import axios from 'axios';
 import { Container } from './style';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,16 +9,14 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Input from '../../Components/Input';
 import Telegram from '@material-ui/icons/Telegram'
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import HowToReg from '@material-ui/icons/HowToReg'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 import PersonAdd from '@material-ui/icons/PersonAdd'
-import ModalSessao from './Components/ModalSessao';
+import ModalSessao from './Components/ModalSessao/index';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default  () => {
-
-
 
     function TabPanel(props) {
         const { children, value, index, ...other } = props;

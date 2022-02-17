@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContactarNos, ImagemContactarNos } from '../../style';
+import { ContactarNos, ImagemContactarNos } from './style';
 import { LocalPhone } from '@material-ui/icons';
 import Input from '../../../../Components/Input';
 import { TextField } from '@material-ui/core';

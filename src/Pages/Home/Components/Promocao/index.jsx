@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Title } from '../style';
 import { Star, StarBorder } from '@material-ui/icons';
-import { ImagemItemPromocao, ItemPromocao, Promocao, TimePromocao, Title } from '../../style'
+import { ImagemItemPromocao, ItemPromocao, Promocao, TimePromocao } from './style'
 import ButtonEncomendar from '../../../../Components/ButtonEncomendar';
 import ButtonVerMais from '../../../../Components/ButtonVerMais';
 

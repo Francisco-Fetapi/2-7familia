@@ -1,6 +1,6 @@
 import css from 'styled-components'
 
-import Moca from '../../../Imagens/1 (26).jpg'
+import Moca from '../../Imagens/1 (26).jpg'
 
 export const Container = css.main`
     height: 100vh;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ImagemProdutoMaisVendido, PodutosMaisVendidositems, ProdutosMaisVendidos, Title } from '../../style'
+import { Title } from '../style';
+import { ImagemProdutoMaisVendido, PodutosMaisVendidositems, ProdutosMaisVendidos } from './style'
 import ButtonEncomendar from '../../../../Components/ButtonEncomendar';
 import ButtonVerMais from '../../../../Components/ButtonVerMais';
 import { Star, StarHalf, StarBorder } from '@material-ui/icons';

@@ -8,16 +8,16 @@ import { Header, Div, Pedacinho  } from './style'
 
 import PedacoBolo from '../../Imagens/1 (1).png'
 
-import Menu from '../../Components/Menu'
+import Menu from '../../Components/Menu/index'
 import ButtonContactar from '../../Components/ButtonContactar'
 
-import Promocao from './Components/Promocao'
-import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos';
-import PorqueNos from './Components/PorqueNos';
-import QuemSomos from './Components/QuemSomos';
-import NossosProdutos from './Components/Nossos_produtos';
-import ContactarNos from './Components/Contactar_nos';
-import Footer from './Components/Footer';
+import Promocao from './Components/Promocao/index'
+import ProdutosMaisVendidos from './Components/ProdutosMaisVendidos/index';
+import PorqueNos from './Components/PorqueNos/index';
+import QuemSomos from './Components/QuemSomos/index';
+import NossosProdutos from './Components/Nossos_produtos/index';
+import ContactarNos from './Components/Contactar_nos/index';
+import Footer from './Components/Footer/index';
 
 
 const index = () => {

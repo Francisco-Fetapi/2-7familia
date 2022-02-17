@@ -1,5 +1,7 @@
 import React from 'react';
-import { ImagemItemProdutoBig, ImagemItemProdutoSmall, NossosProdutos, Title } from './style';
+
+import { Title } from '../style';
+import { ImagemItemProdutoBig, ImagemItemProdutoSmall, NossosProdutos } from './style';
 
 
 /* Imagens */
