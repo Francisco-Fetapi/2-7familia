@@ -21,6 +21,9 @@ import Footer from './Components/Footer/index';
 
 
 const index = () => {
+
+  localStorage.setItem('ativo','home')
+
   return (
       <>
         <Header>

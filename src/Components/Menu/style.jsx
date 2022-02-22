@@ -40,7 +40,7 @@ export default css.nav`
         transition: .5s ease-in-out;
     }
 
-    & ul li:hover::after{
+    & ul li:hover::after, .ativo::after{
         width: 100%;
     }
 

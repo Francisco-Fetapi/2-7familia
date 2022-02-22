@@ -37,7 +37,20 @@ export const Div = css.div`
     display: flex;
     flex-direction: column;
    
-    
+    nav{
+        animation: aparecer2 .5s ease-in-out .5s backwards;
+    }
+
+    @keyframes aparecer2{
+        from{
+            opacity: 0;
+            transform: translateY(-200px);
+        }to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     & div{
         margin-top: 180px;
         
@@ -46,6 +59,21 @@ export const Div = css.div`
             max-width: 620px;
             color: #eee;
             margin-bottom: 30px;
+            animation: aparecer .8s ease-in-out .6s backwards;
+        }
+
+        button{
+            animation: aparecer .8s ease-in-out .9s backwards;
+        }
+
+        @keyframes aparecer{
+            from{
+                opacity: 0;
+                transform: translateX(-200px);
+            }to{
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     }
     
