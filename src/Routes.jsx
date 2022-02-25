@@ -2,12 +2,11 @@ import React from 'react'
 
 /*------ Importando pages ------*/
 
-import Home from './Pages/Home/index'
-// import Sobre from './pages/sobre.jsx'
-// import Produtos from './pages/produtos.jsx'
-// import Contacto from './pages/contacto.jsx'
-import Login from './Pages/Login/index'
-// import Cadastro from './pages/cadastro.jsx'
+import Home from './Pages/Home/'
+import Sobre from './Pages/Sobre'
+import Produtos from './Pages/Produtos'
+import Contacto from './Pages/Contacto'
+import Login from './Pages/Login/'
 
 /*------ Rotas(React Router) ------*/
 
@@ -17,11 +16,9 @@ const Rotas = () => (
     <>
         <BrowserRouter>
             <Switch>
-                {/* <Route path='/sobre' component={Sobre} />
-                <Route path='/produtos' component={Produtos} />
+                <Route path='/sobre' component={Sobre} />
                 <Route path='/contacto' component={Contacto} />
-                
-                <Route path='/cadastro' component={Cadastro}/> */}
+                <Route path='/produtos' component={Produtos} />
                 <Route path='/login' component={Login}/>
                 <Route path='/' component={Home}/>
             </Switch>

@@ -3,17 +3,11 @@ import React from 'react';
 import { InputAdornment, TextField } from '@material-ui/core';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
-  return (
-        <TextField
-            fullWidth
-            {...props}
-            InputProps={{
-            startAdornment: (
-                <InputAdornment position="start">
-                    {props.icon}
-                </InputAdornment>
-            ),
-            }}
-        />
-  )
+
+    return (
+            <TextField
+                fullWidth
+                {...props}
+            />
+    )
 }

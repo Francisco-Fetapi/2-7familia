@@ -6,8 +6,8 @@ import { ArrowForwardIos } from '@material-ui/icons';
 
 import { Footer } from './style';
 
-import logo from '../../../../Imagens/Delicatezza.svg'
-import TitleTooltip from '../../../../Components/TitleTooltip';
+import logo from '../../Imagens/Delicatezza.svg'
+import TitleTooltip from '../TitleTooltip';
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
