@@ -33,7 +33,7 @@ const Index = () => {
                             <Button style={{background: 'linear-gradient(#FF00E8, #AF049F)', padding: '8px 50px', fontSize: '1.2em', color: '#eee', marginTop: '25px'}} endIcon={<Telegram style={{fontSize: '1.5em'}} />} type='submit' >Logar</Button>
                             <div>
                                 <Tooltip title={<Title>Cadastre-se já</Title>} arrow>
-                                    <p>Não tem uma conta? <span onClick={() => setlogin(!login)}>Cadastre-se</span></p>
+                                    <p onClick={() => setlogin(!login)}>Não tem uma conta? <span>Cadastre-se</span></p>
                                 </Tooltip>
                                 <Tooltip title={<Title>Recupere sua palavra-passe?</Title>} arrow>
                                     <p>Esqueceu a palavra-passe?</p>

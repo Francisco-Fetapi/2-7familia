@@ -56,7 +56,7 @@ export default ({ voltar }) => {
                     mudarImagem={mudarImagem}
                 />
                 <Tooltip title={<Title>Inicie sessão na tua conta</Title>} arrow style={{marginBottom: '-20px'}}>
-                    <p className='sessao'>Já tem uma conta? <span onClick={() => voltar(true)}>Voltar</span></p>
+                    <p className='sessao' onClick={() => voltar(true)}>Já tem uma conta? <span>Voltar</span></p>
                 </Tooltip>
             </form>
         </div>

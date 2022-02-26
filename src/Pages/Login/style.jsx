@@ -64,17 +64,18 @@ export const Container = styled.main`
                 span{
                     color: #FF00E8;
                     font-weight: 500; 
-                    cursor: pointer;
+                    border-bottom: 1px solid #FF00E8;
                 }
 
                 p:first-child{
-                    padding-right: 4px;
+                    cursor: pointer;
+                    padding: 10px 4px 10px 0;
                 }
                 p:last-child{
                     align-self: end;
                     border-left: 2px solid #FF00E8;
-                    padding-left: 10px;
                     cursor: pointer;
+                    padding: 10px 0 10px 10px;
                 }
             }
 
@@ -113,11 +114,14 @@ export const Container = styled.main`
             }
 
             .sessao{
+                padding: 10px 0;
+                cursor: pointer;
                 color: #fff;
+
                 span{
                     color: #FF00E8;
                     font-weight: 500; 
-                    cursor: pointer;
+                    border-bottom: 1px solid #FF00E8;
                 }
             }
 
