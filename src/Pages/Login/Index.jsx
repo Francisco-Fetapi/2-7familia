@@ -26,7 +26,7 @@ const Index = () => {
                         <div className='titulo'>
                             <p>Iniciar Sessão</p>
                         </div>
-                        <h2><HowToReg style={{fontSize: '1.4em'}}/> Faça o seu login</h2>
+                        <h2><HowToReg style={{fontSize: '1.4em'}}/> Acesse a sua conta</h2>
                         <form onSubmit={logar}>
                             <Input label='E-mail' type='email' value={Valor} onChange={e => setValor(e.target.value)}/>
                             <Input label='Senha' type='password' value={Valor}  onChange={e => setValor(e.target.value)}/>

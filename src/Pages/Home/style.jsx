@@ -1,9 +1,9 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 import Banner from '../../Imagens/1 (9).jpg'
 
 
-export const Title = css.h2`
+export const Title = styled.h2`
     font-size: 2em;
 
     span{
@@ -21,7 +21,7 @@ export const Title = css.h2`
     }
 `
 /*------------------------------Header----------------------------------*/
-export const Header = css.header`
+export const Header = styled.header`
     height: 100vh;
     background: url('${Banner}');
     background-position: bottom;
@@ -29,7 +29,7 @@ export const Header = css.header`
     background-attachment: fixed;
 `
 
-export const Div = css.div`
+export const Div = styled.div`
     padding: 30px 40px;
     height: 100%;
     width: 100%;
@@ -82,7 +82,7 @@ export const Div = css.div`
 
 /*---------------------Sessão Pedacinho-------------------------*/
 
-export const Pedacinho = css.section`
+export const Pedacinho = styled.section`
     padding: 50px;
     margin: 70px 0;
     display: flex;

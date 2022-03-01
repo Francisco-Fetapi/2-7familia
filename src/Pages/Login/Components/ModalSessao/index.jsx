@@ -16,22 +16,31 @@ export default ({ open, handleClose, Imagem, mudarImagem }) => {
 
     const [anchorEl, setAnchorEl] = useState(false);
 
+
+    // Activar Popover
     const handleClick = () => {
         setAnchorEl(true);
         setTimeout(() => handleClosePop(), 1300)
     };
 
-    const handleClosePop = () => {
-        setAnchorEl(false);
-    };
+    // Desactivar Popover
+    const handleClosePop = () => setAnchorEl(false)
 
     const id = anchorEl ? 'simple-popover' : undefined;
+
+    const mandar = e => {
+        e.preventDefault()
+
+        // if(FILE.current.value === '') alert('olá')
+        
+    }
 
     return (
         <Dialog open={open} onClose={handleClose}>
         {/* form to be created */}
             <Container className='container'>
-                <form encType='multipart/form-data'>
+                <h2>Escolha a sua foto de perfil</h2>
+                <form encType='multipart/form-data' onSubmit={mandar}>
                     <label htmlFor="foto_user">
                         <img src={Imagem === '' ? foto_user : `http://localhost/Projecto_back_end/imagens/`+Imagem} alt="Usuario sem foto" />
                     </label>
@@ -40,7 +49,7 @@ export default ({ open, handleClose, Imagem, mudarImagem }) => {
                     <TextField style={{maxWidth: '390px', fontSize: '1.2em', outline: 'none', }} variant='outlined' label='Nº do Bilhete de Identidade'/>
                     { Imagem !== '' && <p>Escolheu uma foto</p> }
                     <div>
-                        <Button onClick={handleClick} style={{background: 'linear-gradient(#FF00E8, #AF049F)', padding: '6px 30px', fontSize: '1.2em', color: '#eee',}} endIcon={<PersonAdd style={{fontSize: '1.5em'}}/> }>Cadastrar</Button>
+                        <Button type='submit' style={{background: 'linear-gradient(#FF00E8, #AF049F)', padding: '6px 30px', fontSize: '1.2em', color: '#eee',}} endIcon={<PersonAdd style={{fontSize: '1.5em'}}/> }>Cadastrar</Button>
                         <Button color='default' style={{alignSelf: 'flex-end', marginRight: '20px'}} onClick={handleClose}>Fechar</Button>
                     </div>
                 </form>

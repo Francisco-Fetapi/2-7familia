@@ -1,7 +1,7 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 /*---------------------Footer-------------------------*/
-export const Footer = css.footer`
+export const Footer = styled.footer`
     & > div:nth-child(1){
         background: #371910;
 

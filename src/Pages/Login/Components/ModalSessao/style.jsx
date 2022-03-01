@@ -1,9 +1,15 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
-export const Container = css.div`
+export const Container = styled.div`
     width: 100%;
     min-width: 450px;
 
+    h2{
+        text-align: center;
+        margin: 30px 0 -10px;
+        font-weight: 500;
+    }
+    
     form{
         padding: 50px 0 20px;
         width: 100%;
@@ -13,10 +19,10 @@ export const Container = css.div`
         gap: 50px;
 
         label[for |= 'foto_user']{   
-            border-radius: 50%;         
+            border-radius: 50%; 
+
             img{
                 width: 140px;
-                height: 140px;
                 border-radius: 50%;
             }
             &::after{
