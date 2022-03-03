@@ -8,7 +8,7 @@ export const Container = styled.div`
     background-size: cover;
 
     & div{
-        background: linear-gradient(to bottom, #000000c3 75%, transparent);
+        background: linear-gradient(to bottom left, #000000c8 65%, transparent);
         padding: 40px;
         display: flex;
         flex-direction: column;

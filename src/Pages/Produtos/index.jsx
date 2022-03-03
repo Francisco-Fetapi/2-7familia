@@ -3,8 +3,9 @@ import React from 'react'
 import Menu from '../../Components/Menu'
 import { Div, Header, Title } from './style'
 
-import { Search } from '@material-ui/icons'
+import Search from '@material-ui/icons/Search'
 import Footer from '../../Components/Footer'
+import Slogan from '../../Components/Slogan'
 
 const index = () => {
 
@@ -27,6 +28,7 @@ const index = () => {
             <Title>
                 <h1>Produtos</h1>
             </Title>
+            <Slogan />
             <Footer />
         </>
     )
