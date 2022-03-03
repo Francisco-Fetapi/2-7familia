@@ -2,15 +2,15 @@
 import React, { useRef, useState } from 'react'
 
 import axios from 'axios'
-import PersonAdd from '@material-ui/icons/PersonAdd'
 import Button from '@material-ui/core/Button'
+import { MenuItem, Popover, Select, Tooltip } from '@material-ui/core'
+import PersonAdd from '@material-ui/icons/PersonAdd'
+import CheckCircleOutlined from '@material-ui/icons/CheckCircleOutlined'
+
 import Input from '../../Components/Input'
 import ModalSessao from './Components/ModalSessao'
 import Title from '../../Components/TitleTooltip'
-import { MenuItem, Popover, Select, Tooltip } from '@material-ui/core'
-
 import foto_user from '../../Imagens/user.jpg' 
-import CheckCircleOutlined from '@material-ui/icons/CheckCircleOutlined'
 import { Certo, Errado } from './style2'
 import API from '../../_config/API'
 

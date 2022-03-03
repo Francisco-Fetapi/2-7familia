@@ -58,16 +58,12 @@ export const Div = styled.div`
 export const Title = styled.div`   
     margin: 100px 0 60px 60px;
     border-left: 4px solid #1d1e20;
-    padding: 7px 10px;
+    padding: 2px 7px;
     color: #1d1e20;
 
     h1{
         font-size: 3em;
         font-weight: 400;
-    }
-
-    p{
-        font-size: 1.2em;
     }
 `;
 

@@ -6,7 +6,7 @@ import Home from './Pages/Home/'
 import Sobre from './Pages/Sobre'
 import Produtos from './Pages/Produtos'
 import Contacto from './Pages/Contacto'
-import Login from './Pages/Login'
+import Login from './Pages/Login/Index'
 import LoginAdmin from './Pages/Admin/Login/'
 import PainelAdmin from './Pages/Admin'
 

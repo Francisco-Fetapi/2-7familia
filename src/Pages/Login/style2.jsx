@@ -69,7 +69,7 @@ export const Container = styled.main`
 `
 
 export const Certo = styled.h3`
-    background: green;
+    background: #008000da;
     padding: 15px;
     color: white;
     font-weight: 500;
@@ -78,7 +78,7 @@ export const Certo = styled.h3`
     gap: 5px;
 `
 export const Errado = styled.h3`
-    background: red;
+    background: #ff0000da;
     padding: 15px;
     color: white;
     font-weight: 500;

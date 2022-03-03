@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-throw-literal */
 import React, { useState } from 'react'
 
@@ -58,7 +59,8 @@ const Index = () => {
             else{
                 setErro(false)
                 handleClick()
-                setTimeout(() => window.location.href = 'http://localhost:3000/', 1500)
+                localStorage.setItem('usuario_logado',response)
+                history.back()
             }
             
         } catch (error) {

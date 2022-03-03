@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import { Badge, IconButton, Tooltip } from '@material-ui/core';
+import { Badge, Button, IconButton, Tooltip } from '@material-ui/core';
 import { Favorite, PersonPin, ShoppingCart } from '@material-ui/icons';
 
 import ItemsMenu from './ItemsMenu';
@@ -12,7 +12,16 @@ import Logo from '../../Imagens/Delicatezza.svg'
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
 
-    localStorage.setItem('logado','sim');
+    const [Logado, setLogado] = useState(false);
+
+    useEffect(() => {
+        if(localStorage.usuario_logado) setLogado(true)
+    }, []);
+
+    const Logout = () => {
+        localStorage.removeItem('usuario_logado')
+        setLogado(false)
+    }
 
     return (
         <Menu>
@@ -40,9 +49,9 @@ export default () => {
                 </Tooltip>
                 </li>
                 {
-                    localStorage.logado ? (
+                    Logado ? (
                         <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
-                            <li><Link to='/login'><PersonPin /> Logout</Link></li>
+                            <li><Button onClick={Logout}><PersonPin /> Logout</Button></li>
                         </Tooltip>
                     )
                     : (

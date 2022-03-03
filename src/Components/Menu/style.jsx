@@ -60,12 +60,21 @@ export default styled.nav`
     & ul + ul li:last-child a{
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 5px;
         background: linear-gradient(#FF00E8, #AF049F);
         padding: 10px 25px;
         font-size: 1.3em;
         border-radius: 4px;
         color: #1d1e20;
+    }
+    & ul + ul li:last-child button{
+        background: linear-gradient(#FF00E8, #AF049F);
+        padding: 5px 18px;
+        font-size: 1.3em;
+        border-radius: 4px;
+        color: #1d1e20;
+        text-transform: capitalize;
     }
 
 `

@@ -26,7 +26,6 @@ const index = () => {
             </Header>
             <Title>
                 <h1>Produtos</h1>
-                <p>Se é delicioso, está aqui!</p>
             </Title>
             <Footer />
         </>
