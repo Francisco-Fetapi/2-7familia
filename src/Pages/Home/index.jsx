@@ -18,6 +18,7 @@ import QuemSomos from './Components/QuemSomos/index';
 import NossosProdutos from './Components/Nossos_produtos/index';
 import ContactarNos from './Components/Contactar_nos/index';
 import Footer from '../../Components/Footer/index';
+import Slogan from '../../Components/Slogan/index';
 
 
 const index = () => {
@@ -57,6 +58,7 @@ const index = () => {
         <QuemSomos />
         <NossosProdutos />
         <ContactarNos />
+        <Slogan />
         <Footer />
       </>
   )
