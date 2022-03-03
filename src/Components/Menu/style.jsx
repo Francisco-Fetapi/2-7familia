@@ -1,6 +1,6 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
-export default css.nav`
+export default styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +35,7 @@ export default css.nav`
         content: '';
         display: block;
         width: 0;
+        margin: auto;
         height: 2px;
         background: #FF00E8;
         transition: .5s ease-in-out;
@@ -44,12 +45,13 @@ export default css.nav`
         width: 100%;
     }
 
-    & ul + ul li:first-child a{
-        border: 1px solid #FF00E8;
-        border-radius: 5px;
+    & ul + ul li:first-child{
         display: flex;
-        gap: 15px;
         align-items: center;
+
+        & *{
+            color: #eee;
+        }
     }
 
     & ul + ul li:first-child::after, & ul + ul li:last-child::after{

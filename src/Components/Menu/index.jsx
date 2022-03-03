@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import { Badge, Tooltip } from '@material-ui/core';
-import { PersonPin, ShoppingCart } from '@material-ui/icons';
+import { Badge, IconButton, Tooltip } from '@material-ui/core';
+import { Favorite, PersonPin, ShoppingCart } from '@material-ui/icons';
 
 import ItemsMenu from './ItemsMenu';
 import Title from '../TitleTooltip';
@@ -11,6 +11,9 @@ import Logo from '../../Imagens/Delicatezza.svg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+
+    localStorage.setItem('logado','sim');
+
     return (
         <Menu>
             <Link to='/'>
@@ -20,19 +23,34 @@ export default () => {
             </Link>
             <ItemsMenu />
             <ul>
-                <Tooltip title={<Title>Carrinho de encomendas</Title>} arrow>
-                    <li>
-                        <Link to='/'>
+                <li>
+                    <Tooltip title={<Title>Carrinho - itens encomendados</Title>} arrow>
+                        <IconButton to='/'>
                             <Badge badgeContent={4} color='secondary'>
                                 <ShoppingCart />
                             </Badge>
-                            Carrinho
-                        </Link>
-                    </li>
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title={<Title>Adoros - itens adorados</Title>} arrow>
+                        <IconButton>
+                            <Badge badgeContent={4} color='secondary'>
+                                <Favorite />
+                            </Badge>
+                        </IconButton>
                 </Tooltip>
-                <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
-                    <li><Link to='/login'><PersonPin /> Login</Link></li>
-                </Tooltip>
+                </li>
+                {
+                    localStorage.logado ? (
+                        <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
+                            <li><Link to='/login'><PersonPin /> Logout</Link></li>
+                        </Tooltip>
+                    )
+                    : (
+                        <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
+                            <li><Link to='/login'><PersonPin /> Login</Link></li>
+                        </Tooltip>
+                    )
+                }
             </ul>
         </Menu>
     )

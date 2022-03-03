@@ -1,9 +1,9 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 import Cacks from '../../../../Imagens/1 (3).jpg'
 
 /*---------------------Sessão Contactar-nos-------------------------*/
-export const ContactarNos = css.section`
+export const ContactarNos = styled.section`
     display: flex;
     width: 100%;
 
@@ -34,6 +34,14 @@ export const ContactarNos = css.section`
                 color: #eee;
             }
 
+            .MuiInputBase-input:focus{
+                padding: 12px 0;
+            }
+
+            .MuiInputBase-input{
+                padding: 12px 0;
+            }
+
             .Mui-focused{
                 color: #FF00E8;
             }
@@ -53,7 +61,7 @@ export const ContactarNos = css.section`
     }
 `
 
-export const ImagemContactarNos = css.div`
+export const ImagemContactarNos = styled.div`
     background: url('${Cacks}');
     background-position: center;
     background-size: cover;

@@ -77,7 +77,7 @@ export const Certo = styled.h3`
     align-items: center;
     gap: 5px;
 `
-export const Erro = styled.h3`
+export const Errado = styled.h3`
     background: red;
     padding: 15px;
     color: white;

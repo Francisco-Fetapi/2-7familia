@@ -55,7 +55,7 @@ export const Footer = styled.footer`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 5px;
+        gap: 15px;
         padding: 30px;
         border-top: 2px solid #eee;
         background: #1d1e20;
