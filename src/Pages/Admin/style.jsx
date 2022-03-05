@@ -31,8 +31,23 @@ export const Drawer = styled.div`
     }
 
     & + div{
-        margin-left: 300px;
+        margin-left: 270px;
         background: #eee;
         width: 100%;
+        height: 100vh;
+    }
+`;
+
+export const Conteudo = styled.div`
+    padding-top: 60px;
+    padding-right: 60px;
+
+    h1{
+
+    }
+
+    h2{
+        margin-top: 8vh;
+        font-weight: 500;
     }
 `;

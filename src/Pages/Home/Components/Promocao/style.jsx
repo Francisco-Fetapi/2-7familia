@@ -73,7 +73,7 @@ export const ItemPromocao = styled.div`
 
         p{
             color: ${cinzaEEE};
-            font-family: 'Roboto light'
+            font-family: 'Roboto light';
             max-width: 600px;
         }
 
