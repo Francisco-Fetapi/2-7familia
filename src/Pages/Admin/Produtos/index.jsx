@@ -64,7 +64,7 @@ const Index = () => {
           <h2>Produtos</h2>
 
           <div className='produtos--funcoes'>
-            <h3>Total de Produtos: <strong>{Produtos.length > 0 ? Produtos.length : 'Nenhum Produto cadastrado ainda.'}</strong></h3>
+            <h3>Total de Produtos: <strong>{Produtos.length}</strong></h3>
             <Button variant='contained' style={ButtonStyle} startIcon={<AddShoppingCart />} onClick={handleOpenAdd}>Novo Produto</Button>
           </div>
 

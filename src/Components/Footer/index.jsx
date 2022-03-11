@@ -53,7 +53,7 @@ export default () => {
           </div>
           <div>
               <p>Designed by <span>BEFAT Company</span></p>
-              <p>© Copyright Delicatezza, 2020 | Todos os direitos reservados.</p>
+              <p>© Copyright Delicatezza, {new Date().getFullYear()} | Todos os direitos reservados.</p>
           </div>
           
       </Footer>

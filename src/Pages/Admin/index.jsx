@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core'
 import Produtos from  './Produtos'
 import { Container, Conteudo, Drawer } from './style'
 import avatar from '../../Imagens/avatar.png'
+import { BusinessCenter, Chat, ChatBubble, PeopleAlt, Shop, ShoppingCart } from '@material-ui/icons'
 
 const Index = () => {
 
@@ -16,11 +17,11 @@ const Index = () => {
                     <img src={avatar} alt="Avatar" />
                     <p>Editoh Donatello</p>
                 </div>
-                <Button style={{color: '#eee', marginTop: '40px'}} onClick={() => setItem('dashboard')} fullWidth>Dashboard</Button>  
-                <Button style={{color: '#eee', marginTop: '5px'}} onClick={() => setItem('produtos')} fullWidth>Produto</Button>  
-                <Button style={{color: '#eee', marginTop: '5px'}} onClick={() => setItem('encomendas')} fullWidth>Encomendas</Button>  
-                <Button style={{color: '#eee', marginTop: '5px'}} onClick={() => setItem('usuarios')} fullWidth>Usuários</Button>  
-                <Button style={{color: '#eee', marginTop: '5px'}} onClick={() => setItem('chat')} fullWidth>Chat</Button>  
+                <Button style={{marginTop: '40px'}} onClick={() => setItem('dashboard')} fullWidth><BusinessCenter/> Dashboard</Button>  
+                <Button onClick={() => setItem('produtos')} fullWidth><Shop /> Produtos</Button>  
+                <Button onClick={() => setItem('encomendas')} fullWidth><ShoppingCart /> Encomendas</Button>  
+                <Button onClick={() => setItem('usuarios')} fullWidth><PeopleAlt /> Usuários</Button>  
+                <Button onClick={() => setItem('chat')} fullWidth><Chat /> Chat</Button>  
             </Drawer>
             <Conteudo>
                 <h1>Painel Administrador</h1>

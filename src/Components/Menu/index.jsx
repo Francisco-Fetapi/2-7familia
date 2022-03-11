@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import { Badge, Button, IconButton, Tooltip } from '@material-ui/core';
-import { Favorite, PersonPin, ShoppingCart } from '@material-ui/icons';
+import { Favorite, Input, PersonPin, ShoppingCart } from '@material-ui/icons';
 import API from '../../_config/API'
 
 import ItemsMenu from './ItemsMenu';
@@ -67,7 +67,7 @@ export default ({ Reacoes, desReagir }) => {
                 {
                     Logado ? (
                         <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
-                            <li><Button onClick={Logout}><PersonPin /> Logout</Button></li>
+                            <li><Button onClick={Logout}><Input style={{marginRight: '10px'}} /> Logout</Button></li>
                         </Tooltip>
                     )
                     : (

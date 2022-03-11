@@ -29,6 +29,18 @@ export const Drawer = styled.div`
             margin-top: 10px;
         }
     }
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: .9em;
+        padding: 13px 130px 13px 49px;
+        color: #eee;
+
+        svg{
+            margin-right: 10px;
+        }
+    }
 
     & + div{
         margin-left: 270px;
@@ -41,10 +53,6 @@ export const Drawer = styled.div`
 export const Conteudo = styled.div`
     padding-top: 60px;
     padding-right: 60px;
-
-    h1{
-
-    }
 
     h2{
         margin-top: 8vh;
