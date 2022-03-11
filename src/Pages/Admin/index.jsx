@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Button } from '@material-ui/core'
 import Produtos from './Produtos'
@@ -7,9 +7,16 @@ import avatar from '../../Imagens/avatar.png'
 import { BusinessCenter, Chat, PeopleAlt, Shop, ShoppingCart } from '@material-ui/icons'
 
 const Index = () => {
+    
+    useEffect(() => {
+        if(localStorage.admin_logado) setLogado(true)
+    }, []);
+    
     const [Item, setItem] = useState('dashboard');
+    const [Logado, setLogado] = useState(false);
 
-    if (!localStorage.admin_logado) window.location.href = 'http://localhost:3000/admin/login'
+
+    if (!Logado) window.location.href = 'http://localhost:3000/admin/login'
 
     else {
         return (

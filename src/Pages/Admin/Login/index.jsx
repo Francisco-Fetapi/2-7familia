@@ -54,16 +54,18 @@ export default () => {
 
       const response = await API.verificar_login_admin(FD);
 
-      if (response === "Admin não encontrado") setErro(response);
-      else {
-        localStorage.setItem("admin_logado", response);
+      if (response === 'Admin não encontrado'){
+        setErro(response);
         handleClick()
+      }
+      else {
+        handleClick()
+        localStorage.setItem('admin_logado', response);
+        window.location.href = 'http://localhost:3000/admin';
       }
     } catch (error) {
       setErro(error);
       handleClick()
-    }finally{
-      window.location.href = "http://localhost:3000/admin";
     }
   };
 
