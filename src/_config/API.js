@@ -51,6 +51,10 @@ const API = {
     async desrreagir_produto(dados){
         const response = await axios('/desrreagir_produto',dados)
         return response.data
+    },
+    async verificar_login_admin(dados){
+        const response = await axios('/verificar_login_admin',dados)
+        return response.data
     }
 }
 
