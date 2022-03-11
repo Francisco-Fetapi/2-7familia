@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import foto from '../../../Imagens/avatar.png'
-
 export const Container = styled.div`
     margin-top: 40px;
 

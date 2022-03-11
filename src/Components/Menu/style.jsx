@@ -49,8 +49,12 @@ export default styled.nav`
         display: flex;
         align-items: center;
 
-        & *{
+        & svg{
             color: #eee;
+        }
+
+        & span{
+            color: black;
         }
     }
 

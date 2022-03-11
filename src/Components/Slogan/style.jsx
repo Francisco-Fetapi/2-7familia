@@ -8,7 +8,7 @@ export const Container = styled.div`
     background-size: cover;
 
     & div{
-        background: linear-gradient(to bottom left, #000000c8 65%, transparent);
+        background: linear-gradient(to bottom left, #000000cf 65%, transparent);
         padding: 40px;
         display: flex;
         flex-direction: column;
@@ -22,6 +22,7 @@ export const Container = styled.div`
             font-weight: 400;
             font-size: 3em;
             font-family: 'Krinkes Decor PERSONAL USE';
+            
             span{
                 color: #FF00E8;
                 font-family: 'Krinkes Decor PERSONAL USE';

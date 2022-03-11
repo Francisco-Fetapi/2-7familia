@@ -2,36 +2,61 @@
 import React,{ useState, useRef } from 'react'
 
 import { Button, Dialog, Popover } from '@material-ui/core'
-import { Container, ImagemProduto } from './style'
-
-import foto from '../../../../Imagens/addFoto.png'
-import { Certo, Errado } from '../../../Login/style2'
 import { CheckCircleOutlined } from '@material-ui/icons'
-import axios from 'axios'
+import { Container, ImagemProduto } from './style'
+import { Certo, Errado } from '../../../Login/style2'
+import foto from '../../../../Imagens/addFoto.png'
+import API from '../../../../_config/API'
 
-const Index = ({ open, handleClose }) => {
+const Index = ({ open, handleClose, buscarProdutos }) => {
 
     const FILE = useRef()
 
     const [Imagem, setImagem] = useState('');
 
-    const Adicionar = e => {
+    const Adicionar = async e => {
         e.preventDefault()
+
+        const FD = new FormData()
         
         try {
             if(Imagem === '') throw 'Escolha uma foto para o produto'
             else if(Campos.nome === '') throw 'Nome está vazio'
-            else if(Campos.preco === '') throw 'Preço está vazio'
+            else if(Campos.preco === '') throw 'Preço está vazio '
+            else if(Campos.preco.length >= 9) throw 'Preço tem número a mais'
+            else if(Campos.preco.indexOf('.') === -1){
+                if(Campos.preco.length >= 7) throw 'Preço tem número a mais'
+            }
             else if(Campos.categoria === '') throw 'Categoria está vazia'
             else if(Campos.descricao === '') throw 'Descrição está vazia'
+
+            FD.append(FILE.current.name, FILE.current.files[0])
+            FD.append('nome_produto',Campos.nome)
+            FD.append('preco',Campos.preco)
+            FD.append('categoria',Campos.categoria)
+            FD.append('descricao',Campos.descricao)
+
+            const response = await API.add_produto(FD)
+
+            if(response === 'Não cadastrado') setErro('Produto não cadastrado!')
+            else{
+                setErro(false)
+                buscarProdutos()
+                setCampos({
+                    nome: '',
+                    preco: '',
+                    categoria: '',
+                    descricao: ''
+                })
+                setImagem('')
+                setTimeout(() => handleClick(), 1000)
+                setTimeout(() => handleClose(), 1500)
+            }
             
         } catch (error) {
             setErro(error)
             handleClick()
         }
-
-
-        // handleClose()
     }
 
     const [anchorEl, setAnchorEl] = useState(false);
@@ -57,9 +82,9 @@ const Index = ({ open, handleClose }) => {
         const FD = new FormData()
 
         FD.append(FILE.current.name, FILE.current.files[0])
-        const foto = await axios.post('http://localhost/Projecto_back_end/mostra_foto.php',FD)
+        const foto = await API.mostrar_foto(FD)
 
-        setImagem(foto.data)
+        setImagem(foto)
     }
 
 
@@ -80,7 +105,7 @@ const Index = ({ open, handleClose }) => {
                 <form onSubmit={Adicionar}>
                     <div>
                         <label htmlFor="foto">
-                            <ImagemProduto imagem={Imagem === '' ? foto : `http://localhost/Projecto_back_end/imagens/`+Imagem} />
+                            <ImagemProduto imagem={Imagem === '' ? foto : Imagem} />
                         </label>
                         <input type="file" ref={FILE} id='foto' name='foto' hidden onChange={mudarImagem}/>
                     </div>
@@ -90,7 +115,7 @@ const Index = ({ open, handleClose }) => {
                     </div>
                     <div>
                         <label htmlFor="preco">Preço</label>
-                        <input type="text" value={Campos.preco} id='preco' name='preco' onChange={handleChange}/>
+                        <input type="number" value={Campos.preco} id='preco' name='preco' onChange={handleChange}/>
                     </div>
                     <div>
                         <label htmlFor="categoria">Categoria</label>
@@ -121,9 +146,9 @@ const Index = ({ open, handleClose }) => {
                 }}
             >
                 {
-                    Erro ?  <Errado>Erro: {Erro}!</Errado> : (
+                    Erro ?  <Errado>{Erro}!</Errado> : (
                         <Certo>
-                            <CheckCircleOutlined /> Login feito!
+                            <CheckCircleOutlined /> Produto Cadastrado!
                         </Certo>
                     )
                 }

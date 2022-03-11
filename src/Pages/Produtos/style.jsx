@@ -67,3 +67,47 @@ export const Title = styled.div`
     }
 `;
 
+export const ContainerProdutos = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    padding: 60px;
+
+    & > div{
+        flex: 1;
+        min-width: 200px;
+        max-width: 300px;
+    }
+`;
+
+export const ProdutoItem = styled.div`
+    background: #371910;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 4px;
+
+    h3{
+        color: #FF00E8;
+        font-size: 1.4em;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    p{
+        color: #eee;
+        font-size: 1.2em;
+        font-family: 'Times New Roman', Times, serif;
+    }    
+`;
+export const ProdutoImagem = styled.div`
+    width: 100%;
+    height: 180px;
+    background: url('${props => props.imagem}');
+    background-position: center;
+    background-size: cover; 
+    border-radius: 4px 4px 0 0;
+`;
