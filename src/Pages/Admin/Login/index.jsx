@@ -14,7 +14,7 @@ export default () => {
   const [Login, setLogin] = useState(true);
   const [Campos, setCampos] = useState({
     email: '',
-    senha: ''
+    codigo: ''
   });
 
   const handleChange = e => {
@@ -32,10 +32,10 @@ export default () => {
 
     try {
       if(Campos.email === '') throw 'E-mail está vazio'
-      else if(Campos.senha === '') throw 'Senha está vazia'
+      else if(Campos.codigo === '') throw 'Senha está vazia'
 
       FD.append('email',Campos.email)
-      FD.append('senha',Campos.senha)
+      FD.append('codigo',Campos.codigo)
 
       const response = await API.verificar_login_admin(FD)
 
@@ -62,8 +62,8 @@ export default () => {
                 <input type="email" name='email' value={Campos.email} onChange={handleChange} placeholder='exemplo@gmail.com' id='email' />
               </div>
               <div>
-                <label htmlFor="senha">Senha</label>
-                <input type="password" name='senha' value={Campos.senha} onChange={handleChange} placeholder='editoh$20/%' id='senha' />
+                <label htmlFor="senha">Código de acesso</label>
+                <input type="password" name='codigo' value={Campos.codigo} onChange={handleChange} placeholder='editoh$20/%' id='senha' />
               </div>
               <Button className='button'>Logar</Button>
             </form>
