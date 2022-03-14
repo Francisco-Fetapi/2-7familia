@@ -19,18 +19,18 @@ export default () => {
   });
 
   const [Erro, setErro] = useState(false);
-    const [anchorEl, setAnchorEl] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(false);
 
-    // Activar Popover
-    const handleClick = () => {
-        setAnchorEl(true);
-        setTimeout(() => handleClosePop(), 1300)
-    };
+  // Activar Popover
+  const handleClick = () => {
+    setAnchorEl(true);
+    setTimeout(() => handleClosePop(), 1300);
+  };
 
-    // Desactivar Popover
-    const handleClosePop = () => setAnchorEl(false)
+  // Desactivar Popover
+  const handleClosePop = () => setAnchorEl(false);
 
-    const id = anchorEl ? 'simple-popover' : undefined;
+  const id = anchorEl ? "simple-popover" : undefined;
 
   const handleChange = (e) => {
     const campo = e.target;
@@ -54,18 +54,18 @@ export default () => {
 
       const response = await API.verificar_login_admin(FD);
 
-      if (response === 'Admin não encontrado'){
+      if (response === "Admin não encontrado") {
         setErro(response);
-        handleClick()
-      }
-      else {
-        handleClick()
+        handleClick();
+      } else {
+        setErro(false)
+        handleClick();
         localStorage.setItem('admin_logado', response);
         window.location.href = 'http://localhost:3000/admin';
       }
     } catch (error) {
       setErro(error);
-      handleClick()
+      handleClick();
     }
   };
 
@@ -73,7 +73,7 @@ export default () => {
     <Container>
       {Login ? (
         <>
-          <h2>Logar como Admin</h2>
+          <h2>Login Administrador</h2>
           <form onSubmit={Logar}>
             <div>
               <label htmlFor="email">E-mail</label>
@@ -97,7 +97,7 @@ export default () => {
                 id="senha"
               />
             </div>
-            <Button className="button">Logar</Button>
+            <Button>Logar</Button>
           </form>
           <Tooltip title={<Title>Crie sua conta</Title>} arrow>
             <p onClick={() => setLogin(false)}>

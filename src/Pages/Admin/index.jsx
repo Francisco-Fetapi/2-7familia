@@ -8,13 +8,8 @@ import { BusinessCenter, Chat, PeopleAlt, Shop, ShoppingCart } from '@material-u
 
 const Index = () => {
     
-    useEffect(() => {
-        if(localStorage.admin_logado) setLogado(true)
-    }, []);
-    
+    const [Logado, setLogado] = useState(localStorage.admin_logado ? true : false);
     const [Item, setItem] = useState('dashboard');
-    const [Logado, setLogado] = useState(false);
-
 
     if (!Logado) window.location.href = 'http://localhost:3000/admin/login'
 
