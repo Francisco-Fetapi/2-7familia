@@ -12,8 +12,6 @@ const Index = () => {
     
     const [Logado, setLogado] = useState(localStorage.admin_logado ? true : false);
     const [Item, setItem] = useState('dashboard');
-<<<<<<< HEAD
-=======
     const [Admin, setAdmin] = useState([]);
 
     const buscaDadosAdmin = async id_admin => {
@@ -26,7 +24,6 @@ const Index = () => {
         localStorage.removeItem('admin_logado')
         setLogado(false)
     }
->>>>>>> Dashboard
 
     if (!Logado) window.location.href = 'http://localhost:3000/admin/login'
 

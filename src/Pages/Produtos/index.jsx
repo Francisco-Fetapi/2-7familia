@@ -4,6 +4,7 @@ import Search from '@material-ui/icons/Search'
 import Menu from '../../Components/Menu'
 import Footer from '../../Components/Footer'
 import Slogan from '../../Components/Slogan'
+import ButtonEncomendar from '../../Components/ButtonEncomendar'
 import { Div, Header, Title, ContainerProdutos, ProdutoItem, ProdutoImagem } from './style'
 import API from '../../_config/API'
 import { IconButton } from '@material-ui/core'
@@ -136,6 +137,9 @@ const Index = () => {
                                         ) : ''
                                     }
                                     <p>{`KZ `+produto.preco}</p>
+                                    <div className="btns">
+                                        <ButtonEncomendar />
+                                    </div>
                                 </ProdutoItem>
                             )
                         }else return (
