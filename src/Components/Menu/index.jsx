@@ -56,7 +56,9 @@ export default ({ Reacoes, desReagir }) => {
                             </Badge>
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title={<Title>Adoros - Produtos adorados</Title>} arrow>
+                    <Tooltip title={<Title>{Adorados.length ? 
+                                            Adorados.length > 1 ? `${Adorados.length} Produtos adorados` :  `${Adorados.length} Produto adorado`
+                                            : 'Adoros - Produtos adorados'}</Title>} arrow>
                         <IconButton>
                             <Badge badgeContent={Adorados.length < 1 ? '0' : Adorados.length} color='secondary'>
                                 <Favorite />

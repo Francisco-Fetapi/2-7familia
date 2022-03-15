@@ -12,6 +12,10 @@ const API = {
         const response = await axios('/cadastrar_usuario',dados)
         return response.data
     },
+    async selecionar_usuarios(){
+        const response = await axios('/selecionar_usuarios')
+        return response.data
+    },
     async mostrar_foto(dados){
         const response = await axios('/mostrar_foto',dados)
         return response.data
@@ -48,12 +52,20 @@ const API = {
         const response = await axios('/selecionar_reacoes')
         return response.data
     },
+    async selecionar_encomendas(){
+        const response = await axios('/selecionar_encomendas')
+        return response.data
+    },
     async desrreagir_produto(dados){
         const response = await axios('/desrreagir_produto',dados)
         return response.data
     },
     async verificar_login_admin(dados){
         const response = await axios('/verificar_login_admin',dados)
+        return response.data
+    },
+    async selecionar_admins(){
+        const response = await axios('/selecionar_admins')
         return response.data
     }
 }

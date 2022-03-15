@@ -8,13 +8,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Tooltip } from '@material-ui/core'
-import { AddShoppingCart } from '@material-ui/icons'
+import { AddShoppingCart, Shop } from '@material-ui/icons'
 
 import { Container } from './style'
 import TitleTooltip from '../../../Components/TitleTooltip';
 import ModalAdd from '../components/ModalAdd'
 import ModalEdit from '../components/ModalEdit'
 import API from '../../../_config/API.js'
+import { Title } from '../style';
 
 const Index = () => {
 
@@ -61,7 +62,7 @@ const Index = () => {
 
   return (
       <Container>
-          <h2>Produtos</h2>
+          <Title><Shop />Produtos</Title>
 
           <div className='produtos--funcoes'>
             <h3>Total de Produtos: <strong>{Produtos.length}</strong></h3>
