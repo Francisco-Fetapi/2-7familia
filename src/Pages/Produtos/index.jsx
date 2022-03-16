@@ -149,7 +149,7 @@ const Index = () => {
                                         <Favorite style={{fontSize: '2em'}}/>
                                     </IconButton>
                                 </ProdutoImagem>
-                                <h3>{produto.nome_produto}</h3>
+                                <h3>{produto.nome_produto.length > 20 ? produto.nome_produto.substring(0,20)+'...' : produto.nome_produto}</h3>
                                 <div>
                                     <StarBorder style={{color: 'yellow'}} />
                                     <StarBorder style={{color: 'yellow'}} />
@@ -158,6 +158,9 @@ const Index = () => {
                                     <StarBorder style={{color: 'yellow'}} />
                                 </div>
                                 <p>{`KZ `+produto.preco}</p>
+                                <div className="btns">
+                                    <ButtonEncomendar />
+                                </div>
                             </ProdutoItem>
                         )
                     })
