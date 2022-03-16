@@ -101,7 +101,12 @@ export const ProdutoItem = styled.div`
         color: #eee;
         font-size: 1.2em;
         font-family: 'Times New Roman', Times, serif;
-    }    
+    }   
+    .btns{
+        display: flex;
+        gap: 4%;
+        align-items: center;
+    } 
 `;
 export const ProdutoImagem = styled.div`
     width: 100%;

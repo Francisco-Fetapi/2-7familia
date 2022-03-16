@@ -8,14 +8,16 @@ import ButtonEncomendar from '../../Components/ButtonEncomendar'
 import { Div, Header, Title, ContainerProdutos, ProdutoItem, ProdutoImagem } from './style'
 import API from '../../_config/API'
 import { IconButton } from '@material-ui/core'
-import { Favorite, Star, StarBorder, StarHalf } from '@material-ui/icons'
+import { Favorite, Star, StarBorder, StarHalf, MoreHoriz } from '@material-ui/icons'
 import loading from '../../Imagens/loading.svg'
+import { Link } from 'react-router-dom'
 
 const Index = () => {
 
     localStorage.setItem('ativo','produtos')
     const user_id = +localStorage.usuario_logado
 
+    const [Logado, setLogado] = useState(localStorage.usuario_logado ? true : false);
     const [Produtos, setProdutos] = useState([]);
     const [Reacoes, setReacoes] = useState([]);
 
@@ -74,7 +76,7 @@ const Index = () => {
                         
                         // Verificar se o usuário reagiu nesse determinado produto e retornar funcionalidades de acordo com essa verficação 
                         const Reacoes_Pub = Reacoes.filter(reacao => reacao.id_produto === produto.id)
-                        const Reagio = Reacoes_Pub.filter(reacao => reacao.id_usuario === user_id && reacao.id_produto === produto.id)
+                        const Reagio = Reacoes_Pub.filter(reacao => reacao.id_usuario === user_id)
                         
                         if(Reagio.length === 1){
                             return(
@@ -84,7 +86,7 @@ const Index = () => {
                                             <Favorite style={{fontSize: '2em', color: '#FF00E8'}}/>
                                         </IconButton>
                                     </ProdutoImagem>
-                                    <h3>{produto.nome_produto}</h3>
+                                    <h3>{produto.nome_produto.length > 20 ? produto.nome_produto.substring(0,20)+'...' : produto.nome_produto}</h3>
                                     {
                                         Reacoes_Pub.length >= 0 && Reacoes_Pub.length <= 9 ? (
                                             <div>
@@ -137,9 +139,18 @@ const Index = () => {
                                         ) : ''
                                     }
                                     <p>{`KZ `+produto.preco}</p>
-                                    <div className="btns">
-                                        <ButtonEncomendar />
-                                    </div>
+                                    {
+                                        Logado ? (
+                                            <div className="btns">
+                                                <Link to={`/encomendar/${produto.id}`}>
+                                                    <ButtonEncomendar />
+                                                </Link>
+                                                <IconButton>
+                                                    <MoreHoriz style={{color: '#eee'}}/>
+                                                </IconButton>
+                                            </div>
+                                        ) : ''
+                                    }
                                 </ProdutoItem>
                             )
                         }else return (
@@ -160,6 +171,9 @@ const Index = () => {
                                 <p>{`KZ `+produto.preco}</p>
                                 <div className="btns">
                                     <ButtonEncomendar />
+                                    <IconButton>
+                                        <MoreHoriz style={{color: '#eee'}}/>
+                                    </IconButton>
                                 </div>
                             </ProdutoItem>
                         )

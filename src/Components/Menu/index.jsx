@@ -109,7 +109,7 @@ export default ({ Reacoes, desReagir }) => {
           </Tooltip>
         )}
       </ul>
-      <ModalAdoros open={open} handleClose={handleClose} Reacoes={Reacoes}/>
+      <ModalAdoros open={open} handleClose={handleClose} Reacoes={Reacoes} desReagir={desReagir}/>
     </Menu>
   );
 };

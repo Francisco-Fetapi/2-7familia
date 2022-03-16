@@ -21,6 +21,7 @@ const Rotas = () => (
                 <Route path='/sobre' component={Sobre} />
                 <Route path='/contacto' component={Contacto} />
                 <Route path='/produtos' component={Produtos} />
+                <Route path='/encomendar/:id_produto' component={Produtos} />
                 <Route path='/login' component={Login}/>
                 <Route path='/admin/login' component={LoginAdmin}/>
                 <Route path='/admin' component={PainelAdmin}/>
