@@ -29,7 +29,7 @@ const Index = () => {
             </div>
             <div></div>
             <div>
-              <p>{Produto.nome_produto}</p>
+              
             </div>
           </Container>
         ) : <p>Carregando</p>

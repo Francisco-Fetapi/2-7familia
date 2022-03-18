@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { Popover, Tooltip } from "@material-ui/core";
 import Title from "../../../Components/TitleTooltip";
-import Button from "../components/button";
+import Button from "../../../Components/button";
 import Cadastro from "./cadastro";
 import { Container } from "./style";
 import API from "../../../_config/API";

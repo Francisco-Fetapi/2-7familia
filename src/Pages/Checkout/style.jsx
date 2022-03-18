@@ -14,12 +14,13 @@ export const Container = styled.div`
     
 
       h1{
-          font-size: 2.5em;
-          font-weight: 500;
+          font-size: 2.4em;
+          font-weight: 300;
       }
 
       p{
-          font-size: 1.2em;
+          font-size: 1.1em;
+          font-family: 'Roboto light';
       }
   }
 `;

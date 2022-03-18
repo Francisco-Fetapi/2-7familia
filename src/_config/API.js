@@ -52,6 +52,10 @@ const API = {
         const response = await axios('/selecionar_reacoes')
         return response.data
     },
+    async selecionar_reacoes_produto(dados){
+        const response = await axios('/selecionar_reacoes_produto',dados)
+        return response.data
+    },
     async selecionar_produtos_adorados(dados){
         const response = await axios('/selecionar_produtos_adorados',dados)
         return response.data

@@ -1,7 +1,7 @@
 /* eslint-disable no-throw-literal */
 import React, { useState } from "react";
 
-import Button from "../components/button";
+import Button from "../../../Components/button";
 import Title from "../../../Components/TitleTooltip";
 import { Popover, Tooltip } from "@material-ui/core";
 import API from '../../../_config/API'
@@ -124,7 +124,6 @@ const Cadastro = ({ voltar }) => {
             />
           </div>
         </div>
-
         <Button>Cadastrar</Button>
       </form>
       <Tooltip title={<Title>Iniciar sessão na sua conta</Title>} arrow>
