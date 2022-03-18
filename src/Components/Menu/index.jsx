@@ -32,8 +32,7 @@ export default ({ Reacoes, desReagir }) => {
 
   const selecionaReacoes = async () => {
     const response = await API.selecionar_reacoes();
-    const AdorosUser = response.filter(
-      (adorados) => adorados.id_usuario === user_logado
+    const AdorosUser = response.filter(adorados => adorados.id_usuario === user_logado
     );
     setAdorados(AdorosUser);
   };
@@ -59,7 +58,7 @@ export default ({ Reacoes, desReagir }) => {
                 title={<Title>Carrinho - Produtos encomendados</Title>}
                 arrow
               >
-                <IconButton to="/">
+                <IconButton>
                   <Badge badgeContent={4} color="secondary">
                     <ShoppingCart />
                   </Badge>
