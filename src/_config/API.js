@@ -28,7 +28,7 @@ const API = {
         const response = await axios('/add_produto',dados)
         return response.data
     },
-    async selecionar_produtos(dados){
+    async selecionar_produtos(){
         const response = await axios('/selecionar_produtos')
         return response.data
     },
@@ -50,6 +50,10 @@ const API = {
     },
     async selecionar_reacoes(){
         const response = await axios('/selecionar_reacoes')
+        return response.data
+    },
+    async selecionar_reacoes_produto(dados){
+        const response = await axios('/selecionar_reacoes_produto',dados)
         return response.data
     },
     async selecionar_produtos_adorados(dados){
