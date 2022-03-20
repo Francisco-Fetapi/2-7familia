@@ -52,7 +52,6 @@ export const Container = styled.div`
         padding: 20px;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         h3{
             display: flex;
@@ -62,7 +61,7 @@ export const Container = styled.div`
             font-weight: 500;
             font-size: 1.5em;
             justify-content: center;
-            margin: .7rem 0 3rem;
+            margin: .7rem 0 .2rem;
 
             svg{
                 font-size: 1.2em;
@@ -71,37 +70,40 @@ export const Container = styled.div`
         }
 
         div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-left: 2rem;
 
             label{
                 color: #fff;
-                font-size: 1.2em;
+                font-size: 1.1em;
+                display: block;
             }
 
             input{
                 border: none;
                 border-radius: 4px;
-                font-size: 1em;
-                padding: 6px;
+                font-size: .9em;
+                padding: 5px;
                 text-align: center;
             }
         }
 
-        div:nth-child(2){
-            label{
-                margin-right: 5px;
-            }
+        div:nth-child(2) {
+            margin-top: 1.5rem;
+
             input{
-                max-width: 60px;
-            }
-        }
-        div:nth-child(3){
-            label{
-                margin-bottom: 5px;
+                max-width: 50px;
             }
         }
 
         div + div{
-            margin-top: .8rem;
+            margin-top: 1rem;
+
+            input {
+                max-width: 150px;
+            }
         }
       }
     }

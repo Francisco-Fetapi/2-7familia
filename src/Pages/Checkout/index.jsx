@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import API from '../../_config/API'
 import ButtonRosa from '../../Components/button'
@@ -9,6 +9,7 @@ import { ShoppingCart } from '@material-ui/icons'
 
 const Index = () => {
   const { id_produto } = useParams();
+  const history = useHistory()
 
   const [Produto, setProduto] = useState([]);
   const [ReacoesProduto, setReacoesProduto] = useState([]);
@@ -29,6 +30,10 @@ const Index = () => {
   const buscaReacoesProduto = async produto_id => {
     const response = await API.selecionar_reacoes_produto({ produto_id })
     setReacoesProduto(response)
+  }
+
+  const Voltar = () => {
+      history.goBack()
   }
 
   return (
@@ -57,7 +62,7 @@ const Index = () => {
               </div>
               <div className='btns'>
                 <ButtonRosa>Confirmar</ButtonRosa>
-                <Button variant='contained' disableElevation>Cancelar</Button>
+                <Button variant='contained' disableElevation onClick={Voltar}>Cancelar</Button>
               </div>
             </form>
           </Container>
