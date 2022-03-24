@@ -21,7 +21,6 @@ const Index = ({ open, handleClose, Reacoes, desReagir }) => {
     }
 
 
-
   return (
     <Dialog open={open} onClose={handleClose}>
         {

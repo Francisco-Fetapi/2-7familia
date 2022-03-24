@@ -1,3 +1,4 @@
+/* eslint-disable no-throw-literal */
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -32,7 +33,6 @@ const Index = () => {
     setReacoesProduto(response)
   }
   	
-  const date = new Date()
   const [Campos, setCampos] = useState({
       quantidade: 1,
       data_entrega: ''
@@ -56,11 +56,27 @@ const Index = () => {
 
   const encomendar = e => {
     e.preventDefault()
-    
+    const date = new Date()
+
+    const dataHoje = `${date.getFullYear()}-${date.getMonth() + 1 < 10 ? '0'+(date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate() < 10 ? '0'+date.getDate() : date.getDate()}`
+
+    // alert(date.toLocaleDateString())
+
+   
     try {
-      // if(Campos.quantidade < 1) throw ''
-    } catch (error) {
+      if(Campos.data_entrega === '') throw 'Coloque uma data para entrega de 3 dias de antecedência'
+      else if(Campos.data_entrega === dataHoje) throw 'Para hoje não é possível, tem que ter 3 dias de antecendência'
+      else{
+        const Data_entrega = new Date(Campos.data_entrega)
+  
+        if(Data_entrega.getMonth() === date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && Data_entrega.getDate() < date.getDate()) throw 'Esse dia já passou!'
+        if(Data_entrega.getMonth() < date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && Data_entrega.getDate() > date.getDate()) throw 'Esse dia já passou!'
+      }
+      // alert(Campos.data_entrega)
+      // alert(date.toLocaleTimeString())
       
+    } catch (error) {
+      alert(error)
     }
   }
 

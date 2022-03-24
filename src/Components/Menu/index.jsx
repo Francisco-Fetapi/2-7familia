@@ -12,7 +12,7 @@ import Logo from "../../Imagens/Delicatezza.svg";
 import ModalAdoros from "../ModalAdoros";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ({ Reacoes, desReagir }) => {
+export default ({ Reacoes, desReagir, alertar }) => {
   useEffect(() => {
     if (localStorage.usuario_logado) setLogado(true);
   }, []);
@@ -108,7 +108,7 @@ export default ({ Reacoes, desReagir }) => {
           </Tooltip>
         )}
       </ul>
-      <ModalAdoros open={open} handleClose={handleClose} Reacoes={Reacoes} desReagir={desReagir}/>
+      <ModalAdoros open={open} handleClose={handleClose} Reacoes={Reacoes} desReagir={desReagir} alertar={alertar}/>
     </Menu>
   );
 };
