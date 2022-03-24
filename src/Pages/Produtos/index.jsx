@@ -42,6 +42,7 @@ const Index = () => {
         const response = await API.reagir_produto({id_usuario,id_produto})
         setReacoes(response)
     }
+    
     const desrreagir = async id_reacao => {
         const response = await API.desrreagir_produto({id_reacao})
         setReacoes(response)
