@@ -78,7 +78,7 @@ export default ({ Reacoes, desReagir, alertar }) => {
               >
                 <IconButton onClick={handleOpen}>
                   <Badge
-                    badgeContent={Adorados.length < 1 ? "0" : Adorados.length}
+                    badgeContent={Adorados.length < 1 ? null : Adorados.length}
                     color="secondary"
                   >
                     <Favorite />

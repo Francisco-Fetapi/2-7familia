@@ -5,8 +5,9 @@ import { useHistory, useParams } from "react-router-dom";
 import API from '../../_config/API'
 import ButtonRosa from '../../Components/button'
 import { Container, ImagemProduto } from "./style";
-import { Button } from "@material-ui/core";
+import { Button, Popover } from "@material-ui/core";
 import { ShoppingCart } from '@material-ui/icons'
+import { Certo, Errado } from "../Login/style2";
 
 const Index = () => {
   const { id_produto } = useParams();
@@ -54,29 +55,45 @@ const Index = () => {
       history.goBack()
   }
 
+  const [Erro, setErro] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(false);
+
+  // Activar Popover
+  const handleClick = () => {
+      setAnchorEl(true);
+      setTimeout(() => handleClosePop(), 1300)
+  };
+
+  // Desactivar Popover
+  const handleClosePop = () => setAnchorEl(false)
+
+  const id = anchorEl ? 'simple-popover' : undefined;
+
   const encomendar = e => {
     e.preventDefault()
     const date = new Date()
 
     const dataHoje = `${date.getFullYear()}-${date.getMonth() + 1 < 10 ? '0'+(date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate() < 10 ? '0'+date.getDate() : date.getDate()}`
 
-    // alert(date.toLocaleDateString())
-
    
     try {
+      // Se data estiver vazia
       if(Campos.data_entrega === '') throw 'Coloque uma data para entrega de 3 dias de antecedência'
       else if(Campos.data_entrega === dataHoje) throw 'Para hoje não é possível, tem que ter 3 dias de antecendência'
       else{
         const Data_entrega = new Date(Campos.data_entrega)
   
         if(Data_entrega.getMonth() === date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && Data_entrega.getDate() < date.getDate()) throw 'Esse dia já passou!'
-        if(Data_entrega.getMonth() < date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && Data_entrega.getDate() > date.getDate()) throw 'Esse dia já passou!'
+        else if(Data_entrega.getMonth() < date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && ((Data_entrega.getDate() <= date.getDate()) || (Data_entrega.getDate() >= date.getDate()) )) throw 'Esse dia e mês já passaram!'
+        else if(Data_entrega.getMonth() > date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && Data_entrega.getDate() < date.getDate()) {
+          if(((Data_entrega.getDate() + 31) - date.getDate()) < 3) throw 'Tem que encomendar com 3 dias de antecendência no mínimo.'
+        }
+        else if(Data_entrega.getMonth() === date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && ((Data_entrega.getDate() - date.getDate()) < 3)) throw 'Tem que encomendar com 3 dias de antecedência no mínimo.'
       }
-      // alert(Campos.data_entrega)
-      // alert(date.toLocaleTimeString())
       
     } catch (error) {
-      alert(error)
+      setErro(error)
+      handleClick()
     }
   }
 
@@ -109,6 +126,28 @@ const Index = () => {
                 <Button variant='contained' disableElevation onClick={Voltar}>Cancelar</Button>
               </div>
             </form>
+            <Popover
+                id={id}
+                open={anchorEl}
+                anchorEl={anchorEl}
+                onClose={handleClosePop}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+            >
+                {
+                    Erro ?  <Errado>Erro: {Erro}!</Errado> : (
+                        <Certo>
+                            <ShoppingCart /> Encomenda feita!
+                        </Certo>
+                    )
+                }
+            </Popover>
           </Container>
         ) : <p>Carregando</p>
       }
