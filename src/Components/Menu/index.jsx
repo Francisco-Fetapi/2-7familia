@@ -13,29 +13,38 @@ import ModalAdoros from "../ModalAdoros";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ Reacoes, desReagir, alertar }) => {
-  useEffect(() => {
-    if (localStorage.usuario_logado) setLogado(true);
-  }, []);
-
-  useEffect(() => {
-    selecionaReacoes();
-  }, [Reacoes]);
 
   const user_logado = +localStorage.usuario_logado;
 
   const [Logado, setLogado] = useState(false);
   const [Adorados, setAdorados] = useState([]);
+  const [Encomendados, setEncomendados] = useState([]);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.usuario_logado) setLogado(true);
+  }, []);
+
+  useEffect(() => {
+    selecionaReacoes(user_logado);
+  }, [Reacoes]);
+
+  useEffect(() => {
+    selecionarEncomendas(user_logado)
+  }, [])
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const selecionaReacoes = async () => {
-    const response = await API.selecionar_reacoes();
-    const AdorosUser = response.filter(adorados => adorados.id_usuario === user_logado
-    );
-    setAdorados(AdorosUser);
+  const selecionaReacoes = async id_usuario => {
+    const response = await API.selecionar_produtos_adorados({ id_usuario })
+    setAdorados(response);
   };
+
+  const selecionarEncomendas = async id_usuario => {
+    const response = await API.selecionar_encomendas_usuario({ id_usuario })
+    setEncomendados(response)
+  }
 
   const Logout = () => {
     localStorage.removeItem("usuario_logado");
@@ -55,11 +64,19 @@ export default ({ Reacoes, desReagir, alertar }) => {
           {Logado ? (
             <>
               <Tooltip
-                title={<Title>Carrinho - Produtos encomendados</Title>}
+                title={<Title>
+                  {
+                    Encomendados.length
+                    ? Encomendados.length > 1
+                        ? `${Encomendados.length} Produtos encomendados`
+                        : `${Encomendados.length} Produto encomendado`
+                      : "Carrinho - Produtos encomendados"
+                  }
+                </Title>}
                 arrow
               >
                 <IconButton>
-                  <Badge badgeContent={4} color="secondary">
+                  <Badge badgeContent={Encomendados.length < 1 ? null : Encomendados.length} color="secondary">
                     <ShoppingCart />
                   </Badge>
                 </IconButton>
@@ -69,9 +86,9 @@ export default ({ Reacoes, desReagir, alertar }) => {
                   <Title>
                     {Adorados.length
                       ? Adorados.length > 1
-                        ? `${Adorados.length} Produtos adorados`
-                        : `${Adorados.length} Produto adorado`
-                      : "Adoros - Produtos adorados"}
+                        ? `${Adorados.length} Produtos favoritos`
+                        : `${Adorados.length} Produto favorito`
+                      : "Favoritos - Produtos favoritos"}
                   </Title>
                 }
                 arrow
