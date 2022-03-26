@@ -4,14 +4,17 @@ import { useHistory, useParams } from "react-router-dom";
 
 import API from '../../_config/API'
 import ButtonRosa from '../../Components/button'
+import Aguardando from '../../Components/Aguardando'
 import { Container, ImagemProduto } from "./style";
 import { Button, Popover } from "@material-ui/core";
 import { ShoppingCart } from '@material-ui/icons'
 import { Certo, Errado } from "../Login/style2";
+import Loading from '../../Imagens/loading.svg'
 
 const Index = () => {
   const { id_produto } = useParams();
   const history = useHistory()
+  const id_usuario = +localStorage.usuario_logado
 
   const [Produto, setProduto] = useState([]);
   const [ReacoesProduto, setReacoesProduto] = useState([]);
@@ -69,7 +72,7 @@ const Index = () => {
 
   const id = anchorEl ? 'simple-popover' : undefined;
 
-  const encomendar = e => {
+  const encomendar = async e => {
     e.preventDefault()
     const date = new Date()
 
@@ -89,8 +92,19 @@ const Index = () => {
           if(((Data_entrega.getDate() + 31) - date.getDate()) < 3) throw 'Tem que encomendar com 3 dias de antecendência no mínimo.'
         }
         else if(Data_entrega.getMonth() === date.getMonth() && Data_entrega.getFullYear() === date.getFullYear() && ((Data_entrega.getDate() - date.getDate()) < 3)) throw 'Tem que encomendar com 3 dias de antecedência no mínimo.'
+        
+        const response = await API.add_encomenda({
+          id_usuario,
+          id_produto,
+          'quantidade': Campos.quantidade,
+          'data_entrega':Campos.data_entrega
+        })
+
+        setErro(false)
+        handleClick()
       }
       
+
     } catch (error) {
       setErro(error)
       handleClick()
@@ -108,7 +122,7 @@ const Index = () => {
             </div>
             <form onSubmit={encomendar}>
               <div className="Item">
-                <ImagemProduto imagem={`http://localhost:8000/`+Produto[0].foto_produto} />
+                <ImagemProduto imagem={Produto[0].foto_produto !== undefined ? `http://localhost:8000/`+Produto[0].foto_produto : Loading} />
                 <div className="conteudo">
                   <h3><ShoppingCart /> Sua encomenda</h3>
                   <div>
@@ -149,7 +163,7 @@ const Index = () => {
                 }
             </Popover>
           </Container>
-        ) : <p>Carregando</p>
+        ) : <Aguardando />
       }
     </>
     
