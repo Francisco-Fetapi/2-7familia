@@ -81,8 +81,7 @@ const Index = () => {
                         
                         return(
                             <ProdutoItem key={index}>
-                                <ProdutoImagem imagem={`http://127.0.0.1:8000/`+produto.foto_produto}>
-                                    
+                                <ProdutoImagem imagem={`http://127.0.0.1:8000/`+produto.foto_produto}> 
                                     {
                                         Reagio.length ? (
                                             <IconButton onClick={() => desrreagir(Reagio[0].id)}>

@@ -10,6 +10,7 @@ import Title from "../TitleTooltip";
 import Menu from "./style";
 import Logo from "../../Imagens/Delicatezza.svg";
 import ModalAdoros from "../ModalAdoros";
+import ModalEncomendas from '../ModalEncomendas'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ Reacoes, desReagir, alertar }) => {
@@ -19,7 +20,8 @@ export default ({ Reacoes, desReagir, alertar }) => {
   const [Logado, setLogado] = useState(false);
   const [Adorados, setAdorados] = useState([]);
   const [Encomendados, setEncomendados] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [openAdoros, setOpenAdoros] = useState(false);
+  const [openEncomendas, setOpenEncomendas] = useState(false);
 
   useEffect(() => {
     if (localStorage.usuario_logado) setLogado(true);
@@ -33,8 +35,10 @@ export default ({ Reacoes, desReagir, alertar }) => {
     selecionarEncomendas(user_logado)
   }, [])
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpenAdoros = () => setOpenAdoros(true);
+  const handleCloseAdoros = () => setOpenAdoros(false);
+  const handleOpenEncomendas = () => setOpenEncomendas(true);
+  const handleCloseEncomendas = () => setOpenEncomendas(false);
 
   const selecionaReacoes = async id_usuario => {
     const response = await API.selecionar_produtos_adorados({ id_usuario })
@@ -75,7 +79,7 @@ export default ({ Reacoes, desReagir, alertar }) => {
                 </Title>}
                 arrow
               >
-                <IconButton>
+                <IconButton onClick={handleOpenEncomendas}>
                   <Badge badgeContent={Encomendados.length < 1 ? null : Encomendados.length} color="secondary">
                     <ShoppingCart />
                   </Badge>
@@ -93,7 +97,7 @@ export default ({ Reacoes, desReagir, alertar }) => {
                 }
                 arrow
               >
-                <IconButton onClick={handleOpen}>
+                <IconButton onClick={handleOpenAdoros}>
                   <Badge
                     badgeContent={Adorados.length < 1 ? null : Adorados.length}
                     color="secondary"
@@ -125,7 +129,8 @@ export default ({ Reacoes, desReagir, alertar }) => {
           </Tooltip>
         )}
       </ul>
-      <ModalAdoros open={open} handleClose={handleClose} Reacoes={Reacoes} desReagir={desReagir} alertar={alertar}/>
+      <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
+      <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>
     </Menu>
   );
 };

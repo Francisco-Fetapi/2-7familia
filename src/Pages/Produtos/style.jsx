@@ -83,14 +83,15 @@ export const ContainerProdutos = styled.div`
 
 export const ProdutoItem = styled.div`
     background: #371910;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 3px;
     border-radius: 4px;
 
     h3{
+        margin-top: 10px;
         color: #FF00E8;
         font-size: 1.4em;
         font-weight: 300;

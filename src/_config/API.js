@@ -72,6 +72,14 @@ const API = {
         const response = await axios('/selecionar_encomendas_usuario',dados)
         return response.data
     },
+    async selecionar_produtos_encomendados(dados){
+        const response = await axios('/selecionar_produtos_encomendados',dados)
+        return response.data
+    },
+    async eliminar_encomenda(dados){
+        const response = await axios('/eliminar_encomenda',dados)
+        return response.data
+    },
     async desrreagir_produto(dados){
         const response = await axios('/desrreagir_produto',dados)
         return response.data

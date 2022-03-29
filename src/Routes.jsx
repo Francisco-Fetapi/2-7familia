@@ -26,7 +26,9 @@ const Rotas = () => (
                 <Route path='/login' component={Login}/>
                 <Route path='/admin/login' component={LoginAdmin}/>
                 <Route path='/admin' component={PainelAdmin}/>
-                <Route path='/' component={Home}/>
+                <Route exact path='/home'component={Home}/>
+                <Route exact path='/' component={Home}/>
+                <Route path='*' render={() => <h1>Erro</h1>}/>
             </Switch>
         </BrowserRouter>
     </>
