@@ -11,6 +11,7 @@ import { IconButton } from '@material-ui/core'
 import { Favorite, Star, StarBorder, StarHalf, MoreHoriz } from '@material-ui/icons'
 import loading from '../../Imagens/loading.svg'
 import { Link } from 'react-router-dom'
+import ModalVerProduto from '../../Components/ModalVerProduto'
 
 const Index = () => {
 
@@ -20,6 +21,15 @@ const Index = () => {
     const [Logado, setLogado] = useState(localStorage.usuario_logado ? true : false);
     const [Produtos, setProdutos] = useState([]);
     const [Reacoes, setReacoes] = useState([]);
+    const [Busca, setBusca] = useState('');
+    const [Id_produto, setId_produto] = useState('');
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        if(Busca === '') buscaProdutos()
+        else if(!isNaN(Busca)) alert('Contém números')
+        else selecionar_produtos_filtro(Busca)
+    }, [Busca]);
 
     useEffect(() => {
         buscaProdutos()
@@ -27,6 +37,21 @@ const Index = () => {
     useEffect(() => {
         selecionaReacoes()
     }, []);
+
+    const handleClose = () => setOpen(false) 
+    const handleClick = () => setOpen(true)
+
+    const verProduto = id_produto => {
+        setId_produto(id_produto)
+        handleClick()
+    }
+
+    const handleChange = e => setBusca(e.target.value)
+
+    const selecionar_produtos_filtro = async palavra => {
+        const response = await API.selecionar_produtos_filtro({ palavra })
+        setProdutos(response)
+    }
 
     const buscaProdutos = async () => {
         const response = await API.selecionar_produtos()
@@ -55,7 +80,7 @@ const Index = () => {
                     <Menu Reacoes={Reacoes} desReagir={desrreagir} />
                     <div>
                         <form>
-                            <input type="text" placeholder='Buscar...'/>
+                            <input type="text" onChange={handleChange} placeholder='Buscar...'/>
                             <button><Search style={{fontSize: '3em'}}/></button>
                         </form>
                         <p>Busque os produtos que mais desejas dentre os nossos.</p>
@@ -153,7 +178,7 @@ const Index = () => {
                                             <Link to={`/encomendar/${produto.id}`}>
                                                 <ButtonEncomendar />
                                             </Link>
-                                            <IconButton>
+                                            <IconButton onClick={() => verProduto(produto.id)}>
                                                 <MoreHoriz style={{color: '#eee'}}/>
                                             </IconButton>
                                         </div>
@@ -162,6 +187,7 @@ const Index = () => {
                             </ProdutoItem>
                         )})
                 }
+                <ModalVerProduto open={open} handleClose={handleClose} ReacoesTotal={Reacoes} reagir={reagir} desrreagir={desrreagir} Id_produto={Id_produto}/>
             </ContainerProdutos>
             <Slogan />
             <Footer />

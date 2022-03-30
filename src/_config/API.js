@@ -36,6 +36,10 @@ const API = {
         const response = await axios('/selecionar_produto',dados)
         return response.data
     },
+    async selecionar_produtos_filtro(dados){
+        const response = await axios('/selecionar_produtos_filtro',dados)
+        return response.data
+    },
     async deletar_produto(dados){
         const response = await axios('/deletar_produto',dados)
         return response.data
