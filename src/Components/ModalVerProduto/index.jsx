@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import { Dialog, IconButton } from '@material-ui/core'
-import API from '../../_config/API'
-import { Favorite, Star, StarBorder } from '@material-ui/icons'
-import ButtonEncomendar from '../ButtonEncomendar'
 import { Link } from 'react-router-dom'
-import { ProdutoImagem, ProdutoItem } from '../../Pages/Produtos/style'
-import { Container } from './style'
+import { Dialog, IconButton } from '@material-ui/core'
+import { Favorite, Star, StarBorder } from '@material-ui/icons'
+import API from '../../_config/API'
+import ButtonEncomendar from '../ButtonEncomendar'
+import Button from '../../Components/button'
+import { Container, ProdutoImagem, ProdutoItem } from './style'
+import './melhora.css'
 
 const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto }) => {
 
@@ -19,6 +20,7 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
     useEffect(() => {
         buscaProduto(Id_produto)
     }, [Id_produto]);
+    
     useEffect(() => {
         selecionaReacoes(Id_produto)
     }, [Id_produto,ReacoesTotal]);
@@ -46,7 +48,7 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                             const Reagio = Reacoes.filter(reacao => reacao.id_usuario === user_logado)
             
                             return(
-                                <Container>
+                                <Container className='MuiDialog-paperWidthSm'>
                                     <ProdutoItem key={index}>
                                         <ProdutoImagem imagem={`http://127.0.0.1:8000/`+produto.foto_produto}> 
                                             {
@@ -124,7 +126,13 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                                             ) : ''
                                         }
                                     </ProdutoItem>
-                                    <h1>Comentários</h1>
+                                    <div>
+                                        <h2>Comentários</h2>
+                                        <form>
+                                            <textarea name="" placeholder='O que você achou desse produto?'></textarea>
+                                            <Button disableElevation>Comentar</Button>
+                                        </form>
+                                    </div>
                                 </Container>
                                 
                             )})   

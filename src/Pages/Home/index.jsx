@@ -46,7 +46,9 @@ const index = () => {
           <div>
             <h3>Vai um pedacinho de felicidade aí?</h3>
             <p>Nadinha de misturas prontas ou sabores artificiais, a Delicatezza tem receitas exclusivas, feitas com ingredientes frescos e muito amor para deixar o seu dia muito especial!</p>
-            <Button style={{background: '#A15300', color: '#eee', padding: '10px 20px'}}>Confira os nossos produtos</Button>
+            <Link to='/produtos'>
+                <Button style={{background: '#A15300', color: '#eee', padding: '10px 20px'}}>Confira os nossos produtos</Button>
+            </Link>
           </div>
         </Pedacinho>
 
