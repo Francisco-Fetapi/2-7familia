@@ -67,8 +67,11 @@ export const DuvidaBanner = styled.div`
       }
 
       p:last-child{
-          color: #DB00C6;
-          font-size: 2em;
+          font-size: 1.5em;
+
+          span{
+            color: #DB00C6;
+          }
       }
 
       p + p{

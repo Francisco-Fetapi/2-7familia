@@ -42,7 +42,7 @@ const Index = () => {
       <DuvidaBanner>
           <div>
             <p>Você tem alguma inquietação?</p>
-            <p>Contacta-nos</p>
+            <p>Sinta-se a vontade, <span>Contacta-nos.</span></p>
           </div>
           <img src={ImagemPessoa} alt='dúvida'/>
       </DuvidaBanner>
@@ -70,24 +70,24 @@ const Index = () => {
       <OutrasFormas>
         <p>Nossas redes sociais</p>
         <div>
-          <Link>
+          <a href='https://free.facebook.com/atallde.manjor?refid=12'>
             <div>
               <Facebook style={{color: 'blue'}}/>
               <p>Facebook</p>
             </div>
-          </Link>
-          <Link>
+          </a>
+          <a href='#'>
             <div>
               <Instagram style={{color: '#a307a3'}}/>
               <p>Instagram</p>
             </div>
-          </Link>
-          <Link>
+          </a>
+          <a href='http://chat.whatsapp.com%2FGxgc6i4GgFMFcPzkbjgpwi%3Ffbclid%3DIwAR0BKul2iAy9Bn9VYiTXGAJIAg7BkrWFMOZlJmtWRMAIsRuMQvtvVfTbKho&h=AT22QnYswzhj-87OKDq714kUi63zhp9eh0GSi5N70psF9m7VOH5EAwu9Y8G5s40OkcSql5UfgfKVMjKn05GkODV6_BXe5rJhFqUSxzEJD1vYCgAFj4hEhTDPamqVoH-hZqdqEnWgprfm4ds7lFSKPQemazPMqugyTA'>
             <div>
               <WhatsApp style={{color: 'green'}}/>
               <p>WhatsApp</p>
             </div>
-          </Link>
+          </a>
         </div>
         <span>Clique em cada uma delas para acessa-las.</span>
       </OutrasFormas>
