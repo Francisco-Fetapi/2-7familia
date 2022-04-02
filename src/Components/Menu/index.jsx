@@ -43,11 +43,13 @@ export default ({ Reacoes, desReagir, alertar }) => {
   const selecionaReacoes = async id_usuario => {
     const response = await API.selecionar_produtos_adorados({ id_usuario })
     setAdorados(response);
+    localStorage.setItem('adorados',response.length)
   };
 
   const selecionarEncomendas = async id_usuario => {
     const response = await API.selecionar_encomendas_usuario({ id_usuario })
     setEncomendados(response)
+    localStorage.setItem('encomendas',response.length)
   }
 
   const Logout = () => {
@@ -80,7 +82,7 @@ export default ({ Reacoes, desReagir, alertar }) => {
                 arrow
               >
                 <IconButton onClick={handleOpenEncomendas}>
-                  <Badge badgeContent={Encomendados.length < 1 ? null : Encomendados.length} color="secondary">
+                  <Badge badgeContent={Encomendados.length < 1 ? localStorage.encomendas : Encomendados.length} color="secondary">
                     <ShoppingCart />
                   </Badge>
                 </IconButton>
@@ -99,7 +101,7 @@ export default ({ Reacoes, desReagir, alertar }) => {
               >
                 <IconButton onClick={handleOpenAdoros}>
                   <Badge
-                    badgeContent={Adorados.length < 1 ? null : Adorados.length}
+                    badgeContent={Adorados.length < 1 ? localStorage.adorados : Adorados.length}
                     color="secondary"
                   >
                     <Favorite />

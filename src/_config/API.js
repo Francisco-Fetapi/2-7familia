@@ -16,6 +16,10 @@ const API = {
         const response = await axios('/selecionar_usuarios')
         return response.data
     },
+    async selecionar_usuario(dados){
+        const response = await axios('/selecionar_usuario',dados)
+        return response.data
+    },
     async mostrar_foto(dados){
         const response = await axios('/mostrar_foto',dados)
         return response.data
