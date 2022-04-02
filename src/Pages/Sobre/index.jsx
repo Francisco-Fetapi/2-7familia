@@ -41,7 +41,7 @@ const index = () => {
         </div>
       </BannerExplicativo>
       <Opcoes>
-        <p>Tem alguma coisa a mais?</p>
+        <p>Alguma outra coisa que queiras?</p>
         <div>
           <div>
             <p>Entre em contacto connosco</p>
