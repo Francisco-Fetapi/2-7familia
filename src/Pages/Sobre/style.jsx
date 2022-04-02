@@ -134,20 +134,34 @@ export const BannerExplicativo = styled.div`
 `;
 
 export const Opcoes = styled.div`
-  display: flex;
-  max-width: 1200px;
-  justify-content: center;
+    padding: 6%;
+  & > p{
+    font-size: 1.5em;
+    margin-bottom: 5%;
+    text-align: center;
 
-  div{
-      padding: 6%;
-
-      p{
-          font-size: 1.5em;
-          margin-bottom: 7%;
-      }
+    &::after{
+        content: '';
+        display: block;
+        height: 2px;
+        width: 15%;
+        margin: 10px auto 0;
+        background: currentColor;
+    }
   }
 
-  div:first-child{
-      border-right: 1px solid #1D1E20;
+  & > div{
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    gap: 8%;
+  }
+
+  div div{
+      p{
+          font-size: 1.2em;
+          text-align: center;
+          margin-bottom: 7%;
+      }
   }
 `;

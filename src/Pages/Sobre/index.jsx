@@ -41,17 +41,20 @@ const index = () => {
         </div>
       </BannerExplicativo>
       <Opcoes>
+        <p>Tem alguma coisa a mais?</p>
         <div>
-          <p>Entre em contacto connosco</p>
-          <Link to='/contacto'>
-            <ButtonContactar icon={<Phone style={{fontSize: '1.3em'}}/>}/>
-          </Link>
-        </div>
-        <div>
-          <p>Aceda aos nossos produtos</p>
-          <Link to='/produtos'>
-            <Button variant='contained' startIcon={<ShopTwo style={{fontSize: '1.3em'}}/>} style={{padding: '12px 40px', fontSize: '1.3em',background: 'linear-gradient(#D17008, #A15300)', color: '#fff'}} disableElevation>Ver Produtos</Button>
-          </Link>
+          <div>
+            <p>Entre em contacto connosco</p>
+            <Link to='/contacto'>
+              <ButtonContactar icon={<Phone style={{fontSize: '1.3em'}}/>}/>
+            </Link>
+          </div>
+          <div>
+            <p>Aceda aos nossos produtos</p>
+            <Link to='/produtos'>
+              <Button variant='contained' startIcon={<ShopTwo style={{fontSize: '1.3em'}}/>} style={{padding: '12px 40px', fontSize: '1.3em',background: 'linear-gradient(#D17008, #A15300)', color: '#fff'}} disableElevation>Ver Produtos</Button>
+            </Link>
+          </div>
         </div>
       </Opcoes>
       <Slogan />

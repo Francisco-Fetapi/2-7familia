@@ -112,7 +112,7 @@ export const Questionario = styled.div`
             div{
                 label{
                     display: block;
-                    margin-bottom: 1em;
+                    margin-bottom: .8em;
                     font-size: 1.3em;
                     color: #F3F2F2;
                 }
