@@ -5,7 +5,6 @@ import Moca from '../../Imagens/1 (26).jpg'
 const rosa = '#FF00E8'
 
 export const Container = styled.main`
-    height: 100vh;
     width: 100%;
     background: url('${Moca}');
     background-position: center;
@@ -46,9 +45,10 @@ export const Container = styled.main`
         h2 {
             color: #fff;
             font-weight: 500;
-            font-size: 1.8em;
+            font-size: 1.5em;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 7px;
         }
 
@@ -64,7 +64,7 @@ export const Container = styled.main`
             & > p{
                 color: #eee;
                 margin: -10px 0 18px;
-                font-size: 1.1em;
+                font-size: 1.1rem;
             }
 
             label[for |= 'foto_user']{
@@ -102,13 +102,47 @@ export const Container = styled.main`
 
                 p:first-child{
                     cursor: pointer;
-                    padding: 10px 4px 10px 0;
+                    padding: 2% 1% 2% 0;
                 }
                 p:last-child{
                     align-self: end;
                     border-left: 2px solid ${rosa};
                     cursor: pointer;
-                    padding: 10px 0 10px 10px;
+                    padding: 2% 0 2% 2%;
+                }
+            }
+
+            @media(max-width: 500px){
+                padding: 0 7%;
+                gap: 20px;
+
+                div.senha{
+                    display: block;
+
+                    .MuiInputBase-input[type='date']{
+                        color: #eee;
+                    }
+
+                    .MuiFormControl-root + .MuiFormControl-root{
+                        margin-top: 20px;
+                    }
+
+                    .MuiSelect-root{
+                        margin-top: 20px;
+                    }
+                }
+
+                .opcoes{
+                    display: block;
+                    margin-top: 5%;
+
+                    p{
+                        text-align: center;
+                    }
+
+                    p:last-child{
+                        border-left: none;
+                    }
                 }
             }
 
@@ -160,6 +194,20 @@ export const Container = styled.main`
                 }
             }
 
+        }
+
+        @media(max-width: 600px){
+            &, & .titulo{
+                border-radius: 0px;
+            }
+
+            .titulo p{
+                font-size: 1.3em;
+            }
+
+            h2{
+                font-size: 1.2em;
+            }
         }
 
     } 

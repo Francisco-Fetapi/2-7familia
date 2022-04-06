@@ -1,7 +1,7 @@
 /* eslint-disable no-throw-literal */
 import React,{ useState, useRef } from 'react'
 
-import { Button, Dialog, Popover } from '@material-ui/core'
+import { Button, Dialog, MenuItem, Popover, Select } from '@material-ui/core'
 import { CheckCircleOutlined } from '@material-ui/icons'
 import { Container, ImagemProduto } from './style'
 import { Certo, Errado } from '../../../Login/style2'
@@ -118,8 +118,10 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
                         <input type="number" value={Campos.preco} id='preco' name='preco' onChange={handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor="categoria">Categoria</label>
-                        <input type="text" value={Campos.categoria} id='categoria' name='categoria' onChange={handleChange}/>
+                        <Select label='Categoria' type='password' value={Campos.categoria} name='categoria' onChange={handleChange} >
+                            <MenuItem value="Bolos Feios" selected>Bolos Feios</MenuItem>
+                            <MenuItem value="Bolos de chocolate">Bolos de chocolate</MenuItem>
+                        </Select>
                     </div>
                     <div>
                         <label htmlFor="descricao">Descrição</label>

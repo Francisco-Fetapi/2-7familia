@@ -93,7 +93,7 @@ const Index = () => {
                             <Input label='E-mail' type='email' name='email' value={Campos.email} onChange={handleChange} />
                             <Input label='Senha' type='password'  name='senha' value={Campos.senha} onChange={handleChange}/>
                             <Button style={{background: 'linear-gradient(#FF00E8, #AF049F)', padding: '8px 50px', fontSize: '1.2em', color: '#eee', marginTop: '25px'}} endIcon={<Telegram style={{fontSize: '1.5em'}} />} type='submit'>Logar</Button>
-                            <div>
+                            <div className='opcoes'>
                                 <Tooltip title={<Title>Cadastre-se já</Title>} arrow>
                                     <p onClick={() => setlogin(!login)}>Não tem uma conta? <span>Cadastre-se</span></p>
                                 </Tooltip>

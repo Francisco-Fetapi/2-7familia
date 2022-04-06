@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100%;
     max-width: 500px;
     background: #fff;
     margin: 0 0 40px;
 
     form{
-        
         div{
             label{
                 display: block;
@@ -21,6 +19,9 @@ export const Container = styled.div`
                 background: #ccc;
                 padding: 6px 15px;
                 font-size: 1.1em;
+            }
+            select{
+                background: red;
             }
 
             
