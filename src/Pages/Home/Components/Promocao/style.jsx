@@ -19,8 +19,9 @@ export const Promocao = styled.section`
 
 `
 export const TimePromocao = styled.div`
+    width: 100%;
     display: flex;
-    gap: 30px;
+    gap: 3%;
 
     div{
         display: flex;
@@ -44,9 +45,30 @@ export const TimePromocao = styled.div`
     & + p{
         font-size: 1.1em;
         margin: 10px 0 -5px;
+        text-align: center;
 
         span{
             color: ${rosa};
+        }
+    }
+
+    @media(max-width: 500px){
+        gap: 1%;
+        margin: auto;
+
+        div{
+            padding: 3% 2%;
+            width: 26%;
+            justify-content: center;
+            gap: 1%;
+            margin: auto;
+
+            span:first-child{
+                font-size: 1.5em;
+            }
+            span:last-child{
+                font-size: .8em;
+            }
         }
     }
 `
@@ -75,11 +97,6 @@ export const ItemPromocao = styled.div`
             color: ${cinzaEEE};
             font-family: 'Roboto light';
             max-width: 600px;
-        }
-
-        p + p span{
-            color: #A15300;
-            font-weight: bold;
         }
 
         .descricao--cotacao{
@@ -113,6 +130,35 @@ export const ItemPromocao = styled.div`
         color: #444;
         align-self: flex-end;
     }
+
+    @media(max-width: 500px){
+        display: block;
+
+        .promocao_descricao{
+            padding: 30px 20px;
+            border-radius: 0;
+            gap: 3px;
+
+            h3{
+                margin: 6px 0 6px;
+            }
+
+            h3 + p{
+                margin: 3px 0 10px;
+            }
+
+            .descricao--btns{
+                margin-top: 15px;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        & + p{
+            align-self: center;
+        }
+    }
 `
 
 export const ImagemItemPromocao = styled.div`
@@ -121,6 +167,12 @@ export const ImagemItemPromocao = styled.div`
     background-size: cover;
     width: 400px;
     border-radius: 5px 0 0 5px;
+
+    @media(max-width: 500px){
+        height: 70vh;
+        width: 100%;
+        border-radius: 0;
+    }
 `
 
 /*---------------------Final da Sessão Promoção-------------------------*/

@@ -19,6 +19,10 @@ export const Title = styled.h2`
         border-radius: 60px;
         margin: 10px auto; 
     }
+
+    @media(max-width: 500px){
+        font-size: 1.5em;
+    }
 `
 /*------------------------------Header----------------------------------*/
 export const Header = styled.header`
@@ -75,8 +79,12 @@ export const Div = styled.div`
                 transform: translateX(0);
             }
         }
+    }
 
-        @media(max-width: 500px){
+    @media(max-width: 500px){
+        padding: 3% 4%;
+
+        & div{
             margin: auto;
 
             p{
@@ -92,6 +100,7 @@ export const Div = styled.div`
                 }
             }
         }
+            
     }
     
 `
@@ -132,6 +141,8 @@ export const Pedacinho = styled.section`
     @media(max-width: 500px){
         flex-direction: column;
         gap: 15px;
+        padding: 30px 20px;
+        margin-top: 10px;
 
         & img{
             max-width: 200px;

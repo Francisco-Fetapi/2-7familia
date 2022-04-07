@@ -5,13 +5,14 @@ export const ProdutosMaisVendidos = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 2%;
     max-width: 1200px;
     margin: 120px auto 40px;
 
     h2 + p{
         font-size: 1.1em;
         margin: 20px 0 -5px;
+        text-align: center;
     }
 
     .produto--cotacao{
@@ -30,6 +31,7 @@ export const ProdutosMaisVendidos = styled.section`
     .produto--categoria{
         color: #eee;
         font-weight: 400;
+        text-align: center;
 
         span{
             color: #A15300;
@@ -41,6 +43,16 @@ export const ProdutosMaisVendidos = styled.section`
         gap: 15px;
         padding: 10px 20px 20px;
     }
+    
+    @media(max-width: 500px){
+        gap: 4%;
+
+        .botoes{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
 `
 
 export const PodutosMaisVendidositems = styled.div`
@@ -59,7 +71,15 @@ export const PodutosMaisVendidositems = styled.div`
     }
 
     @media(max-width: 500px){
+        margin-top: 30px;
         flex-wrap: wrap;
+        width: 100%;
+
+        & > div{
+            width: 100%;
+            gap: 6px;
+            margin: 5px 10px 10px;
+        }
     }
 `
 
@@ -71,6 +91,10 @@ export const ImagemProdutoMaisVendido = styled.div`
     border-radius: 5px 5px 0 0;
     margin-bottom: 20px;
     width: 100%;
+
+    @media(max-width: 500px){
+        height: 40vh;
+    }
 
 `
 /*---------------------Final da Sessão Produtos mais vendidos-------------------------*/

@@ -1,11 +1,11 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 import Padeiro from '../../../../Imagens/1 (5).jpg'
 import nos from '../../../../Imagens/nos.jpg'
 
 /*---------------------Sessão Quem Somos-------------------------*/
 
-export const QuemSomos = css.section`
+export const QuemSomos = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -20,7 +20,7 @@ export const QuemSomos = css.section`
     }
 `
 
-export const BannerDescritivo = css.div`
+export const BannerDescritivo = styled.div`
     background: url('${Padeiro}');
     background-position: center;
     background-size: cover;
@@ -59,7 +59,7 @@ export const BannerDescritivo = css.div`
     } 
 `
 
-export const Nos = css.div`
+export const Nos = styled.div`
     background: #1d1e20;
     color: #fff;
     width: 100%;

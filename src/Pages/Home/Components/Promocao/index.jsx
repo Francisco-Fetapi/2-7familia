@@ -48,7 +48,6 @@ export default () => {
               <div className='promocao_descricao'>
                 <h3>Bolo de chocolate</h3>
                 <p> O melhor bolo de chocolate que você já viu e vai provar, com creme de chocolate e recheio de morango.</p>
-                <p><span>Categoria: </span>Bolos de chocolate</p>
                 <div className='descricao--cotacao'>
                   <span className='cotacao--estrelas'>
                       <Star />
