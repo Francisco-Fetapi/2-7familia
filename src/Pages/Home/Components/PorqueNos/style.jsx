@@ -1,8 +1,8 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 /*-------------------------Sessão Porquê Nós-----------------------------*/
 
-export const PorqueNos = css.section`
+export const PorqueNos = styled.section`
     margin: 150px 0;
     display: flex;
     flex-direction: column;
@@ -42,10 +42,16 @@ export const PorqueNos = css.section`
             max-width: 235px;
             color: #eee;
         }
+    
+        @media(max-width: 500px){
+            flex-direction: column;
+            gap: 20px;
+        }
+    
     }
 `
 
-export const ItemMotivos = css.div`
+export const ItemMotivos = styled.div`
     margin-bottom: -15px;
 
     svg{

@@ -1,7 +1,7 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 /*---------------------Sessão Produtos mais vendidos-------------------------*/
-export const ProdutosMaisVendidos = css.section`
+export const ProdutosMaisVendidos = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,9 +43,10 @@ export const ProdutosMaisVendidos = css.section`
     }
 `
 
-export const PodutosMaisVendidositems = css.div`
+export const PodutosMaisVendidositems = styled.div`
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
 
     & > div{
@@ -56,9 +57,13 @@ export const PodutosMaisVendidositems = css.div`
         align-items: center;
         gap: 15px;
     }
+
+    @media(max-width: 500px){
+        flex-wrap: wrap;
+    }
 `
 
-export const ImagemProdutoMaisVendido = css.div`
+export const ImagemProdutoMaisVendido = styled.div`
     background: url('${props => props.imagem}');
     background-position: center;
     background-size: cover;

@@ -81,4 +81,12 @@ export default styled.nav`
         text-transform: capitalize;
     }
 
+    @media(max-width: 500px){
+        display: none;
+
+        & ul{
+            display: block;
+        }
+    }
+
 `

@@ -7,7 +7,6 @@ import API from '../../_config/API'
 import ButtonEncomendar from '../ButtonEncomendar'
 import Button from '../../Components/button'
 import { Container, ProdutoImagem, ProdutoItem } from './style'
-import './melhora.css'
 
 const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto }) => {
 

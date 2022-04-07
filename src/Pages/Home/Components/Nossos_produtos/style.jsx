@@ -1,8 +1,8 @@
-import css from 'styled-components'
+import styled from 'styled-components'
 
 /*---------------------Sessão Nossos Produtos-------------------------*/
 
-export const NossosProdutos = css.section`
+export const NossosProdutos = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +25,7 @@ export const NossosProdutos = css.section`
 
 `
 
-export const ImagemItemProdutoSmall = css.div`
+export const ImagemItemProdutoSmall = styled.div`
     background: url('${props => props.imagem}');
     background-position: center;
     background-size: cover;
@@ -38,10 +38,18 @@ export const ImagemItemProdutoSmall = css.div`
     &:hover{
         transform: scale(1.03);
     }
+
+    @media(max-width: 500px){
+        flex-basis: 100%;
+    }
 `
 
-export const ImagemItemProdutoBig = css(ImagemItemProdutoSmall)`
+export const ImagemItemProdutoBig = styled(ImagemItemProdutoSmall)`
     flex-basis: 60%;
+
+    @media(max-width: 500px){
+        flex-basis: 100%;
+    }
 `
 
 /*---------------------Final da Sessão Nossos Produtos-------------------------*/

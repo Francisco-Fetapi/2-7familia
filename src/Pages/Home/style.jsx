@@ -75,6 +75,23 @@ export const Div = styled.div`
                 transform: translateX(0);
             }
         }
+
+        @media(max-width: 500px){
+            margin: auto;
+
+            p{
+                font-size: 1.4em;
+                text-align: center;
+            }
+
+            button{
+                max-width: 450px;
+
+                svg{
+                    font-size: .5em;
+                }
+            }
+        }
     }
     
 `
@@ -109,6 +126,15 @@ export const Pedacinho = styled.section`
         p{
             font-size: 1.2em;
             max-width: 500px;
+        }
+    }
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        gap: 15px;
+
+        & img{
+            max-width: 200px;
         }
     }
 `
