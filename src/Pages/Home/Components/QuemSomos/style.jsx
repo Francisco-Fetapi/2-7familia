@@ -24,7 +24,7 @@ export const BannerDescritivo = styled.div`
     background: url('${Padeiro}');
     background-position: center;
     background-size: cover;
-    bakground-attachment: fixed;
+    background-attachment: fixed;
 
     & > div{
         display: flex;
@@ -57,6 +57,11 @@ export const BannerDescritivo = styled.div`
             align-self: flex-end;
         }
     } 
+
+    @media(max-width: 500px){
+        width: 100%;
+        display: none;
+    }
 `
 
 export const Nos = styled.div`

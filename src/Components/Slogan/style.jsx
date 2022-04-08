@@ -34,4 +34,14 @@ export const Container = styled.div`
             font-size: 1.6em;
         }
     }
+
+    @media(max-width: 500px){
+        & div h4{
+            font-size: 2.4em;
+        }
+        
+        & div p{
+            font-size: 1.2em;
+        }
+    }
 `;

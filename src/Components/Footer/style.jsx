@@ -10,6 +10,13 @@ export const Footer = styled.footer`
             display: flex;
             justify-content: space-around;
             align-items: flex-start;
+            flex-wrap: wrap;
+
+            @media(max-width: 500px){
+                flex-direction: column;
+                align-items: center;
+                gap: 4%;
+            }
         }
 
         nav ul{
@@ -64,6 +71,9 @@ export const Footer = styled.footer`
         p span{
             color: #FF00E8;
             font-weight: 500;
+        }
+        p{
+            text-align: center;
         }
     }
 `

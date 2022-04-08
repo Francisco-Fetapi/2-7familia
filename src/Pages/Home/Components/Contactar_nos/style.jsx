@@ -59,6 +59,14 @@ export const ContactarNos = styled.section`
             }
         }
     }
+
+    @media(max-width: 500px){
+        display: block;
+
+        & > div:last-child{
+            width: 100%;
+        }
+    }
 `
 
 export const ImagemContactarNos = styled.div`
@@ -66,5 +74,9 @@ export const ImagemContactarNos = styled.div`
     background-position: center;
     background-size: cover;
     width: 32%;
+
+    @media(max-width: 500px){
+        display: none;
+    }
 `
 /*---------------------Final da Sessão Contactar-nos-------------------------*/

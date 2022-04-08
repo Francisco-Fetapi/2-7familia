@@ -29,6 +29,12 @@ export const Div = styled.div`
         max-width: 1000px;
         text-align: center;
     }
+
+    @media(max-width: 500px){
+        h1{
+            font-size: 3em;
+        }
+    }
 `
 
 export const Title = styled.div`   
@@ -74,6 +80,22 @@ export const Introducao = styled.section`
         margin: 0 3% 0 0;
       }
   }
+
+  @media(max-width: 500px){
+      display: block;
+
+      div{
+          margin: auto;
+      }
+
+      p{
+          line-height: 1.4em;
+          font-size: 1em;
+          max-width: 100%;
+          padding: 10px;
+          margin-top: 50px;
+      }
+  }
 `;
 
 export const ImagemIntroducao = styled.div`
@@ -94,6 +116,15 @@ export const ImagemIntroducao = styled.div`
       margin: 30px 0 0 40px;
       position: absolute;
   }
+
+  @media(max-width: 500px){
+      width: 80%;
+
+      &::after{
+          margin-left: 28px;
+          margin-top: 13px;
+      }
+  }
 `;
 
 export const Texto = styled.div`
@@ -109,6 +140,12 @@ export const Texto = styled.div`
 
   span{
       color: #FF00E8;
+  }
+
+  @media(max-width: 500px){
+      padding: 10px;
+      line-height: 1.4em;
+      font-size: 1em;
   }
 `;
 
@@ -130,7 +167,12 @@ export const BannerExplicativo = styled.div`
           line-height: 1.8em;
       }
   }
-  
+  @media(max-width: 500px){
+      div p{
+          font-size: 1.2em;
+          line-height: 1.5em;
+      }
+  }
 `;
 
 export const Opcoes = styled.div`
@@ -162,6 +204,20 @@ export const Opcoes = styled.div`
           font-size: 1.2em;
           text-align: center;
           margin-bottom: 7%;
+      }
+  }
+
+  @media(max-width: 500px){
+      & > p{
+          margin-bottom: 30px;
+      }
+      & > div{
+          flex-direction: column;
+          gap: 2em;
+      }
+
+      div div p{
+          margin-bottom: 1%;
       }
   }
 `;

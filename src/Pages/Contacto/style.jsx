@@ -28,6 +28,13 @@ export const Div = styled.div`
         max-width: 1200px;
         text-align: center;
     }
+
+    @media(max-width: 500px){
+        h1{
+            font-size: 3em;
+            display: none;
+        }
+    }
 `
 
 export const Title = styled.div`   
@@ -59,6 +66,7 @@ export const DuvidaBanner = styled.div`
 
 
   & > div{
+      width: 100%;
     max-width: 600px;
 
       p:first-child{
@@ -82,6 +90,20 @@ export const DuvidaBanner = styled.div`
   img{
       width: 100%;
       max-width: 450px;
+  }
+
+  @media(max-width: 500px){
+      padding: 20px;
+      flex-direction: column;
+      gap: 5%;
+
+      & > div p:first-child{
+        font-size: 1.8em;
+      }
+      & > div p:last-child{
+        font-size: 1em;
+        margin-bottom: 30px;
+      }
   }
 `;
 
@@ -197,5 +219,21 @@ export const OutrasFormas = styled.div`
   span{
       display: block;
       margin-top: 4%;
+  }
+
+  @media(max-width: 500px){
+      & > div{
+          flex-direction: column;
+          gap: .6em;
+
+          div{
+              p{
+                  font-size: 1em;
+              }
+              svg{
+                  font-size: 1.7em;
+              }
+          }
+      }
   }
 `;
