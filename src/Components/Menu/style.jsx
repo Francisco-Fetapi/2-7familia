@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export default styled.nav`
     display: flex;
+    padding: 5%;
     justify-content: space-between;
     align-items: center;
     color: red;
@@ -82,10 +83,67 @@ export default styled.nav`
     }
 
     @media(max-width: 500px){
-        display: none;
 
         & ul{
+            display: none;
+        }
+
+        & > a:first-child{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &.mobile{
+            background: #371910;
             display: block;
+            gap: 5%;
+            position: fixed;
+            padding: 8.1%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 9999;
+
+            & ul{
+                display: block;
+
+                li{
+                    background: none;
+                    transition: .2s ease;
+                }
+
+                li + li{
+                    margin-top: 10px;
+                }
+
+
+                li a{
+                    font-size: 1.3em;
+                }
+
+                li::after{
+                    display: none;
+                }
+
+                li:hover{
+                    background: #ccc;
+
+                    a{
+                        color: #371910;
+                    }
+                }
+            }
+
+            /* & ul + ul li:first-child svg{
+                color: #1d1e20;
+            } */
+
+            & ul + ul li:first-child:hover, & ul + ul li:last-child:hover{
+                background: none;
+            }
         }
     }
 

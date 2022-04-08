@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { Badge, Button, IconButton, Tooltip } from "@material-ui/core";
-import { Favorite, Input, PersonPin, ShoppingCart } from "@material-ui/icons";
+import { Close, Dehaze, Favorite, Input, PersonPin, ShoppingCart } from "@material-ui/icons";
 import API from "../../_config/API";
 
 import ItemsMenu from "./ItemsMenu";
@@ -22,6 +22,14 @@ export default ({ Reacoes, desReagir, alertar }) => {
   const [Encomendados, setEncomendados] = useState([]);
   const [openAdoros, setOpenAdoros] = useState(false);
   const [openEncomendas, setOpenEncomendas] = useState(false);
+  const [Mobile, setMobile] = useState(false);
+  const [Mostra, setMostra] = useState(false);
+
+
+  useEffect(() => {
+    if(window.innerWidth <= 500) setMobile(true)
+    window.onresize = () => VerificaLargura()
+  }, []);
 
   useEffect(() => {
     if (localStorage.usuario_logado) setLogado(true);
@@ -35,9 +43,20 @@ export default ({ Reacoes, desReagir, alertar }) => {
     selecionarEncomendas(user_logado)
   }, [])
 
-  const handleOpenAdoros = () => setOpenAdoros(true);
+  const VerificaLargura = () => {
+      const largura = window.innerWidth <= 500 ? true : false
+      setMobile(largura)
+  }
+
+  const handleOpenAdoros = () => {
+    setOpenAdoros(true);
+    setMostra(false)
+  } 
   const handleCloseAdoros = () => setOpenAdoros(false);
-  const handleOpenEncomendas = () => setOpenEncomendas(true);
+  const handleOpenEncomendas = () => {
+    setOpenEncomendas(true);
+    setMostra(false)
+  }
   const handleCloseEncomendas = () => setOpenEncomendas(false);
 
   const selecionaReacoes = async id_usuario => {
@@ -58,11 +77,18 @@ export default ({ Reacoes, desReagir, alertar }) => {
   };
 
   return (
-    <Menu>
+    <Menu className={ Mostra ? 'mobile' : ''}>
       <Link to="/">
         <h1>
           <img src={Logo} alt="Delicatezza delicias" />
         </h1>
+        {
+          Mobile ? <IconButton onClick={() => setMostra(!Mostra)}>
+              {
+                !Mostra ? <Dehaze style={{color: '#eee', fontSize: '1.3em'}} /> : <Close style={{color: '#eee', fontSize: '1.3em'}} />
+              }
+            </IconButton> : ''
+        }
       </Link>
       <ItemsMenu />
       <ul>

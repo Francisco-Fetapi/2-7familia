@@ -31,6 +31,10 @@ export const Header = styled.header`
     background-position: bottom;
     background-size: cover;
     background-attachment: fixed;
+
+    @media(max-width: 500px){
+        height: 80vh;
+    }
 `
 
 export const Div = styled.div`
@@ -65,9 +69,13 @@ export const Div = styled.div`
             margin-bottom: 30px;
             animation: aparecer .8s ease-in-out .6s backwards;
         }
-
-        button{
-            animation: aparecer .8s ease-in-out .9s backwards;
+        div{
+            display: flex;
+            justify-content: center;
+            
+            button{
+                animation: aparecer .8s ease-in-out .9s backwards;
+            }
         }
 
         @keyframes aparecer{
@@ -90,14 +98,6 @@ export const Div = styled.div`
             p{
                 font-size: 1.4em;
                 text-align: center;
-            }
-
-            button{
-                max-width: 450px;
-
-                svg{
-                    font-size: .5em;
-                }
             }
         }
             
