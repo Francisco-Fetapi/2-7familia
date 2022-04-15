@@ -18,6 +18,10 @@ export const QuemSomos = styled.section`
     h2::after{
         background: #1d1e20;
     }
+
+    @media(max-width: 500px){
+        margin-bottom: 100px;
+    }
 `
 
 export const BannerDescritivo = styled.div`
@@ -60,7 +64,12 @@ export const BannerDescritivo = styled.div`
 
     @media(max-width: 500px){
         width: 100%;
-        display: none;
+        /* display: none; */
+        display: block;
+
+        & div > img{
+            display: none;
+        }
     }
 `
 
@@ -116,9 +125,22 @@ export const Nos = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 50px;
+            padding: 3rem;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    @media(max-width: 500px){
+        display: block;
+        margin-top: 100px;
+
+        & > div:last-child{
+            width: 100%;
+
+            div{
+                padding: 6rem;
+            }
         }
     }
 `

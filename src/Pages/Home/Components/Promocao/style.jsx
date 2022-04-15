@@ -10,7 +10,8 @@ export const Promocao = styled.section`
     align-items: center;
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto 40px;
+    margin: auto;
+    margin-bottom: 40px;
 
     h2 + p{
         color: ${rosa};
@@ -21,7 +22,8 @@ export const Promocao = styled.section`
 export const TimePromocao = styled.div`
     width: 100%;
     display: flex;
-    gap: 3%;
+    justify-content: center;
+    gap: 4%;
 
     div{
         display: flex;
@@ -53,21 +55,18 @@ export const TimePromocao = styled.div`
     }
 
     @media(max-width: 500px){
-        gap: 1%;
-        margin: auto;
+        gap: 6%;
 
         div{
-            padding: 3% 2%;
-            width: 26%;
+            padding: 1rem .8rem;
             justify-content: center;
             gap: 1%;
-            margin: auto;
 
             span:first-child{
-                font-size: 1.5em;
+                font-size: 1.7em;
             }
             span:last-child{
-                font-size: .8em;
+                font-size: .9em;
             }
         }
     }
@@ -149,7 +148,7 @@ export const ItemPromocao = styled.div`
 
             .descricao--btns{
                 margin-top: 15px;
-                flex-direction: column;
+                flex-wrap: wrap;
                 gap: 15px;
                 align-items: center;
             }
@@ -169,7 +168,8 @@ export const ImagemItemPromocao = styled.div`
     border-radius: 5px 0 0 5px;
 
     @media(max-width: 500px){
-        height: 70vh;
+        height: 40vh;
+        background-position: top;
         width: 100%;
         border-radius: 0;
     }

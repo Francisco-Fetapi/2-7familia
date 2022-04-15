@@ -38,7 +38,7 @@ export const Div = styled.div`
 `
 
 export const Title = styled.div`   
-    margin: 100px 0 9% 60px;
+    margin: 100px 0 150px 3%;
     border-left: 4px solid #1d1e20;
     padding: 2px 7px;
     color: #1d1e20;
@@ -50,6 +50,18 @@ export const Title = styled.div`
 
     p{
         font-size: 1.2em;
+    }
+
+    @media(max-width: 500px){
+        margin: 60px 0 80px 5%;
+
+        h1{
+            font-size: 1.8em;
+        }
+
+        p{
+            font-size: 1em;
+        }
     }
 `;
 
@@ -89,10 +101,10 @@ export const Introducao = styled.section`
       }
 
       p{
+          padding: 3.5%;
           line-height: 1.4em;
           font-size: 1em;
           max-width: 100%;
-          padding: 10px;
           margin-top: 50px;
       }
   }
@@ -143,7 +155,7 @@ export const Texto = styled.div`
   }
 
   @media(max-width: 500px){
-      padding: 10px;
+      padding: 3.5%;
       line-height: 1.4em;
       font-size: 1em;
   }
@@ -200,6 +212,10 @@ export const Opcoes = styled.div`
   }
 
   div div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
       p{
           font-size: 1.2em;
           text-align: center;

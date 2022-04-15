@@ -11,7 +11,7 @@ export const ProdutosMaisVendidos = styled.section`
 
     h2 + p{
         font-size: 1.1em;
-        margin: 20px 0 -5px;
+        margin: 1.7rem 0 1.4rem;
         text-align: center;
     }
 
@@ -42,10 +42,17 @@ export const ProdutosMaisVendidos = styled.section`
         display: flex;
         gap: 15px;
         padding: 10px 20px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     @media(max-width: 500px){
+        margin-top: 40px;
         gap: 4%;
+
+        h2 + p{
+            margin-bottom: 0;
+        }
 
         .botoes{
             flex-direction: column;
@@ -59,7 +66,7 @@ export const PodutosMaisVendidositems = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 3rem;
 
     & > div{
         background: #371910;
@@ -68,6 +75,7 @@ export const PodutosMaisVendidositems = styled.div`
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        max-width: 350px;
     }
 
     @media(max-width: 500px){
@@ -87,7 +95,7 @@ export const ImagemProdutoMaisVendido = styled.div`
     background: url('${props => props.imagem}');
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 30vh;
     border-radius: 5px 5px 0 0;
     margin-bottom: 20px;
     width: 100%;

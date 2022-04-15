@@ -42,17 +42,19 @@ export const PorqueNos = styled.section`
             max-width: 235px;
             color: #eee;
         }
-    
-        @media(max-width: 500px){
+    }
+
+    @media(max-width: 500px){
+        & > div{
             flex-direction: column;
-            gap: 20px;
-        }
-    
+            gap: 50px;
+        } 
+        margin-top: 85px;
     }
 `
 
 export const ItemMotivos = styled.div`
-    margin-bottom: -15px;
+    margin-bottom: -18px;
 
     svg{
         height: 100px;

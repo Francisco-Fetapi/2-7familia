@@ -32,11 +32,9 @@ const index = () => {
             <Menu />
             <div>
               <p>Suas comemorações agora com um toque mais acessível e delicioso.</p>
-              <div>
                 <Link to='/contacto'>
                   <ButtonContactar icon={<Phone style={{fontSize: '30px'}}/>} />
                 </Link>
-              </div>
             </div>
           </Div>
         </Header>

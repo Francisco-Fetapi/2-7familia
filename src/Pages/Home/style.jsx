@@ -60,7 +60,7 @@ export const Div = styled.div`
     }
 
     & div{
-        margin-top: 180px;
+        margin-top: 10%;
         
         p{
             font-size: 2.5em;
@@ -69,13 +69,8 @@ export const Div = styled.div`
             margin-bottom: 30px;
             animation: aparecer .8s ease-in-out .6s backwards;
         }
-        div{
-            display: flex;
-            justify-content: center;
-            
-            button{
-                animation: aparecer .8s ease-in-out .9s backwards;
-            }
+        button{
+            animation: aparecer .8s ease-in-out .9s backwards;
         }
 
         @keyframes aparecer{
@@ -93,7 +88,9 @@ export const Div = styled.div`
         padding: 3% 4%;
 
         & div{
-            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             p{
                 font-size: 1.4em;
@@ -128,12 +125,13 @@ export const Pedacinho = styled.section`
 
 
         h3{
-            font-size: 1.7em;
+            font-size: 1.8em;
         }
 
 
         p{
-            font-size: 1.2em;
+            font-size: 1.3em;
+            line-height: 1.5em;
             max-width: 500px;
         }
     }

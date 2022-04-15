@@ -38,7 +38,7 @@ export const Div = styled.div`
 `
 
 export const Title = styled.div`   
-    margin: 6% auto 3%;
+    margin: 90px auto 60px;
     border-left: 4px solid #1d1e20;
     padding: 2px 7px;
     color: #1d1e20;
@@ -52,6 +52,18 @@ export const Title = styled.div`
 
     p{
         font-size: 1.2em;
+    }
+
+    @media(max-width: 500px){
+        margin-left: 5%;
+
+        h1{
+            font-size: 1.8em;
+        }
+
+        p{
+            font-size: 1em;
+        }
     }
 `;
 
@@ -67,7 +79,7 @@ export const DuvidaBanner = styled.div`
 
   & > div{
       width: 100%;
-    max-width: 600px;
+      max-width: 600px;
 
       p:first-child{
         font-size: 3em;
@@ -98,11 +110,15 @@ export const DuvidaBanner = styled.div`
       gap: 5%;
 
       & > div p:first-child{
-        font-size: 1.8em;
+        font-size: 1.3em;
       }
       & > div p:last-child{
-        font-size: 1em;
+        font-size: .9em;
         margin-bottom: 30px;
+      }
+
+      & > div p + p{
+        margin-top: 2%;
       }
   }
 `;

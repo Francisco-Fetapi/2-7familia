@@ -65,6 +65,16 @@ export const ContactarNos = styled.section`
 
         & > div:last-child{
             width: 100%;
+
+            form{
+                margin-top: 30px;
+                gap: 25px;
+
+                .MuiInputLabel-formControl{
+                    font-size: 1.3em;
+                    margin-bottom: 12px;
+                }
+            }
         }
     }
 `

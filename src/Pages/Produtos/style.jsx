@@ -51,12 +51,13 @@ export const Div = styled.div`
         p{
             font-size: 1.2em;
             color: #eee;
+            text-align: center;
         }
     }
 `
 
 export const Title = styled.div`   
-    margin: 100px 0 60px 60px;
+    margin: 90px 0 60px 3%;
     border-left: 4px solid #1d1e20;
     padding: 2px 7px;
     color: #1d1e20;
@@ -64,6 +65,14 @@ export const Title = styled.div`
     h1{
         font-size: 3em;
         font-weight: 400;
+    }
+
+    @media(max-width: 500px){
+        margin-left: 5%;
+
+        h1{
+            font-size: 2em;
+        }
     }
 `;
 

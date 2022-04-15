@@ -82,15 +82,15 @@ export default ({ Reacoes, desReagir, alertar }) => {
         <h1>
           <img src={Logo} alt="Delicatezza delicias" />
         </h1>
-        {
-          Mobile ? <IconButton onClick={() => setMostra(!Mostra)}>
-              {
-                !Mostra ? <Dehaze style={{color: '#eee', fontSize: '1.3em'}} /> : <Close style={{color: '#eee', fontSize: '1.3em'}} />
-              }
-            </IconButton> : ''
-        }
       </Link>
       <ItemsMenu />
+      {
+        Mobile ? <IconButton onClick={() => setMostra(!Mostra)}>
+            {
+              !Mostra ? <Dehaze style={{color: '#eee', fontSize: '1.3em'}} /> : <Close style={{color: '#eee', fontSize: '1.3em'}} />
+            }
+          </IconButton> : ''
+      }
       <ul>
         <li>
           {Logado ? (
@@ -139,23 +139,25 @@ export default ({ Reacoes, desReagir, alertar }) => {
             ""
           )}
         </li>
-        {Logado ? (
-          <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
-            <li>
-              <Button onClick={Logout}>
-                <Input style={{ marginRight: "10px" }} /> Logout
-              </Button>
-            </li>
-          </Tooltip>
-        ) : (
-          <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
-            <li>
-              <Link to="/login">
-                <PersonPin /> Login
-              </Link>
-            </li>
-          </Tooltip>
-        )}
+        <ul>
+          {Logado ? (
+            <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
+              <li>
+                <Button onClick={Logout}>
+                  <Input style={{ marginRight: "10px" }} /> Logout
+                </Button>
+              </li>
+            </Tooltip>
+          ) : (
+            <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
+              <li>
+                <Link to="/login">
+                  <PersonPin /> Login
+                </Link>
+              </li>
+            </Tooltip>
+          )}
+        </ul>
       </ul>
       <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
       <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>

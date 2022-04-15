@@ -48,7 +48,7 @@ const Index = () => {
       </DuvidaBanner>
       <Questionario imagem={Antendimento}>
         <div>
-          <p>Como podemos ajuda-lo? Escreva para nós.</p>
+          <p>Como podemos ajuda-lo?</p>
           <form>
             <div>
               <label htmlFor="nome">Nome do Usuário</label>

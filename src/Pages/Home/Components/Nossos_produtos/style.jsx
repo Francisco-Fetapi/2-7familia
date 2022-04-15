@@ -23,13 +23,21 @@ export const NossosProdutos = styled.section`
         margin-bottom: 85px;
     }
 
+    @media(max-width: 500px){
+        margin-bottom: 50px;
+
+        & > div{
+            margin-bottom: 40px;
+        }
+    }
+
 `
 
 export const ImagemItemProdutoSmall = styled.div`
     background: url('${props => props.imagem}');
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 40vh;
     flex-basis: 35%;
     border-radius: 4px;
     margin: 10px;
@@ -41,6 +49,7 @@ export const ImagemItemProdutoSmall = styled.div`
 
     @media(max-width: 500px){
         flex-basis: 100%;
+        height: 35vh;
     }
 `
 
