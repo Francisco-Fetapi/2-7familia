@@ -13,7 +13,7 @@ import ModalAdoros from "../ModalAdoros";
 import ModalEncomendas from '../ModalEncomendas'
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ({ Reacoes, desReagir, alertar }) => {
+export default ({ Reacoes, desReagir }) => {
 
   const user_logado = +localStorage.usuario_logado;
 
@@ -83,7 +83,6 @@ export default ({ Reacoes, desReagir, alertar }) => {
           <img src={Logo} alt="Delicatezza delicias" />
         </h1>
       </Link>
-      <ItemsMenu />
       {
         Mobile ? <IconButton onClick={() => setMostra(!Mostra)}>
             {
@@ -91,73 +90,72 @@ export default ({ Reacoes, desReagir, alertar }) => {
             }
           </IconButton> : ''
       }
-      <ul>
-        <li>
-          {Logado ? (
-            <>
-              <Tooltip
-                title={<Title>
-                  {
-                    Encomendados.length
-                    ? Encomendados.length > 1
-                        ? `${Encomendados.length} Produtos encomendados`
-                        : `${Encomendados.length} Produto encomendado`
-                      : "Carrinho - Produtos encomendados"
-                  }
-                </Title>}
-                arrow
-              >
-                <IconButton onClick={handleOpenEncomendas}>
-                  <Badge badgeContent={Encomendados.length < 1 ? localStorage.encomendas : Encomendados.length} color="secondary">
-                    <ShoppingCart />
-                  </Badge>
-                </IconButton>
-              </Tooltip>
-              <Tooltip
-                title={
-                  <Title>
-                    {Adorados.length
-                      ? Adorados.length > 1
-                        ? `${Adorados.length} Produtos favoritos`
-                        : `${Adorados.length} Produto favorito`
-                      : "Favoritos - Produtos favoritos"}
-                  </Title>
+      <ItemsMenu className='items_menu'/>
+      <ul className="icones">
+        {Logado ? (
+          <li>
+            <Tooltip
+              title={<Title>
+                {
+                  Encomendados.length
+                  ? Encomendados.length > 1
+                      ? `${Encomendados.length} Produtos encomendados`
+                      : `${Encomendados.length} Produto encomendado`
+                    : "Carrinho - Produtos encomendados"
                 }
-                arrow
-              >
-                <IconButton onClick={handleOpenAdoros}>
-                  <Badge
-                    badgeContent={Adorados.length < 1 ? localStorage.adorados : Adorados.length}
-                    color="secondary"
-                  >
-                    <Favorite />
-                  </Badge>
-                </IconButton>
-              </Tooltip>
-            </>
-          ) : (
-            ""
-          )}
-        </li>
-        <ul>
-          {Logado ? (
-            <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
-              <li>
-                <Button onClick={Logout}>
-                  <Input style={{ marginRight: "10px" }} /> Logout
-                </Button>
-              </li>
+              </Title>}
+              arrow
+            >
+              <IconButton onClick={handleOpenEncomendas}>
+                <Badge badgeContent={Encomendados.length < 1 ? localStorage.encomendas : Encomendados.length} color="secondary">
+                  <ShoppingCart />
+                </Badge>
+              </IconButton>
             </Tooltip>
-          ) : (
-            <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
-              <li>
-                <Link to="/login">
-                  <PersonPin /> Login
-                </Link>
-              </li>
+            <Tooltip
+              title={
+                <Title>
+                  {Adorados.length
+                    ? Adorados.length > 1
+                      ? `${Adorados.length} Produtos favoritos`
+                      : `${Adorados.length} Produto favorito`
+                    : "Favoritos - Produtos favoritos"}
+                </Title>
+              }
+              arrow
+            >
+              <IconButton onClick={handleOpenAdoros}>
+                <Badge
+                  badgeContent={Adorados.length < 1 ? localStorage.adorados : Adorados.length}
+                  color="secondary"
+                >
+                  <Favorite />
+                </Badge>
+              </IconButton>
             </Tooltip>
-          )}
-        </ul>
+          </li>
+        ) : (
+          ""
+        )}
+      </ul>
+      <ul>
+        {Logado ? (
+          <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
+            <li>
+              <Button onClick={Logout}>
+                <Input style={{ marginRight: "10px", color: '#1d1e20' }} /> Logout
+              </Button>
+            </li>
+          </Tooltip>
+        ) : (
+          <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
+            <li>
+              <Link to="/login">
+                <PersonPin /> Login
+              </Link>
+            </li>
+          </Tooltip>
+        )}
       </ul>
       <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
       <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>

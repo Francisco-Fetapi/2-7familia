@@ -1,25 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  width: 100%;
 
   & > div:nth-child(1){
       flex: 1;
       max-width: 320px;
+      display: none;
+
+      /* Ainda está oculto até corrigir o problema da largura */
+      /* This component is ocult until to corrige the width's problem */
   }
+
   & > div:nth-child(2){
       display: flex;
       flex-direction: column;
       gap: 4%;
       align-items: center;
       flex: 1;
+      width: 100%;
+      max-width: 590px;
 
       h2{
           font-weight: 400;
-          display: flex;
-          justify-content: center;
-          margin-top: 20px;
+          text-align: center;
+          margin-top: 2rem;
+
+          &::after{
+              content: '';
+              display: block;
+              width: 60%;
+              height: 2px;
+              background: currentColor;
+              margin: auto;
+              margin-top: 3px;
+          }
       }
 
       form{
@@ -39,13 +53,28 @@ export const Container = styled.div`
           }
 
           button{
-              padding: 0;
               max-width: 150px;
-              font-size: 0.7em;
+              color: red;
           }
       }
-
   }
+
+  hr{
+        width: 88%;
+        margin: 0px auto 1rem;
+        background: #ccc;
+        height: 2px;
+
+    }
+
+    .botoes{
+        display: flex;
+        max-width: 88%;
+        padding: 20px;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+    }
 `;
 
 export const ProdutoItem = styled.div`
@@ -81,4 +110,39 @@ export const ProdutoImagem = styled.div`
     background-position: center;
     background-size: cover; 
     border-radius: 4px 4px 0 0;
+`;
+
+export const Comentario = styled.div`
+  max-width: 88%;
+  margin: 1rem auto;
+
+  p{
+      margin-bottom: 5px;
+  }
+  div{
+      div:first-child{
+        display: flex;
+        align-items: center;
+        gap: 1%;
+        margin-bottom: .4rem;
+      }
+
+      div:last-child{
+          background: #1d1e20;
+          border-radius: 4px;
+          padding: 8px 5px;
+          color: #ccc;
+          max-width: auto;
+      }
+  }
+`;
+
+export const UsuarioFoto = styled.div`
+  padding: 22px;
+  width: 22px;
+  height: 30px;
+  border-radius: 50%;
+  background: url('${props => props.imagem}');
+  background-size: cover;
+  background-position: center;
 `;

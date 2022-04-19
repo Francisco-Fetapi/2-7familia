@@ -38,12 +38,9 @@ export const Header = styled.header`
 `
 
 export const Div = styled.div`
-    padding: 30px 40px;
     height: 100%;
     width: 100%;
     background: linear-gradient(to bottom, #00000085 65%, transparent);
-    display: flex;
-    flex-direction: column;
    
     nav{
         animation: aparecer2 .5s ease-in-out .5s backwards;
@@ -61,10 +58,18 @@ export const Div = styled.div`
 
     & div{
         margin-top: 10%;
+        width: 100%;
+        max-width: 1200px;
+        margin: 3rem auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
         
         p{
             font-size: 2.5em;
-            max-width: 620px;
+            max-width: 1000px;
+            text-align: center;
             color: #eee;
             margin-bottom: 30px;
             animation: aparecer .8s ease-in-out .6s backwards;

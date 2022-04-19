@@ -59,7 +59,7 @@ const index = () => {
         <PorqueNos />
         <QuemSomos />
         <NossosProdutos />
-        <ContactarNos />
+        <ContactarNos/>
         <Slogan />
         <Footer />
       </>

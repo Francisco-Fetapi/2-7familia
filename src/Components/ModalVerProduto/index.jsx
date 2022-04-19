@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
-import { Dialog, IconButton } from '@material-ui/core'
+import { Button, Dialog, IconButton } from '@material-ui/core'
 import { Favorite, Star, StarBorder } from '@material-ui/icons'
 import API from '../../_config/API'
 import ButtonEncomendar from '../ButtonEncomendar'
-import Button from '../../Components/button'
-import { Container, ProdutoImagem, ProdutoItem } from './style'
+import ButtonComentar from '../../Components/button'
+import { Container, ProdutoImagem, ProdutoItem, Comentario, UsuarioFoto } from './style'
+import './estilo.css'
 
 const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto }) => {
 
@@ -15,9 +16,14 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
     const [Produto, setProduto] = useState([]);
     const [Logado, setLogado] = useState(localStorage.usuario_logado ? true : false);
     const [Reacoes, setReacoes] = useState([]);
+    const [Comentarios, setComentarios] = useState([]);
 
     useEffect(() => {
         buscaProduto(Id_produto)
+    }, [Id_produto]);
+
+    useEffect(() => {
+        buscaComentarios(Id_produto)
     }, [Id_produto]);
     
     useEffect(() => {
@@ -27,6 +33,11 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
     const buscaProduto = async produto_id => {
         const response = await API.selecionar_produto({ produto_id })
         setProduto(response)
+    }
+
+    const buscaComentarios = async id_produto => {
+        const response = await API.selecionar_comentarios_produto({ id_produto })
+        setComentarios(response)
     }
 
     const selecionaReacoes = async id_produto => {
@@ -47,7 +58,7 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                             const Reagio = Reacoes.filter(reacao => reacao.id_usuario === user_logado)
             
                             return(
-                                <Container className='MuiDialog-paperWidthSm'>
+                                <Container>
                                     <ProdutoItem key={index}>
                                         <ProdutoImagem imagem={`http://127.0.0.1:8000/`+produto.foto_produto}> 
                                             {
@@ -128,9 +139,40 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                                     <div>
                                         <h2>Comentários</h2>
                                         <form>
-                                            <textarea name="" placeholder='O que você achou desse produto?'></textarea>
-                                            <Button disableElevation>Comentar</Button>
+                                            <textarea name="conteudo" placeholder='O que você achou desse produto?'></textarea>
+                                            <ButtonComentar>Comentar</ButtonComentar>
                                         </form>
+                                    </div>
+                                    <hr />
+                                    <Comentario>
+                                        {
+                                            Comentarios.length ? 
+                                                <p>{Comentarios.length} Comentário{Comentarios.length < 2 ? '' : 's'}</p> 
+                                            :   <p>Nenhum comentário, seja o primeiro</p>
+                                        }
+                                        {
+                                            Comentarios.length ? 
+                                            
+                                            Comentarios.map((Comentario, index) => (
+                                                <div key={index}>
+                                                    <div>
+                                                        <UsuarioFoto imagem={`http://127.0.0.1:8000/`+Comentario.usuarios.foto_user}/>
+                                                        <span>{Comentario.usuarios.nome_usuario}</span>
+                                                    </div> 
+                                                    <div>
+                                                        {Comentario.comentario}
+                                                    </div>
+                                                </div>
+                                            ))
+                                            : ''
+                                        }
+                                    </Comentario>
+                                    <hr />
+                                    <div className="botoes">
+                                        <Link to={`/encomendar/${Id_produto}`}>
+                                            <ButtonEncomendar />
+                                        </Link>
+                                        <Button variant='contained' disableElevation oncClick={handleClose}>Fechar</Button>
                                     </div>
                                 </Container>
                                 

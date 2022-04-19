@@ -3,7 +3,7 @@ import React from 'react'
 
 import Button from '@material-ui/core/Button';
 
-export default ({ children }) => {
+export default ({ children, props }) => {
 
     const style = {
         padding: '5px 15px',
@@ -13,7 +13,7 @@ export default ({ children }) => {
     }
 
     return (
-            <Button variant='contained' fullWidth style={style} type='submit'>
+            <Button variant='contained' fullWidth style={style} type='submit' disableElevation {...props}>
                 {children}
             </Button>
     )

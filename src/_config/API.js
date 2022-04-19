@@ -103,6 +103,10 @@ const API = {
     async selecionar_admins(){
         const response = await axios('/selecionar_admins')
         return response.data
+    },
+    async selecionar_comentarios_produto(dados){
+        const response = await axios('/selecionar_comentarios_produto',dados)
+        return response.data
     }
 }
 

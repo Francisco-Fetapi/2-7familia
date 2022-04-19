@@ -2,10 +2,12 @@ import styled from 'styled-components'
 
 export default styled.nav`
     display: flex;
-    padding: 5%;
     justify-content: space-between;
     align-items: center;
-    color: red;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 5% 0;
 
     & h1 img{
         max-width: 180px;
@@ -59,10 +61,10 @@ export default styled.nav`
         }
     }
 
-    & ul + ul li:first-child::after, & ul + ul li:last-child::after{
+    & ul + ul li::after{
         display: none;
     }
-    & ul + ul li:last-child a{
+    & ul:last-child li a{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -73,12 +75,16 @@ export default styled.nav`
         border-radius: 4px;
         color: #1d1e20;
     }
-    & ul + ul li:last-child button{
+    & ul + ul:last-child li button{
         background: linear-gradient(#FF00E8, #AF049F);
         padding: 5px 18px;
         font-size: 1.3em;
         border-radius: 4px;
         color: #1d1e20;
         text-transform: capitalize;
+    }
+
+    @media(max-width: 500px){
+        background: red;
     }
 `

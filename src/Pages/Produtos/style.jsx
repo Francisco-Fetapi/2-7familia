@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Banner from '../../Imagens/1 (24).jpg'
 
 export const Header = styled.header`
-    height: 83vh;
+    height: 95vh;
     background: url('${Banner}');
     background-position: center;
     background-size: cover;
@@ -11,7 +11,6 @@ export const Header = styled.header`
 `
 
 export const Div = styled.div`
-    padding: 30px 40px;
     height: 100%;
     width: 100%;
     background: linear-gradient(to bottom, #00000092 65%, transparent);
@@ -19,7 +18,6 @@ export const Div = styled.div`
     div{
         margin: auto;
         max-width: 500px;
-        margin-top: 7em;
         display: flex;
         flex-direction: column;
         gap: 15px;
