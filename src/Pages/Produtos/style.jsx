@@ -16,7 +16,7 @@ export const Div = styled.div`
     background: linear-gradient(to bottom, #00000092 65%, transparent);
 
     div{
-        margin: auto;
+        margin: 4% auto 0;
         max-width: 500px;
         display: flex;
         flex-direction: column;

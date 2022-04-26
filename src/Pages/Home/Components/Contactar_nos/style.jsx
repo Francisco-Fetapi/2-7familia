@@ -21,16 +21,16 @@ export const ContactarNos = styled.section`
         }
 
         form{
-            margin-top: 60px;
+            margin-top: .8rem;
             max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 2rem;
             align-items: center;
 
             .MuiInputLabel-formControl{
                 font-size: 1.6em;
-                margin-bottom: 20px;
+                margin-bottom: .8rem;
                 color: #eee;
             }
 
@@ -56,6 +56,14 @@ export const ContactarNos = styled.section`
 
             .MuiInput-underline:before{
                 border-bottom-color: #ccc;
+            }
+
+            p{
+                color: #eee;
+
+                a{
+                    color: #FF00E8;
+                }
             }
         }
     }
