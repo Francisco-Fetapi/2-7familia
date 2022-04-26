@@ -151,7 +151,7 @@ export default ({ Reacoes, desReagir }) => {
           <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
             <li>
               <Link to="/login">
-                <PersonPin /> Login
+                <PersonPin style={{color: '#1d1e20'}}/> Login
               </Link>
             </li>
           </Tooltip>

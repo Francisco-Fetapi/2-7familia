@@ -24,6 +24,7 @@ const Index = () => {
     const [Busca, setBusca] = useState('');
     const [Id_produto, setId_produto] = useState('');
     const [open, setOpen] = useState(false);
+    const [Loading, setLoading] = useState(true);
 
     useEffect(() => {
         if(Busca === '') buscaProdutos()
@@ -55,6 +56,7 @@ const Index = () => {
 
     const buscaProdutos = async () => {
         const response = await API.selecionar_produtos()
+        localStorage.setItem('produtos',response)
         setProdutos(response)
     }
 

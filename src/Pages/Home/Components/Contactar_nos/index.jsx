@@ -12,16 +12,22 @@ export default () => {
 
     const usuario_id = +localStorage.usuario_logado
     const [DadosUser, setDadosUser] = useState([]);
+    const [Loading, setLoading] = useState(true);
 
     useEffect(() => {
         buscaDadosUser(usuario_id)
     }, [usuario_id]);
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(!Loading)
+        },5000)
+    }, []);
 
     const buscaDadosUser = async id => {
         const response = await API.selecionar_usuario({ id })
         setDadosUser(response)
     }
-
 
     return (
             <ContactarNos>
@@ -29,8 +35,16 @@ export default () => {
                 <div>
                     <h2>Contacta-nos</h2>
                     <form>
-                        <Input label='Seu nome' value={DadosUser.length ? DadosUser[0].nome_usuario : 'Processando nome'} disabled/>
-                        <Input label='Seu e-mail' value={DadosUser.length ? DadosUser[0].email : 'Processando email'} disabled/>
+                        <Input label='Seu nome' value={
+                            DadosUser.length ? 
+                            DadosUser[0].nome_usuario 
+                            : 'Processando nome'
+                        } disabled/>
+                        <Input label='Seu e-mail' value={
+                            DadosUser.length ?
+                            DadosUser[0].email 
+                            : 'Processando email'
+                        } disabled/>
                         <TextField
                             label='Mensagem'
                             fullWidth

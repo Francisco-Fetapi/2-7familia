@@ -21,7 +21,7 @@ export default () => {
       setHora(() => date.getHours() < 10 ? '0'+date.getHours() : date.getHours())
       setMinuto(() => date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes())
       setSegundo(() => date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds())
-    }, 500)
+    }, 800)
   }, []);
 
   return (

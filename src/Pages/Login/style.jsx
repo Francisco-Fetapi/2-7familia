@@ -6,6 +6,7 @@ const rosa = '#FF00E8'
 
 export const Container = styled.main`
     width: 100%;
+    height: 100vh;
     background: url('${Moca}');
     background-position: center;
     background-size: cover;
