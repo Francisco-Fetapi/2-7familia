@@ -8,7 +8,7 @@ import API from "../../_config/API";
 import ItemsMenu from "./ItemsMenu";
 import Title from "../TitleTooltip";
 import Menu from "./style";
-import Logo from "../../Imagens/Delicatezza.svg";
+import Logo from "../../Imagens/2&7familia.png";
 import ModalAdoros from "../ModalAdoros";
 import ModalEncomendas from '../ModalEncomendas'
 

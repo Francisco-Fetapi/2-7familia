@@ -10,8 +10,7 @@ export default styled.nav`
     padding: 5% 0;
 
     & h1 img{
-        max-width: 180px;
-
+        max-width: 250px;
     }
 
     & ul{

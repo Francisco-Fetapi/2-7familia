@@ -15,7 +15,7 @@ export default () => {
           <BannerDescritivo>
               <div>
                 <div>
-                    <p className='descricao'>A Delicatezza Doces e Salgados nasceu da paixão pela gastronomia e fascínio pela alquimia dos sabores. Ao longo da nossa história, conquistaremos os paladares mais exigentes e criaremos receitas exclusivas de bolos de festa, tortas salgadas e sobremesas cheias de personalidade e muito sabor, deixando manhãs mais animadas, festas mais saborosas e sobremesas de domingo com um gostinho mais especial. Hoje estamos ainda no começo, mas queremos resgatar valores intangíveis e nostálgicos presentes no lugar mais doce da memória de nossos clientes. A Delicatezza é assim, muito mais que uma casa de confeição, somos parte do sabor de cada bom momento do seu dia a dia.</p>
+                    <p className='descricao'>A 2 & 7 Família Doces e Salgados nasceu da paixão pela gastronomia e fascínio pela alquimia dos sabores. Ao longo da nossa história, conquistaremos os paladares mais exigentes e criaremos receitas exclusivas de bolos de festa, tortas salgadas e sobremesas cheias de personalidade e muito sabor, deixando manhãs mais animadas, festas mais saborosas e sobremesas de domingo com um gostinho mais especial. Hoje estamos ainda no começo, mas queremos resgatar valores intangíveis e nostálgicos presentes no lugar mais doce da memória de nossos clientes. A 2 & 7 Família é assim, muito mais que uma casa de confeição, somos parte do sabor de cada bom momento do seu dia a dia.</p>
                     <p className='dica'>É um prazer fazer parte do seu dia!</p>
                 </div>
                 <img src={mulher} alt="Mulher apontando" />

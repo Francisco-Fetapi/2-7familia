@@ -59,6 +59,7 @@ export const ContactarNos = styled.section`
             }
 
             p{
+                text-align: center;
                 color: #eee;
 
                 a{

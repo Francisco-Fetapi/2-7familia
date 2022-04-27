@@ -45,7 +45,7 @@ const index = () => {
           <img src={PedacoBolo} alt="Bolo de chocolate" />
           <div>
             <h3>Vai um pedacinho de felicidade aí?</h3>
-            <p>Nadinha de misturas prontas ou sabores artificiais, a Delicatezza tem receitas exclusivas, feitas com ingredientes frescos e muito amor para deixar o seu dia muito especial!</p>
+            <p>Nadinha de misturas prontas ou sabores artificiais, a 2 & 7 Família tem receitas exclusivas, feitas com ingredientes frescos e muito amor para deixar o seu dia muito especial!</p>
             <Link to='/produtos'>
                 <Button style={{background: '#A15300', color: '#eee', padding: '10px 20px'}}>Confira os nossos produtos</Button>
             </Link>

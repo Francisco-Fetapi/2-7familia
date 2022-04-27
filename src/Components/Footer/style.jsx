@@ -54,8 +54,17 @@ export const Footer = styled.footer`
             }
         }
 
-        nav ul:nth-child(2), nav ul:nth-child(3){
+        nav > ul:nth-child(2), nav > ul:nth-child(3), nav > ul:nth-child(4){
             margin-top: 60px;
+        }
+        nav > ul:nth-child(4) ul{
+            display: flex;
+            flex-direction: row;
+
+            svg{
+                color: #FF00E8;
+                font-size: 2em;
+            }
         }
     }
     & > div:nth-child(2){

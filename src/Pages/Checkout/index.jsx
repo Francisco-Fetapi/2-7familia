@@ -10,6 +10,7 @@ import { Button, Popover } from "@material-ui/core";
 import { ShoppingCart } from '@material-ui/icons'
 import { Certo, Errado } from "../Login/style2";
 import Loading from '../../Imagens/loading.svg'
+import ModalEncomendaSucess from '../../Components/ModalEncomendaSucess'
 
 const Index = () => {
   const { id_produto } = useParams();
@@ -18,6 +19,7 @@ const Index = () => {
 
   const [Produto, setProduto] = useState([]);
   const [ReacoesProduto, setReacoesProduto] = useState([]);
+  const [OpenModalSucess, setOpenModalSucess] = useState(true);
 
   useEffect(() => {
     buscaProduto(id_produto)
@@ -71,6 +73,8 @@ const Index = () => {
   const handleClosePop = () => setAnchorEl(false)
 
   const id = anchorEl ? 'simple-popover' : undefined;
+
+  const handleClose = () => setOpenModalSucess(false)
 
   const encomendar = async e => {
     e.preventDefault()
@@ -155,13 +159,10 @@ const Index = () => {
                 }}
             >
                 {
-                    Erro ?  <Errado>Erro: {Erro}!</Errado> : (
-                        <Certo>
-                            <ShoppingCart /> Encomenda feita!
-                        </Certo>
-                    )
+                    Erro ?  <Errado>Erro: {Erro}!</Errado> : ''
                 }
             </Popover>
+            <ModalEncomendaSucess open={OpenModalSucess} handleClose={handleClose}/>
           </Container>
         ) : <Aguardando />
       }

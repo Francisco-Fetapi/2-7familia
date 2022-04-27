@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { Tooltip } from '@material-ui/core';
-import { ArrowForwardIos } from '@material-ui/icons';
+import { ArrowForwardIos, Facebook, Instagram, WhatsApp } from '@material-ui/icons';
 
 import { Footer } from './style';
 
-import logo from '../../Imagens/Delicatezza.svg'
+import logo from '../../Imagens/2&7familia.png'
 import TitleTooltip from '../TitleTooltip';
 
 
@@ -21,7 +21,7 @@ export default () => {
                     <li>Bela Vista, Lobito.</li>
                     <li>Benguela, <span>Angola</span></li>
                     <li><span>Telefone:</span> +244 941 059 086</li>
-                    <li><span>E-mail:</span> delicatezza@gmail.com</li>
+                    <li><span>E-mail:</span> 2&7familia@gmail.com</li>
                 </ul>
                 <ul>
                     <h4>Links Rápidos</h4>
@@ -37,9 +37,6 @@ export default () => {
                     <Tooltip title={<TitleTooltip>Entre em contacto connosco</TitleTooltip>} arrow placement='left'>
                         <li><Link to='/contactar_nos'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Contactar-nos</Link></li>
                     </Tooltip>
-                    <Tooltip title={<TitleTooltip>Carrinho de encomendas</TitleTooltip>} arrow placement='left'>
-                        <li><Link to='/'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Carrinho</Link></li>
-                    </Tooltip>
                     <Tooltip title={<TitleTooltip>Faça o seu login já</TitleTooltip>} arrow placement='left'>
                         <li><Link to='/login'><ArrowForwardIos style={{fontSize: '1.2em'}} /> Login</Link></li>
                     </Tooltip>
@@ -48,12 +45,20 @@ export default () => {
                     <h4>Nossos Serviços</h4>
                     <li>Encomendas</li>
                     <li>Decorações</li>
-                </ul>                  
+                </ul>   
+                <ul>
+                    <h4>Mídias Sociais</h4>
+                    <ul>
+                        <li><Facebook/></li>
+                        <li><Instagram/></li>
+                        <li><WhatsApp/></li>
+                    </ul>
+                </ul>               
               </nav>
           </div>
           <div>
               <p>Designed by <span>BEFAT Company</span></p>
-              <p>© Copyright Delicatezza, {new Date().getFullYear()} | Todos os direitos reservados.</p>
+              <p>© Copyright 2&7 Família, {new Date().getFullYear()} | Todos os direitos reservados.</p>
           </div>
           
       </Footer>
