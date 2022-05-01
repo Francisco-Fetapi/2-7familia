@@ -19,7 +19,7 @@ const Index = () => {
 
   const [Produto, setProduto] = useState([]);
   const [ReacoesProduto, setReacoesProduto] = useState([]);
-  const [OpenModalSucess, setOpenModalSucess] = useState(true);
+  const [OpenModalSucess, setOpenModalSucess] = useState(false);
 
   useEffect(() => {
     buscaProduto(id_produto)
@@ -106,6 +106,7 @@ const Index = () => {
 
         setErro(false)
         handleClick()
+        setOpenModalSucess(true)
       }
       
 

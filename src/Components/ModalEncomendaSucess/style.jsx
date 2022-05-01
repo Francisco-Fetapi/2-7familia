@@ -45,10 +45,16 @@ export const Container = styled.div`
         }
 
         button{
-            padding: 6px 5rem;
+            padding: 6px 6rem;
             font-size: 1.2em;
             background: linear-gradient(#FF00E8, #AF049F);
             color: #fff;
+        }
+
+        & > p{
+            max-width: 70%;
+            text-align: center;
+            font-size: .9em;
         }
     }
 

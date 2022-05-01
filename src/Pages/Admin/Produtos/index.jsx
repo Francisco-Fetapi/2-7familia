@@ -20,15 +20,23 @@ import { Title } from '../style';
 const Index = () => {
 
   const [Produtos, setProdutos] = useState([]);
+  const [Categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     busca_produtos()
   }, []);
-
+  useEffect(() => {
+    selecionar_categorias()
+  }, []);
 
   const busca_produtos = async () => {
       const response = await API.selecionar_produtos();
       setProdutos(response)
+  }
+
+  const selecionar_categorias = async () => {
+      const response = await API.selecionarCategorias()
+      setCategorias(response)
   }
 
   const ButtonStyle = {
@@ -91,7 +99,7 @@ const Index = () => {
                     <TableCell align="left">{produto.nome_produto}</TableCell>
                     <TableCell align="center">{produto.preco}</TableCell>
                     <TableCell align="center">{produto.descricao}</TableCell>
-                    <TableCell align="center">{produto.categoria}</TableCell>
+                    <TableCell align="center">{produto.categoria.nome_categoria}</TableCell>
                     <TableCell align="center">
                       <div className='botoes'>
                         <Tooltip title={<TitleTooltip>Eliminar Produto</TitleTooltip>} arrow>

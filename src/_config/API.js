@@ -100,12 +100,16 @@ const API = {
         const response = await axios('/verificar_login_admin',dados)
         return response.data
     },
-    async selecionar_admins(){
-        const response = await axios('/selecionar_admins')
+    async selecionar_admins(dados){
+        const response = await axios('/selecionar_admins',dados)
         return response.data
     },
     async selecionar_comentarios_produto(dados){
         const response = await axios('/selecionar_comentarios_produto',dados)
+        return response.data
+    },
+    async selecionarCategorias(){
+        const response = await axios('/selecionar_categorias')
         return response.data
     }
 }

@@ -26,7 +26,8 @@ const Index = ({ open, handleClose }) => {
                                 <ShoppingCart />
                                 <p>Encomenda feita</p>
                             </div>
-                            <Button variant='contained' disableElevation>Concluir</Button>
+                            <Button variant='contained' onClick={handleClose} disableElevation>Concluir</Button>
+                            <p>Obrigado por encomendar nosso produto, sua encomenda está disponível no seu carrinho.</p>
                         </div>
                     ) : (
                         <div className='loading'>

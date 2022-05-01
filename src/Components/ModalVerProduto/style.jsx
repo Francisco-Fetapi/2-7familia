@@ -70,7 +70,7 @@ export const Container = styled.div`
     .botoes{
         display: flex;
         max-width: 88%;
-        padding: 20px;
+        padding: 10px 0 30px;
         margin: auto;
         align-items: center;
         justify-content: space-between;

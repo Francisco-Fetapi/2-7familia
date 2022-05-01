@@ -12,6 +12,7 @@ import { CheckCircleOutlined } from "@material-ui/icons";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+  
   const [Login, setLogin] = useState(true);
   const [Campos, setCampos] = useState({
     email: "",
@@ -71,65 +72,67 @@ export default () => {
 
   return (
     <Container>
-      {Login ? (
-        <>
-          <h2>Login Administrador</h2>
-          <form onSubmit={Logar}>
-            <div>
-              <label htmlFor="email">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                value={Campos.email}
-                onChange={handleChange}
-                placeholder="exemplo@gmail.com"
-                id="email"
-              />
-            </div>
-            <div>
-              <label htmlFor="senha">Código de acesso</label>
-              <input
-                type="password"
-                name="codigo"
-                value={Campos.codigo}
-                onChange={handleChange}
-                placeholder="editoh$20/%"
-                id="senha"
-              />
-            </div>
-            <Button>Logar</Button>
-          </form>
-          <Tooltip title={<Title>Crie sua conta</Title>} arrow>
-            <p onClick={() => setLogin(false)}>
-              Não tem uma conta? <span>Criar.</span>
-            </p>
-          </Tooltip>
-          <Popover
-            id={id}
-            open={anchorEl}
-            anchorEl={anchorEl}
-            onClose={handleClosePop}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-          >
-            {Erro ? (
-              <Errado>Erro: {Erro}!</Errado>
-            ) : (
-              <Certo>
-                <CheckCircleOutlined /> Login feito!
-              </Certo>
-            )}
-          </Popover>
-        </>
-      ) : (
-        <Cadastro voltar={setLogin} />
-      )}
+      {
+        Login ? 
+        (
+          <>
+            <h2>Login Administrador</h2>
+            <form onSubmit={Logar}>
+              <div>
+                <label htmlFor="email">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={Campos.email}
+                  onChange={handleChange}
+                  placeholder="exemplo@gmail.com"
+                  id="email"
+                />
+              </div>
+              <div>
+                <label htmlFor="senha">Código de acesso</label>
+                <input
+                  type="password"
+                  name="codigo"
+                  value={Campos.codigo}
+                  onChange={handleChange}
+                  placeholder="editoh$20/%"
+                  id="senha"
+                />
+              </div>
+              <Button>Logar</Button>
+            </form>
+            <Tooltip title={<Title>Crie sua conta</Title>} arrow>
+              <p onClick={() => setLogin(false)}>
+                Não tem uma conta? <span>Criar.</span>
+              </p>
+            </Tooltip>
+            <Popover
+              id={id}
+              open={anchorEl}
+              anchorEl={anchorEl}
+              onClose={handleClosePop}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+            >
+              {Erro ? (
+                <Errado>Erro: {Erro}!</Errado>
+              ) : (
+                <Certo>
+                  <CheckCircleOutlined /> Login feito!
+                </Certo>
+              )}
+            </Popover>
+          </>
+        ) 
+        : <Cadastro voltar={setLogin} />
+      }
     </Container>
   );
 };

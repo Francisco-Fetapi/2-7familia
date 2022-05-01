@@ -172,7 +172,7 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                                         <Link to={`/encomendar/${Id_produto}`}>
                                             <ButtonEncomendar />
                                         </Link>
-                                        <Button variant='contained' disableElevation oncClick={handleClose}>Fechar</Button>
+                                        <Button variant='contained' disableElevation onClick={handleClose}>Fechar</Button>
                                     </div>
                                 </Container>
                                 

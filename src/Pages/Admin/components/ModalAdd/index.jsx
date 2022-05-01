@@ -1,5 +1,5 @@
 /* eslint-disable no-throw-literal */
-import React,{ useState, useRef } from 'react'
+import React,{ useState, useRef, useEffect } from 'react'
 
 import { Button, Dialog, MenuItem, Popover, Select } from '@material-ui/core'
 import { CheckCircleOutlined } from '@material-ui/icons'
@@ -13,6 +13,17 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
     const FILE = useRef()
 
     const [Imagem, setImagem] = useState('');
+    const [Categorias, setCategorias] = useState([]);
+    const [Permite, setPermite] = useState(true);
+
+    useEffect(() => {
+        selecionar_categorias()
+    }, []);
+
+    const selecionar_categorias = async () => {
+        const response = await API.selecionarCategorias()
+        setCategorias(response)
+    }
 
     const Adicionar = async e => {
         e.preventDefault()
@@ -119,8 +130,16 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
                     </div>
                     <div>
                         <Select label='Categoria' type='password' value={Campos.categoria} name='categoria' onChange={handleChange} >
-                            <MenuItem value="Bolos Feios" selected>Bolos Feios</MenuItem>
-                            <MenuItem value="Bolos de chocolate">Bolos de chocolate</MenuItem>
+                            {
+                                Categorias.length ? Categorias.map(categoria => {
+                                    if(Permite){
+                                        setPermite(false)
+                                        return <MenuItem key={categoria.id} value={categoria.id} selected>{categoria.nome_categoria}</MenuItem>
+                                    }else return <MenuItem key={categoria.id} value={categoria.id}>{categoria.nome_categoria}</MenuItem>
+                                    
+                                })
+                                : ''
+                            }
                         </Select>
                     </div>
                     <div>
