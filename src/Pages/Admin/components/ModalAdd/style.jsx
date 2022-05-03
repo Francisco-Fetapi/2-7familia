@@ -12,18 +12,14 @@ export const Container = styled.div`
                 font-size: 1.2em;
             }
 
-            input,textarea{
+            input, textarea ,select{
                 width: 100%;
                 border: none;
                 border-radius: 4px;
                 background: #ccc;
                 padding: 6px 15px;
-                font-size: 1.1em;
+                font-size: 1em;
             }
-            select{
-                background: red;
-            }
-
             
         }
         div:first-child + div{

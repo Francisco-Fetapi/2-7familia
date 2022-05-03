@@ -25,6 +25,8 @@ const Index = () => {
     const [Erro, setErro] = useState(false);
     const [anchorEl, setAnchorEl] = useState(false);
 
+    document.title = login ? 'Iniciar Sessão' : 'Cadastrar-se' 
+
     // Activar Popover
     const handleClick = () => {
         setAnchorEl(true);

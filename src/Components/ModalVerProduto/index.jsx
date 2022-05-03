@@ -7,7 +7,6 @@ import API from '../../_config/API'
 import ButtonEncomendar from '../ButtonEncomendar'
 import ButtonComentar from '../../Components/button'
 import { Container, ProdutoImagem, ProdutoItem, Comentario, UsuarioFoto } from './style'
-import './estilo.css'
 
 const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto }) => {
 

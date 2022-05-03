@@ -9,10 +9,12 @@ import { Container } from "./style";
 import API from "../../../_config/API";
 import { Certo, Errado } from "../../Login/style2";
 import { CheckCircleOutlined } from "@material-ui/icons";
+import { useHistory } from "react-router-dom";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   
+  const history = useHistory()
   const [Login, setLogin] = useState(true);
   const [Campos, setCampos] = useState({
     email: "",
@@ -62,7 +64,7 @@ export default () => {
         setErro(false)
         handleClick();
         localStorage.setItem('admin_logado', response);
-        window.location.href = 'http://localhost:3000/admin';
+        history.push('/admin')
       }
     } catch (error) {
       setErro(error);

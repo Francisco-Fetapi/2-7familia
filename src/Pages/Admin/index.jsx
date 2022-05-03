@@ -18,13 +18,11 @@ const Index = () => {
 
     useEffect(() => {
         if(Logado) buscaDadosAdmin(+localStorage.admin_logado)
-    }, []);
-    useEffect(() => {
-        if(!Logado) history.push('/admin/login')
-    }, []);
+        else history.push('/admin/login')
+    }, [Logado]);
 
     const buscaDadosAdmin = async id_admin => {
-        const response = await API.selecionar_admins(id_admin)
+        const response = await API.selecionar_admins({id_admin})
         setAdmin(response)
     }
 

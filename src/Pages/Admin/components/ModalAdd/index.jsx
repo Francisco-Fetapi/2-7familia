@@ -1,7 +1,7 @@
 /* eslint-disable no-throw-literal */
 import React,{ useState, useRef, useEffect } from 'react'
 
-import { Button, Dialog, MenuItem, Popover, Select } from '@material-ui/core'
+import { Button, Dialog, Popover } from '@material-ui/core'
 import { CheckCircleOutlined } from '@material-ui/icons'
 import { Container, ImagemProduto } from './style'
 import { Certo, Errado } from '../../../Login/style2'
@@ -129,18 +129,19 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
                         <input type="number" value={Campos.preco} id='preco' name='preco' onChange={handleChange}/>
                     </div>
                     <div>
-                        <Select label='Categoria' type='password' value={Campos.categoria} name='categoria' onChange={handleChange} >
+                        <label htmlFor="categoria">Categoria</label>
+                        <select value={Campos.categoria} name='categoria' id='categoria' onChange={handleChange} >
                             {
                                 Categorias.length ? Categorias.map(categoria => {
                                     if(Permite){
                                         setPermite(false)
-                                        return <MenuItem key={categoria.id} value={categoria.id} selected>{categoria.nome_categoria}</MenuItem>
-                                    }else return <MenuItem key={categoria.id} value={categoria.id}>{categoria.nome_categoria}</MenuItem>
+                                        return <option key={categoria.id} value={categoria.id} selected>{categoria.nome_categoria}</option>
+                                    }else return <option key={categoria.id} value={categoria.id}>{categoria.nome_categoria}</option>
                                     
                                 })
                                 : ''
                             }
-                        </Select>
+                        </select>
                     </div>
                     <div>
                         <label htmlFor="descricao">Descrição</label>
@@ -148,7 +149,7 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
                     </div>
                     <div>
                         <Button type='submit'>Adicionar Produto</Button>
-                        <Button variant='contained' onClick={handleClose}>Fechar</Button>
+                        <Button variant='contained' onClick={handleClose} disableElevation>Fechar</Button>
                     </div>                    
                 </form>
             </Container> 

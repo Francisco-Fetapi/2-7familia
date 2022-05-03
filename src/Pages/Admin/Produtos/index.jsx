@@ -20,23 +20,14 @@ import { Title } from '../style';
 const Index = () => {
 
   const [Produtos, setProdutos] = useState([]);
-  const [Categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     busca_produtos()
-  }, []);
-  useEffect(() => {
-    selecionar_categorias()
   }, []);
 
   const busca_produtos = async () => {
       const response = await API.selecionar_produtos();
       setProdutos(response)
-  }
-
-  const selecionar_categorias = async () => {
-      const response = await API.selecionarCategorias()
-      setCategorias(response)
   }
 
   const ButtonStyle = {
@@ -79,11 +70,11 @@ const Index = () => {
 
           <TableContainer component={Paper}>
             <Table aria-label="caption table">
-              <caption>{Produtos.length === 0 ? 'Nenhum produto ainda cadastrado' : 'Todos os produtos já cadastrados'}</caption>
+              <caption>{Produtos.length === 0 ? 'Nenhum produto cadastrado ainda' : 'Todos os produtos já cadastrados'}</caption>
               <TableHead>
                 <TableRow>
                   <TableCell>Foto</TableCell>
-                  <TableCell align="center">Nome do produto</TableCell>
+                  <TableCell align="center">Nome</TableCell>
                   <TableCell align="center">Preço</TableCell>
                   <TableCell align="center">Descrição</TableCell>
                   <TableCell align="center">Categoria</TableCell>

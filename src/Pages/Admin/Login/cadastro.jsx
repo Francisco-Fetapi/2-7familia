@@ -7,14 +7,18 @@ import { Popover, Tooltip } from "@material-ui/core";
 import API from '../../../_config/API'
 import { Certo, Errado } from "../../Login/style2";
 import { CheckCircleOutlined } from "@material-ui/icons";
+import { useHistory } from "react-router-dom";
 
 
 const Cadastro = ({ voltar }) => {
+
+  const history = useHistory()
+
   const [Campos, setCampos] = useState({
     nome_admin: "",
     email: "",
     codigo: "",
-    codigo_confirm: ''
+    codigo_confirm: ""
   });
 
   const handleChange = (e) => {
@@ -65,7 +69,8 @@ const Cadastro = ({ voltar }) => {
       else{
         setErro(false)
         handleClick();
-        setTimeout(() => voltar(true), 1500)
+        localStorage.setItem('admin_logado', response);
+        setTimeout(() => history.push('/'), 1500)
       }
       
     } catch (error) {

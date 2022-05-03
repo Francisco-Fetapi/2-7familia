@@ -1,6 +1,8 @@
 /* eslint-disable no-throw-literal */
 import React, { useRef, useState } from 'react'
 
+import { useHistory } from "react-router-dom";
+
 import axios from 'axios'
 import Button from '@material-ui/core/Button'
 import { MenuItem, Popover, Select, Tooltip } from '@material-ui/core'
@@ -19,6 +21,8 @@ import API from '../../_config/API'
 export default ({ voltar }) => {
 
     const FILE = useRef()
+
+    const history = useHistory()
 
     const [Imagem, setImagem] = useState('')
     const [open, setOpen] = useState(false)
@@ -98,7 +102,8 @@ export default ({ voltar }) => {
             else{
                 setErro(false)
                 handleClick()
-                setTimeout(() => voltar(true), 1500)
+                localStorage.setItem('usuario_logado',response)
+                setTimeout(() => history.back(), 1500)
             }
 
         } catch (error) {
