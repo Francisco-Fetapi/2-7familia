@@ -124,7 +124,7 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                                                 </div>
                                             ) : ''
                                         }
-                                        <p>{`KZ `+produto.preco}</p>
+                                        <p>{(+produto.preco).toLocaleString('pt-br',{ style:'currency', currency:'AOA' }).replace('AOA','KZ')}</p>
                                         {
                                             Logado ? (
                                                 <div className="btns">
@@ -136,42 +136,44 @@ const Index = ({ open, handleClose, ReacoesTotal, reagir, desrreagir, Id_produto
                                         }
                                     </ProdutoItem>
                                     <div>
-                                        <h2>Comentários</h2>
-                                        <form>
-                                            <textarea name="conteudo" placeholder='O que você achou desse produto?'></textarea>
-                                            <ButtonComentar>Comentar</ButtonComentar>
-                                        </form>
-                                    </div>
-                                    <hr />
-                                    <Comentario>
-                                        {
-                                            Comentarios.length ? 
-                                                <p>{Comentarios.length} Comentário{Comentarios.length < 2 ? '' : 's'}</p> 
-                                            :   <p>Nenhum comentário, seja o primeiro</p>
-                                        }
-                                        {
-                                            Comentarios.length ? 
-                                            
-                                            Comentarios.map((Comentario, index) => (
-                                                <div key={index}>
-                                                    <div>
-                                                        <UsuarioFoto imagem={`http://127.0.0.1:8000/`+Comentario.usuarios.foto_user}/>
-                                                        <span>{Comentario.usuarios.nome_usuario}</span>
-                                                    </div> 
-                                                    <div>
-                                                        {Comentario.comentario}
+                                        <div>
+                                            <h2>Comentários</h2>
+                                            <form>
+                                                <textarea name="conteudo" placeholder='O que você achou desse produto?'></textarea>
+                                                <ButtonComentar>Comentar</ButtonComentar>
+                                            </form>
+                                        </div>
+                                        <hr />
+                                        <Comentario>
+                                            {
+                                                Comentarios.length ? 
+                                                    <p>{Comentarios.length} Comentário{Comentarios.length < 2 ? '' : 's'}</p> 
+                                                :   <p>Nenhum comentário, seja o primeiro</p>
+                                            }
+                                            {
+                                                Comentarios.length ? 
+                                                
+                                                Comentarios.map((Comentario, index) => (
+                                                    <div key={index}>
+                                                        <div>
+                                                            <UsuarioFoto imagem={`http://127.0.0.1:8000/`+Comentario.usuarios.foto_user}/>
+                                                            <span>{Comentario.usuarios.nome_usuario}</span>
+                                                        </div> 
+                                                        <div>
+                                                            {Comentario.comentario}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))
-                                            : ''
-                                        }
-                                    </Comentario>
-                                    <hr />
-                                    <div className="botoes">
-                                        <Link to={`/encomendar/${Id_produto}`}>
-                                            <ButtonEncomendar />
-                                        </Link>
-                                        <Button variant='contained' disableElevation onClick={handleClose}>Fechar</Button>
+                                                ))
+                                                : ''
+                                            }
+                                        </Comentario>
+                                        <hr />
+                                        <div className="botoes">
+                                            <Link to={`/encomendar/${Id_produto}`}>
+                                                <ButtonEncomendar />
+                                            </Link>
+                                            <Button variant='contained' disableElevation onClick={handleClose}>Fechar</Button>
+                                        </div>
                                     </div>
                                 </Container>
                                 

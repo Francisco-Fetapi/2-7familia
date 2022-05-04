@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    min-width: 900px;
+    width: 100%;
+    display: flex;
+
 
   & > div:nth-child(1){
       flex: 1;
       max-width: 320px;
-      display: none;
-
-      /* Ainda está oculto até corrigir o problema da largura */
-      /* This component is ocult until to corrige the width's problem */
+      min-width: 300px;
   }
 
   & > div:nth-child(2){

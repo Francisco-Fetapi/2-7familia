@@ -42,7 +42,7 @@ export default () => {
                         </span>
                         <div>
                           <p>E-mail</p>
-                          <p>delicatezza@gmail.com</p>
+                          <p>2&7familia@gmail.com</p>
                         </div>
                       </div>
                   </li>

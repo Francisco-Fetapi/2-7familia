@@ -103,7 +103,7 @@ export default ({ voltar }) => {
                 setErro(false)
                 handleClick()
                 localStorage.setItem('usuario_logado',response)
-                setTimeout(() => history.back(), 1500)
+                setTimeout(() => history.goBack(), 1500)
             }
 
         } catch (error) {

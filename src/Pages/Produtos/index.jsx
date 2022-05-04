@@ -106,11 +106,8 @@ const Index = () => {
                         // Verificar se o usuário reagiu nesse determinado produto e retornar funcionalidades de acordo com essa verficação 
                         const Reacoes_Pub = Reacoes.filter(reacao => reacao.id_produto === produto.id)
                         const Reagio = Reacoes_Pub.filter(reacao => reacao.id_usuario === user_id)
-
-                        const dinheiro = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'AOA' }).format(+produto.preco).replace("AOA","KZ")
                         const precario = (+produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'AOA' }).replace("AOA","KZ")
                         
-
                         return(
                             <ProdutoItem key={index}>
                                 <ProdutoImagem imagem={`http://127.0.0.1:8000/`+produto.foto_produto}> 

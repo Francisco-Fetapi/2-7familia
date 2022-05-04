@@ -70,7 +70,7 @@ const Cadastro = ({ voltar }) => {
         setErro(false)
         handleClick();
         localStorage.setItem('admin_logado', response);
-        setTimeout(() => history.push('/'), 1500)
+        setTimeout(() => history.push('/admin'), 1500)
       }
       
     } catch (error) {

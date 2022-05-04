@@ -34,17 +34,16 @@ const Index = ({ open, handleClose, buscarProdutos }) => {
             if(Imagem === '') throw 'Escolha uma foto para o produto'
             else if(Campos.nome === '') throw 'Nome está vazio'
             else if(Campos.preco === '') throw 'Preço está vazio '
-            else if(Campos.preco.length >= 9) throw 'Preço tem número a mais'
-            else if(Campos.preco.indexOf('.') === -1){
-                if(Campos.preco.length >= 7) throw 'Preço tem número a mais'
-            }
-            else if(Campos.categoria === '') throw 'Categoria está vazia'
+            // else if(Campos.preco.length >= 9) throw 'Preço tem número a mais'
+            // else if(Campos.preco.indexOf('.') === -1){
+            //     if(Campos.preco.length >= 7) throw 'Preço tem número a mais'
+            // }
             else if(Campos.descricao === '') throw 'Descrição está vazia'
 
             FD.append(FILE.current.name, FILE.current.files[0])
             FD.append('nome_produto',Campos.nome)
             FD.append('preco',Campos.preco)
-            FD.append('categoria',Campos.categoria)
+            FD.append('id_categoria',Campos.categoria === '' ? Categorias[0].id : Campos.categoria)
             FD.append('descricao',Campos.descricao)
 
             const response = await API.add_produto(FD)

@@ -53,11 +53,6 @@ const Index = ({ open, handleClose, id_produto, buscarProdutos }) => {
         const FD = new FormData()
 
         try {
-             if(Campos.preco.length >= 9) throw 'Preço tem número a mais'
-             else if(Campos.preco.indexOf('.') === -1){
-                 if(Campos.preco.length >= 7) throw 'Preço tem número a mais'
-            }
-
             if(FILE.current.value !== '') FD.append(FILE.current.name, FILE.current.files[0])
             else FD.append('foto',Produto[0].foto_produto)
 
@@ -66,8 +61,8 @@ const Index = ({ open, handleClose, id_produto, buscarProdutos }) => {
             if(Campos.preco === '') FD.append('preco',Produto[0].preco)
             else FD.append('preco',Campos.preco)
 
-            if(Campos.categoria === '') FD.append('categoria',Produto[0].categoria.id)
-            else FD.append('categoria',Campos.categoria)
+            if(Campos.categoria === '') FD.append('id_categoria',Produto[0].categoria.id)
+            else FD.append('id_categoria',Campos.categoria)
 
             if(Campos.descricao === '') FD.append('descricao',Produto[0].descricao)
             else FD.append('descricao',Campos.descricao)

@@ -2,6 +2,8 @@
 /* eslint-disable no-throw-literal */
 import React, { useState } from 'react'
 
+import { useHistory } from "react-router-dom";
+
 import Tooltip from '@material-ui/core/Tooltip'
 import Button from '@material-ui/core/Button'
 import HowToReg from '@material-ui/icons/HowToReg'
@@ -17,6 +19,7 @@ import { Certo, Errado } from './style2'
 
 const Index = () => {
 
+    const history = useHistory()
     const [login, setlogin] = useState(true);
     const [Campos, setCampos] = useState({
         email: '',
@@ -62,7 +65,7 @@ const Index = () => {
                 setErro(false)
                 handleClick()
                 localStorage.setItem('usuario_logado',response)
-                history.back()
+                history.goBack()
             }
             
         } catch (error) {
