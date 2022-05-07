@@ -11,7 +11,6 @@ import Menu from "./style";
 import Logo from "../../Imagens/2&7familia.png";
 import ModalAdoros from "../ModalAdoros";
 import ModalEncomendas from '../ModalEncomendas'
-import MenuMobile from "../MenuMobile";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ Reacoes, desReagir }) => {
@@ -23,13 +22,7 @@ export default ({ Reacoes, desReagir }) => {
   const [Encomendados, setEncomendados] = useState([]);
   const [openAdoros, setOpenAdoros] = useState(false);
   const [openEncomendas, setOpenEncomendas] = useState(false);
-  const [Mobile, setMobile] = useState(false);
-
-
-  useEffect(() => {
-    if(window.innerWidth <= 500) setMobile(true)
-    window.onresize = () => VerificaLargura()
-  }, []);
+  const [Mostra, setMostra] = useState(false);
 
   useEffect(() => {
     if (localStorage.usuario_logado) setLogado(true);
@@ -43,14 +36,15 @@ export default ({ Reacoes, desReagir }) => {
     selecionarEncomendas(user_logado)
   }, [])
 
-  const VerificaLargura = () => {
-      const largura = window.innerWidth <= 500 ? true : false
-      setMobile(largura)
-  }
-
-  const handleOpenAdoros = () => setOpenAdoros(true);
+  const handleOpenAdoros = () => {
+    setOpenAdoros(true);
+    setMostra(false)
+  } 
   const handleCloseAdoros = () => setOpenAdoros(false);
-  const handleOpenEncomendas = () => setOpenEncomendas(true);
+  const handleOpenEncomendas = () => {
+    setOpenEncomendas(true);
+    setMostra(false)
+  }
   const handleCloseEncomendas = () => setOpenEncomendas(false);
 
   const selecionaReacoes = async id_usuario => {
@@ -71,22 +65,15 @@ export default ({ Reacoes, desReagir }) => {
   };
 
   return (
-    Mobile ? (
-      <>
-        <MenuMobile/>
-        <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
-        <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>
-      </>
-    ) : (
-      <Menu>
-        <Link to="/">
-          <h1>
-            <img src={Logo} alt="Delicatezza delicias" />
-          </h1>
-        </Link>
-        <ItemsMenu className='items_menu'/>
-        <ul className="icones">
-          {Logado ? (
+    <Menu className={Mostra ? 'mobile' : ''}>
+      <Link to="/">
+        <h1>
+          <img src={Logo} alt="Delicatezza delicias" />
+        </h1>
+      </Link>
+      <ul className="icones">
+        { 
+          Logado ? (
             <li>
               <Tooltip
                 title={<Title>
@@ -128,32 +115,36 @@ export default ({ Reacoes, desReagir }) => {
                 </IconButton>
               </Tooltip>
             </li>
-          ) : (
-            ""
-          )}
-        </ul>
-        <ul>
-          {Logado ? (
-            <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
-              <li>
-                <Button onClick={Logout}>
-                  <Input style={{ marginRight: "10px", color: '#1d1e20' }} /> Logout
-                </Button>
-              </li>
-            </Tooltip>
-          ) : (
-            <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
-              <li>
-                <Link to="/login">
-                  <PersonPin style={{color: '#1d1e20'}}/> Login
-                </Link>
-              </li>
-            </Tooltip>
-          )}
-        </ul>
-        <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
-        <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>
-      </Menu>
-    )
+          ) : ""
+        }
+      </ul>
+      <IconButton onClick={() => setMostra(!Mostra)}>
+          {
+            !Mostra ? <Dehaze style={{color: '#eee', fontSize: '1.3em'}} /> : <Close style={{color: '#eee', fontSize: '1.3em'}} />
+          }
+      </IconButton>
+      <ItemsMenu/>
+      <ul>
+        {Logado ? (
+          <Tooltip title={<Title>Termine a sua sessão</Title>} arrow>
+            <li>
+              <Button onClick={Logout}>
+                <Input style={{ marginRight: "10px", color: '#1d1e20' }} /> Logout
+              </Button>
+            </li>
+          </Tooltip>
+        ) : (
+          <Tooltip title={<Title>Faça já o seu login</Title>} arrow>
+            <li>
+              <Link to="/login">
+                <PersonPin style={{color: '#1d1e20'}}/> Login
+              </Link>
+            </li>
+          </Tooltip>
+        )}
+      </ul>
+      <ModalAdoros open={openAdoros} handleClose={handleCloseAdoros} Reacoes={Reacoes} desReagir={desReagir}/>
+      <ModalEncomendas open={openEncomendas} handleClose={handleCloseEncomendas} atualiza={selecionarEncomendas}/>
+    </Menu>
   );
 };

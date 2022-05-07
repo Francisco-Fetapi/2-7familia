@@ -82,27 +82,30 @@ const Index = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {Produtos.map(produto => (
-                  <TableRow key={produto.id}>
-                    <TableCell component="th" scope="row">
-                        <img src={`http://localhost:8000/`+produto.foto_produto} alt="" />
-                    </TableCell>
-                    <TableCell align="left">{produto.nome_produto}</TableCell>
-                    <TableCell align="center">{produto.preco}</TableCell>
-                    <TableCell align="center">{produto.descricao}</TableCell>
-                    <TableCell align="center">{produto.categoria.nome_categoria}</TableCell>
-                    <TableCell align="center">
-                      <div className='botoes'>
-                        <Tooltip title={<TitleTooltip>Eliminar Produto</TitleTooltip>} arrow>
-                          <span onClick={() => Deletar_produto(produto.id)}>Eliminar</span>
-                        </Tooltip>
-                        <Tooltip title={<TitleTooltip>Editar Produto</TitleTooltip>} arrow>
-                          <span onClick={() => Editar_produto(produto.id)}>Editar</span>
-                        </Tooltip>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
+                {
+                  Produtos.length ? 
+                  Produtos.map(produto => (
+                    <TableRow key={produto.id}>
+                      <TableCell component="th" scope="row">
+                          <img src={`http://localhost:8000/`+produto.foto_produto} alt="" />
+                      </TableCell>
+                      <TableCell align="left">{produto.nome_produto}</TableCell>
+                      <TableCell align="center">{produto.preco}</TableCell>
+                      <TableCell align="center">{produto.descricao}</TableCell>
+                      <TableCell align="center">{produto.categoria.nome_categoria}</TableCell>
+                      <TableCell align="center">
+                        <div className='botoes'>
+                          <Tooltip title={<TitleTooltip>Eliminar Produto</TitleTooltip>} arrow>
+                            <span onClick={() => Deletar_produto(produto.id)}>Eliminar</span>
+                          </Tooltip>
+                          <Tooltip title={<TitleTooltip>Editar Produto</TitleTooltip>} arrow>
+                            <span onClick={() => Editar_produto(produto.id)}>Editar</span>
+                          </Tooltip>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  )) : ''
+                }
               </TableBody>
             </Table>
           </TableContainer>
