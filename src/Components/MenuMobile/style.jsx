@@ -4,6 +4,7 @@ export default styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -20,15 +21,11 @@ export default styled.nav`
     }
 
     & ul:nth-child(4), & ul:last-child{
-        /* display: flex;
-        align-items: center;
-        gap: 30px; */
-
         display: none;
     }
 
     &.mobile{
-        background: #00000089;
+        background: #8a090988;
         margin: 0;
         position: fixed;
         top: 0;
@@ -43,7 +40,10 @@ export default styled.nav`
         & ul:nth-child(4){
             width: 100%;
             display: block;
-            background: blue;
+            
+            li + li{
+                margin-top: 20px;
+            }
         }
     }
 

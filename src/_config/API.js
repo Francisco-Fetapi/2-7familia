@@ -32,12 +32,16 @@ const API = {
         const response = await axios('/add_produto',dados)
         return response.data
     },
-    async selecionar_produtos(){
-        const response = await axios('/selecionar_produtos')
+    async selecionar_encomendas(){
+        const response = await axios('/selecionar_encomendas')
         return response.data
     },
     async selecionar_produto(dados){
         const response = await axios('/selecionar_produto',dados)
+        return response.data
+    },
+    async selecionar_produtos(){
+        const response = await axios('/selecionar_produtos')
         return response.data
     },
     async selecionar_produtos_filtro(dados){
@@ -68,10 +72,6 @@ const API = {
         const response = await axios('/selecionar_produtos_adorados',dados)
         return response.data
     },
-    async selecionar_encomendas(){
-        const response = await axios('/selecionar_encomendas')
-        return response.data
-    },
     async add_encomenda(dados){
         const response = await axios('/add_encomenda',dados)
         return response.data
@@ -86,6 +86,10 @@ const API = {
     },
     async eliminar_encomenda(dados){
         const response = await axios('/eliminar_encomenda',dados)
+        return response.data
+    },
+    async eliminar_encomenda_usuario(dados){
+        const response = await axios('/eliminar_encomenda_usuario',dados)
         return response.data
     },
     async desrreagir_produto(dados){

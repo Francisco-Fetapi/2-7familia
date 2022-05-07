@@ -68,7 +68,7 @@ export default ({ Reacoes, desReagir }) => {
     <Menu className={Mostra ? 'mobile' : ''}>
       <Link to="/">
         <h1>
-          <img src={Logo} alt="Delicatezza delicias" />
+          <img src={Logo} alt="2 & 7 Família" />
         </h1>
       </Link>
       <ul className="icones">

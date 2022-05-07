@@ -34,7 +34,7 @@ const Index = ({ open, handleClose, Reacoes, desReagir }) => {
                                 <ImagemProduto imagem={`http://localhost:8000/`+produto.produtos.foto_produto}/>
                                 <div>
                                     <p className='nome_produto'>{produto.produtos.nome_produto.length > 17 ? produto.produtos.nome_produto.substring(0,17)+'...' : produto.produtos.nome_produto}</p>
-                                    <p>KZ {produto.produtos.preco}</p>
+                                    <p>{(produto.produtos.preco).toLocaleString('pt-BR', { style:'currency', currency:'AOA'}).replace('AOA','KZ')}</p>
                                 </div>
                                 <IconButton onClick={() => desReagir(produto.id)}>
                                     <DeleteForever/>

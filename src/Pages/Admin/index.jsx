@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@material-ui/core'
 import { BusinessCenter, Chat, Input, PeopleAlt, Shop, ShoppingCart } from '@material-ui/icons'
 import Produtos from './Produtos'
+import Encomendas from './Encomendas'
 import Dashboard from './Dashboard'
 import { Container, Conteudo, Drawer } from './style'
 import avatar from '../../Imagens/avatar.png'
@@ -53,7 +54,7 @@ const Index = () => {
                                 {
                                     Item === 'dashboard' ? <Dashboard altera={setItem}/>
                                         : Item === 'produtos' ? <Produtos altera={setItem}/>
-                                            : Item === 'encomendas' ? <h2>Encomendas</h2>
+                                            : Item === 'encomendas' ? <Encomendas altera={setItem}/>
                                                 : Item === 'usuarios' ? <h2>Usuários</h2>
                                                     : Item === 'chat' ? <h2>Chat</h2> : ''
                                 }
