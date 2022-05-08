@@ -33,6 +33,10 @@ export default styled.nav`
         bottom: 0;
         z-index: 999;
 
+        & ul{
+            display: none;
+        }
+
         & ul li::after{
             display: none;
         }

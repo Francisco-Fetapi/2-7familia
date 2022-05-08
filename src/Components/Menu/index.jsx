@@ -27,7 +27,7 @@ export default ({ Reacoes, desReagir }) => {
 
 
   useEffect(() => {
-    if(window.innerWidth <= 500) setMobile(true)
+    if(window.innerWidth <= 1000) setMobile(true)
     window.onresize = () => VerificaLargura()
   }, []);
 
