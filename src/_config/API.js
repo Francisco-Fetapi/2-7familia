@@ -115,6 +115,14 @@ const API = {
     async selecionarCategorias(){
         const response = await axios('/selecionar_categorias')
         return response.data
+    },
+    async enviar_mensagem(dados){
+        const response = await axios('/enviar_mensagem',dados)
+        return response.data
+    },
+    async selecionar_mensagens(){
+        const response = await axios('/selecionar_mensagens')
+        return response.data
     }
 }
 

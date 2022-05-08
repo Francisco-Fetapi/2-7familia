@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom'
 import { ContactarNos, ImagemContactarNos } from './style';
 import { LocalPhone } from '@material-ui/icons';
 import Input from '../../../../Components/Input';
-import { TextField } from '@material-ui/core';
+import { Popover, TextField } from '@material-ui/core';
 import ButtonContactar from '../../../../Components/ButtonContactar'
 import API from '../../../../_config/API';
+import { Certo, Errado } from '../../../Login/style2';
+import CheckCircleOutlined from '@material-ui/icons/CheckCircleOutlined';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -34,15 +36,45 @@ export default () => {
         setDadosUser(response)
     }
 
-    const Enviar_mensagem = e => {
+    const Enviar_mensagem = async e => {
         e.preventDefault()
         
         try {
             if(Conteudo === '') throw 'Mensagem está vazia!'
+
+            const response = await API.enviar_mensagem({
+                id_usuario: usuario_id,
+                conteudo: Conteudo
+            })
+
+            if(response){
+                setErro(false)
+                handleClick()
+                setTimeout(() => setConteudo(''),1500)
+            }else{
+                setErro('Mensagem não enviada!')
+                handleClick()
+            }
+
         } catch (error) {
-            alert(error)
+            setErro(error)
+            handleClick()
         }
     }
+
+    const [Erro, setErro] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(false);
+
+    // Activar Popover
+    const handleClick = () => {
+        setAnchorEl(true);
+        setTimeout(() => handleClosePop(), 1300)
+    };
+
+    // Desactivar Popover
+    const handleClosePop = () => setAnchorEl(false)
+
+    const id = anchorEl ? 'simple-popover' : undefined;
 
     return (
             <ContactarNos>
@@ -72,6 +104,28 @@ export default () => {
                         }
                     </form>
                 </div>
+                <Popover
+                    id={id}
+                    open={anchorEl}
+                    anchorEl={anchorEl}
+                    onClose={handleClosePop}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    transformOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                >
+                    {
+                        Erro ?  <Errado>Erro: {Erro}!</Errado> : (
+                            <Certo>
+                                <CheckCircleOutlined /> Mensagem enviada com sucesso
+                            </Certo>
+                        )
+                    }
+                </Popover>
             </ContactarNos>
     )
 }
